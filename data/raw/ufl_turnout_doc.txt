@@ -1,0 +1,153 @@
+=======================================================================================================================
+DOCUMENTATION FOR 1980-2022 GENERAL ELECTION TURNOUT RATES
+Version: 1.2
+Date: 10/8/2024
+Author: Michael McDonald, Professor of Political Science, University of Florida
+These data are released under an Creative Commons 4.0 Attribution License. See: https://creativecommons.org/licenses/by/4.0/
+=======================================================================================================================
+
+============
+RELEASE NOTES
+============
+
+Version 1.2 of the national 1980-2022 timeseries 
+- Updates 2020 and 2022 for 2020 version 1.2 and 2022 version 1.2 data release.
+
+============
+VARIABLES
+============
+
+YEAR
+=======
+Election year.
+
+STATE
+=======
+Long state name.
+
+STATE_ABV
+=======
+State two-letter postal abbreviation.
+
+TOTAL_BALLOTS_COUNTED
+=======
+The total number of ballots counted by election officials in a November general election, either in official state reports or to the United States Election
+Assistance Commission (for decades 2000 and later). For 1990s and prior, I use reports generously provided by the Congressional Research Service and
+reported to the United States Congress.
+ 
+Notes:
+- Prior to 2010 fewer states report the total ballots counted in their official reports or to the United States Election Assistance Commission.
+  I do not attempt to estimate missing data for states. I estimate a national number by computing the ratio of the VOTE_FOR_HIGHEST_OFFICE to the
+  TOTAL_BALLOTS_CAST for reporting states and applying this ratio to the national sum of the VOTE_FOR_HIGHEST_OFFICE. To be transparent about this
+  reporting I provide nulls for these states' data.
+- For more recent elections, observant researchers will notice that I include a "SOURCE" field in individual year datasets. I do not do include this field for this time-series.
+  I primarily use SOURCE during the months after an election as a means to check for certification of election results so I can finalize the turnout rate numerator statistics
+  and I provide them as a courtesy to interested researchers.
+- I make various adjustments to 2010-present election results. I recommend the documentation for these individual election years for more information.
+
+VOTE_FOR_HIGHEST_OFFICE
+=======
+Vote for the highest statewide vote-getting office. In a presidential election this is almost always the presidential election and in a midterm it is US Senator or governor.
+Some states do not hold statewide governor elections in even years and may not have a US Senate election due to the staggered six-year terms. For these states,
+usually the combined totals for US Congress are used unless there is another statewide office which receives more votes.
+
+VAP
+=======
+Voting-age population. Residential population age 18 and older.
+Source: Various July 1 Census Bureau population estimates. Census demographers take the last decennial census as a base and apply birth rates, death rates, and immigration rates
+drawn from various sources. The decennial census is not adjusted for under/over counts of various populations, a known issue with the Census. Most likely, the population
+estimates undercount the population of the United States. 
+
+With each July 1 update to the population estimates, the Census Bureau not only releases a new estimate, but also updates prior years' population estimates spanning back to the last decennial census. 
+The methodology is not transparent, but I imagine this process reflects updates to various primary birth, death, and immigration administrative record sources.
+When these data new become available, I typically update prior election years' voting-age population estimates.
+
+By the end of a decade, the population estimates become less reliable and do not match perfectly the population count revealed in the next decennial census. A few years following the
+decennial census, the Census Bureau releases the "intercensial adjustments" which adjusts the prior decade's population estimates to align with the bookend of decennial census population
+statistics. The release of these data typically mark the last update for my voting-age population estimates.
+
+NONCITIZEN_PCT
+=======
+Percent non-citizen.
+Source: 
+- For 2006 and after I use non-citizen VAP estimates from various 1-Year American Community Surveys.
+- Prior to 2006, I use interpolation between various decennial census citizenship estimates (and the 2005 American Community Survey for 2000, 2002, and 2004). 
+  The American Community Survey is a replacement for the now-defunct decennial census long-form 1 in 100 sample, which is where citizenship was previously asked.
+- In my prior published work, I used citizenship responses to the Current Population Survey's Voting and Registration Supplement, which includes a
+  citizenship question. This is a valid citizenship estimate, but changes to the Census Bureau's methodology in the early 1990s lead me to believe that the interpolation
+  method between decennial censuses yields a more reliable measure.
+- While outside the scope of this dataset, the 1960 decennial census did not include a citizenship question. This is a barrier to creating a more complete
+  historical time-series for state citizen voting-age population estimates.
+- For presentation purposes, I only provide 3 signfiicant digits. The actual estimates reflect more precise citizenship percentage estimates.
+
+Further worthy of note is the Census Bureau weights the American Community Survey (and the Current Population Survey) to age-sex-race population estimates available
+at the time of the release of these surveys. The Census Bureau does not retroactively reweight these surveys to population estimate updates. It is 
+for this reason I apply the noncitizen percentage to the VAP rather than directly using total citizen population estimates available from the American Community Survey.
+
+INELIGIBLE_PRISON
+=======
+Ineligible felons in prison. 
+A '0' or Null denotes a state either does not disenfranchise felony prisoners or has no felony prisoners (this is true for DC).
+Starting in 2010, the Bureau of Justice Statistics began reporting citizen prison populations and voting-age populations. 
+I subtract these populations from the prison statistics.
+Source for prison statistics: Various year-end DOJ prison reports
+Source for state felon disenfranchisement laws: National Conference of State Legislatures. See: https://www.ncsl.org/elections-and-campaigns/felon-voting-rights
+
+Note:
+- State-level reports for prison populations do not exist prior to 1978.
+
+INELIGIBLE_PROBATION
+=======
+Ineligbile felons who are on probation. 
+A '0' denotes a state does not disenfranchise felons on probation.
+Source for probation statistics: Various year-end DOJ probation and parole reports. 
+Source for state felon disenfranchisement laws: National Conference of State Legislatures. See: https://www.ncsl.org/elections-and-campaigns/felon-voting-rights
+
+The Department of Justice estimates that felons constitutue typically constitute between 50% and 60% of the total probation population. 
+I apply this adjustment to various years' ineligible felon statistics.
+
+Note:
+- These reports do not exist prior to 1980, which is the primary reason I do not extend this time-series before 1980.
+
+INELIGIBLE_PAROLE
+=======
+Ineligbile felons who are on parole. 
+A '0' denotes a state does not disenfranchise felons on parole.
+Source for parole statistics: Various year-end DOJ probatiton and parole reports
+Source for state felon disenfranchisement laws: National Conference of State Legislatures. See: https://www.ncsl.org/elections-and-campaigns/felon-voting-rights
+
+Note:
+- These reports do not exist prior to 1980, which is the primary reason I do not extend this time-series before 1980.
+
+INELIGIBLE_FELONS_TOTAL
+=======
+Total number of ineligible felons, the sum of INELIGIBLE_PRISON + INELIGIBLE_PROBATION + INELIGIBLE_PAROLE
+Notes:
+- I do not have a reliable method of estimating the number of felons who are subjected to some form of post-correctional disenfranchisement, so I
+choose not to make this adjustment.
+- I add the number of prisoners in the custody of the US government to the national count of ineligible felony prisoners.
+
+ELIGIBLE_OVERSEAS
+=======
+Various sources, such as State Department reports of overseas citizens (typically permanent overseas residents who notify a country's embassy), Defense
+Department deployment reports, and in more recent years estimates from the Defense Department's Voting Assistance Commission, which is charged
+with facilitating voting for service members and overseas civilians.
+
+VEP
+=======
+Voting-eligible population. For state VEP estimates use the following calculation: VAP*(1-NONCITIZEN_PCT) - INELIGIBLE_FELONS_TOTAL.
+For national VEP estimates use the following calculation: VAP*(1-NONCITIZEN_PCT) - INELIGIBLE_FELONS_TOTAL + OVERSEAS_ELIGIBLE
+
+VEP_TURNOUT_RATE
+=======
+Turnout rate for those eligible to vote. Calulcated as TOTAL_BALLOTS_COUNTED/VEP.
+
+- Before 2010, an increasing number of states do not report TOTAL_BALLOTS_COUNTED and I do not attempt to estimate this number. For researchers who
+  wish to analyze pre-2010 rates, I recommend either substituting the VOTE_FOR_HIGHEST_OFFICE for TOTAL_BALLOTS_COUNTED, or estimating TOTAL_BALLOTS_COUNTED
+  from the ratio of TOTAL_BALLOTS_COUNTED to VOTE_FOR_HIGHEST_OFFICE from states that report both numbers.
+
+VAP_TURNOUT_RATE
+=======
+Turnout rate for those of voting-age. Calulcated as TOTAL_BALLOTS_COUNTED/VAP
+Note:
+- The VEP turnout rate is the preferred turnout rate. I provide VAP turnout rates for some stakeholders, such as pollsters, who use VAP turnout rates.

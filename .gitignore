@@ -1,0 +1,23 @@
+# R
+.Rhistory
+.RData
+.Rapp.history
+.Rproj.user/
+*.Rproj
+
+# Quarto
+/.quarto/
+*_files/
+
+# macOS
+.DS_Store
+
+# misc
+*.log
+
+# Public repo is English-only; Chinese / bilingual versions are kept locally
+# for the author's own reference and are never published.
+*_zh.qmd
+*_zh.pdf
+*_zh.html
+*bilingual*
