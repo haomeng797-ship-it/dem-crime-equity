@@ -1,35 +1,11 @@
 # Democracy, Crime, and Equity in the U.S. States
 
-Does state democratic backsliding track racial inequality in incarceration, and can felon
-re-enfranchisement undo it? A small, fully reproducible study in R using public data. Its recurring
-argument is methodological: how the question is measured and designed, more than the raw data,
-decides the finding.
+### The Measure Makes the Finding
+*How measurement, design, and framing shape what we conclude about race, democracy, and punishment in the U.S. states.*
+
+A small, reproducible study in R on public state-level data, asking whether stronger state democracy tracks less racial inequality in incarceration, and whether felon re-enfranchisement changes it. Its through-line is methodological: across four routine choices about measurement and design, the same data points in different directions, so a finding that looks like it is about race and democracy often turns on the analyst's choices. The full argument and results are in the paper, linked below.
 
 **Author:** Miura Meng
-
-## Summary
-
-The relationship between state democracy and racial inequality in incarceration turns out to depend
-almost entirely on how the question is measured and designed. A naive cross-section suggests that
-more democratic states have wider racial disparities, but that is an artifact of the popular
-Black/White incarceration ratio. Following each state over time, stronger democracy coincides with
-lower incarceration of both groups, though a national decline is the larger force. And Florida's
-2018 Amendment 4, the largest restoration of felon voting rights in modern U.S. history, produced
-no measurable change in turnout, because a follow-up law (SB7066) first required people to pay
-outstanding court fines. The recurring lesson: careful choices about measurement and design keep
-overturning the convenient story.
-
-## Key findings
-
-- **Measurement decides the answer.** The Black/White incarceration ratio is higher in more
-  democratic states only because they imprison far fewer white people; by the absolute Black rate
-  or the Black–white gap, the relationship flips or flattens.
-- **Within states over time** (mixed models), stronger democracy goes with lower incarceration of
-  both groups, but the effect is modest next to a nationwide decarceration trend.
-- **A trajectory typology** (group-based trajectory modeling) shows the states that democratized
-  decarcerated the most, while those that backslid did so least.
-- **A causal test** (synthetic control of Florida's Amendment 4) finds no turnout effect, because
-  the reform was largely neutralized by a pay-your-fines-first requirement.
 
 ## Read it
 
@@ -37,12 +13,12 @@ The main write-up is a short academic paper, **"The Measure Makes the Finding."*
 link between democracy, race, and punishment is decided less by the data than by how inequality is
 measured and how the study is designed.
 
-- Paper, formatted PDF: [`paper/dem_crime_equity_paper.pdf`](paper/dem_crime_equity_paper.pdf)
-- Paper, web version: [`paper/dem_crime_equity_paper.html`](paper/dem_crime_equity_paper.html)
+- [Read the paper (web)](https://haomeng797-ship-it.github.io/dem-crime-equity/paper/dem_crime_equity_paper.html)
+- [The paper as a formatted PDF](https://haomeng797-ship-it.github.io/dem-crime-equity/paper/dem_crime_equity_paper.pdf)
 
 A longer, more exploratory data walk-through is also included as a self-contained report:
 
-- [`report/dem_crime_equity.html`](report/dem_crime_equity.html)
+- [Read the report (web)](https://haomeng797-ship-it.github.io/dem-crime-equity/report/dem_crime_equity.html)
 
 The matching `.qmd` files are the Quarto sources.
 

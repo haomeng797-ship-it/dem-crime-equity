@@ -11,7 +11,7 @@ abstract: |
   This paper offers such a demonstration, using race, democracy, and punishment across the U.S. states.
   It walks the case through four routine decisions. The choice of inequality measure can make more
   democratic states look either more or less racially unequal, because the popular Black/White ratio
-  moves with its denominator for reasons that have nothing to do with Black residents. The choice
+  moves with its White denominator, which falls steeply in more democratic states while Black imprisonment changes much less. The choice
   between comparing states and following one state over time turns a striking cross-sectional pattern
   into a small within-state one. A clustering method returns a tidy five-group typology that looks more
   solid than the data warrant. And Florida's 2018 Amendment 4 reads as a sweeping expansion of voting
@@ -92,7 +92,7 @@ The paper proceeds in four demonstrations, and each one revises the one before i
   1.4 million voters; by its effect it changed almost nothing.
 
 The point is not any single number, but the pattern across them: measurement, design, and framing
-decide what we are able to conclude, and careful choices keep overturning the convenient answer. The
+decide what we are able to conclude, and careful choices keep overturning the answer that looked settled. The
 case, race and democracy and punishment, matters in its own right, yet here it mainly serves to make
 that methodological lesson concrete.
 
@@ -213,7 +213,12 @@ states, it turns out, imprison white residents at strikingly low rates, and that
 does the arithmetic work, inflating the ratio even in a state where Black imprisonment is no higher
 than average. The South illustrates the same mechanism in reverse. Southern states post lower ratios,
 but not because they treat Black and white residents more evenly; they imprison white residents
-heavily too, and the large white denominator pulls the ratio down. The measure reported most often,
+heavily too, and the large white denominator pulls the ratio down. The regional averages put numbers
+on this. White imprisonment runs about 230 per 100,000 in the more democratic Northeast and about 535
+in the South, more than twice as high, while the Black rate stays within a much narrower band, roughly
+1,460 to 2,060 across the four regions. The ratio therefore runs highest on average across the
+low-white-rate Northeast and lowest across the high-white-rate South, even though the South is the less
+democratic region. The measure reported most often,
 then, is also the one most exposed to movement that has nothing to do with how Black people are
 treated, since a state can climb the ratio simply by incarcerating fewer white people. Judged by the
 absolute Black rate, more democratic states look slightly better; judged by the gap, they look no
