@@ -336,6 +336,17 @@ credibility (Figure 5). After the reform, the gaps are −1.4 points in 2020 and
 negative rather than positive, and the placebo test returns a p-value of about 0.14, meaning Florida is
 not unusual among the donor states (Figure 6). Amendment 4 produced no measurable increase in turnout.
 
+Two further checks indicate the null is robust rather than an artifact of the specification. An in-time
+placebo that moves the treatment back to 2016, before the reform, yields only small gaps in the
+genuinely pre-treatment years, about +1.0 points in 2016 and +2.1 in 2018; these are modest and
+positive, the opposite sign of the post-reform gaps, so the design does not manufacture the result,
+though the 2018 gap signals a mild pre-existing drift. A leave-one-out analysis that re-fits the model
+dropping each weighted donor in turn, with synthetic Florida drawing mainly on Arizona and New
+Hampshire, leaves the 2020 gap between −1.6 and +1.1 points and the 2022 gap between −5.4 and +1.3,
+straddling zero in every case, so no single donor drives the estimate. The negative 2022 gap is
+therefore best read as a fluctuation around zero rather than as turnout suppression: it is not
+statistically distinguishable from zero and reverses when individual donors are removed.
+
 A null result is only worth reporting if its source is visible, and here it is. The reform barely took
 effect. Florida's disenfranchised share fell only from 1.25 percent of the voting-age population in
 2018 to 1.16 percent in 2020 and 1.14 percent in 2022, a nearly flat line rather than the steep drop
