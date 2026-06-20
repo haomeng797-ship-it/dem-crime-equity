@@ -356,7 +356,7 @@ The Sentencing Project. (2024). *Locked Out 2024: Four Million Denied Voting Rig
 
 # Reproducibility {.appendix}
 
-Every figure and number in this report is produced by the scripts in `R/`, run in order. All
+Every figure and all modeling results in this report are produced by the scripts in `R/`, run in order; a few descriptive summary statistics quoted in the text are computed directly from the source data. All
 analyses use R (R Core Team, 2025) with the packages lme4 (Bates et al., 2015), gbmt (Magrini,
 2022), and tidysynth (Dunford, 2023).
 
