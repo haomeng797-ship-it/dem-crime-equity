@@ -24,13 +24,19 @@ The matching `.qmd` files are the Quarto sources.
 
 ## Reproduce
 
-Requires R (>= 4.5) and [Quarto](https://quarto.org). Install the R packages:
+Requires R (>= 4.5) and [Quarto](https://quarto.org). Rendering the PDF also needs a LaTeX engine (`quarto install tinytex`) and the Times New Roman / Charter fonts used in the figures (both ship with macOS; install them on Linux/Windows to match the figures exactly). Install the R packages:
 
 ```r
-install.packages(c("dplyr", "tidyr", "ggplot2", "lme4", "gbmt", "tidysynth", "ragg", "knitr"))
+install.packages(c("dplyr", "tidyr", "ggplot2", "lme4", "gbmt", "tidysynth", "ragg", "ggrepel", "knitr"))
 ```
 
-Then run the pipeline from the repository root, in order:
+From the repository root, regenerate everything — both figure sets, all analyses, and the rendered paper and report — with one script:
+
+```bash
+bash run_all.sh
+```
+
+Or run the steps by hand, in order:
 
 ```bash
 Rscript R/01_load_merge.R          # build the merged state-year dataset
@@ -39,6 +45,7 @@ Rscript R/03_equity_measures.R     # four ways to measure inequity
 Rscript R/04_within_state_models.R # within/between mixed models
 Rscript R/05_gbtm_trajectories.R   # trajectory typology
 Rscript R/06_causal_amendment4.R   # Florida synthetic control
+Rscript R/07_robustness.R          # synthetic-control robustness checks
 
 quarto render report/dem_crime_equity.qmd       # the report (HTML)
 quarto render paper/dem_crime_equity_paper.qmd  # the paper (PDF + HTML)
@@ -53,7 +60,7 @@ run with `FIG_FONT="Times New Roman" FIG_OUTDIR="figures_pdf"` to produce the PD
 
 | Path | Contents |
 |---|---|
-| `R/` | analysis scripts `00`–`06` (run `01`–`06` in order) |
+| `R/` | analysis scripts `00`–`07` (run `01`–`07` in order) |
 | `data/raw/` | third-party source data (see `data/SOURCES.md`) |
 | `data/` | `state_dem_incarceration.{rds,csv}`, the merged dataset built by `R/01` |
 | `figures/` | generated figures for the web (Charter, PNG 300 dpi) |
