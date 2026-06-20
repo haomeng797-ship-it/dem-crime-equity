@@ -8,7 +8,7 @@
 
 suppressPackageStartupMessages({ library(dplyr) })
 
-proj <- path.expand("~/Documents/dem-crime-equity")
+proj <- Sys.getenv("DEM_CRIME_ROOT", unset = getwd())  # project root: run from repo root, or set DEM_CRIME_ROOT
 raw  <- file.path(proj, "data", "raw")
 
 # --- State Democracy Index 2.0 ---

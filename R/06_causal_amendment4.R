@@ -9,7 +9,7 @@
 suppressPackageStartupMessages({ library(dplyr); library(tidyr); library(ggplot2); library(tidysynth) })
 source("R/00_theme.R")
 
-proj <- path.expand("~/Documents/dem-crime-equity")
+proj <- Sys.getenv("DEM_CRIME_ROOT", unset = getwd())  # project root: run from repo root, or set DEM_CRIME_ROOT
 raw  <- read.csv(file.path(proj, "data", "raw", "ufl_turnout_1980_2022.csv"),
                  check.names = FALSE, stringsAsFactors = FALSE)
 

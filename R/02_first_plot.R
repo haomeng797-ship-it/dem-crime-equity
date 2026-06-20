@@ -6,7 +6,7 @@
 suppressPackageStartupMessages({ library(dplyr); library(ggplot2) })
 source("R/00_theme.R")
 
-proj <- path.expand("~/Documents/dem-crime-equity")
+proj <- Sys.getenv("DEM_CRIME_ROOT", unset = getwd())  # project root: run from repo root, or set DEM_CRIME_ROOT
 df <- readRDS(file.path(proj, "data", "state_dem_incarceration.rds"))
 
 win <- 2016:2020
