@@ -16,9 +16,10 @@ Rscript R/04_within_state_models.R
 Rscript R/05_gbtm_trajectories.R
 Rscript R/06_causal_amendment4.R
 Rscript R/07_robustness.R
+Rscript R/08_bayes_expansion.R
 
 echo "== PDF figures (Times) into figures_pdf/ =="
-for s in 02_first_plot 03_equity_measures 04_within_state_models 05_gbtm_trajectories 06_causal_amendment4; do
+for s in 02_first_plot 03_equity_measures 04_within_state_models 05_gbtm_trajectories 06_causal_amendment4 08_bayes_expansion; do
   FIG_FONT="Times New Roman" FIG_OUTDIR="figures_pdf" Rscript "R/${s}.R"
 done
 
