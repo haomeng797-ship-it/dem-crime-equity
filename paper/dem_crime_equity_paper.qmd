@@ -116,7 +116,11 @@ Describing a gap as one of "achievement" rather than "opportunity," for instance
 locate its causes, away from structures and toward individuals, without altering a single statistic
 (Quinn, 2025). And as a result travels outward from the model that produced it, the qualifications
 that gave it meaning tend to drop away, so that a conditional finding begins to circulate as a settled
-fact (van der Bles, van der Linden, Freeman, & Spiegelhalter, 2020; Merry, 2016).
+fact (van der Bles, van der Linden, Freeman, & Spiegelhalter, 2020; Merry, 2016). A more constructive
+response to the same problem is to stop hiding the choices and report a result across all of the
+defensible ones, the approach formalized as the garden of forking paths and the multiverse and
+specification-curve analyses it motivated (Gelman & Loken, 2014; Steegen et al., 2016; Simonsohn et
+al., 2020; Young & Holsteen, 2017). This paper works in that tradition.
 
 As a principle, none of this is new. What it has lacked is a compact, concrete demonstration: a single
 consequential question carried through the ordinary choices an analyst makes, with the answer shown to
@@ -124,7 +128,10 @@ move at each step. That is what this paper sets out to provide. It takes one cas
 four routine decisions, treating each decision as part of the analysis rather than as a preliminary to
 it. The contribution, then, is not the insight that measurement and framing matter, which is by now
 well established, but the worked example that shows how much they matter, and how readily they
-compound, once a real claim about racial inequality is at stake.
+compound, once a real claim about racial inequality is at stake. The contribution is methodological in
+a second sense as well: the paper shows that a multiverse of measurement and design choices, usually
+presented as a row of separate results, can be reorganized as contrasts of a single Bayesian model
+that both explains the disagreements and quantifies how reliable they are.
 
 ## Measuring racial disparity in incarceration
 
@@ -502,6 +509,8 @@ Dunford, E. (2023). *tidysynth: A tidy implementation of the synthetic control m
 
 Gelman, A., Hill, J., & Yajima, M. (2012). Why we (usually) don't have to worry about multiple comparisons. *Journal of Research on Educational Effectiveness, 5*(2), 189–211.
 
+Gelman, A., & Loken, E. (2014). The statistical crisis in science. *American Scientist, 102*(6), 460–465.
+
 Gillborn, D., Warmington, P., & Demack, S. (2018). QuantCrit: Education, policy, "Big Data" and principles for a critical race theory of statistics. *Race Ethnicity and Education, 21*(2), 158–179.
 
 Grumbach, J. M. (2022). *Laboratories against democracy: How national parties transformed state politics*. Princeton University Press.
@@ -532,9 +541,15 @@ Sabol, W. J., Johnson, T. L., & Lynch, J. P. (2025). Discrepancies in measures o
 
 The Sentencing Project. (2024). *Locked out 2024: Four million denied voting rights due to a felony conviction*.
 
+Simonsohn, U., Simmons, J. P., & Nelson, L. D. (2020). Specification curve analysis. *Nature Human Behaviour, 4*(11), 1208–1214.
+
+Steegen, S., Tuerlinckx, F., Gelman, A., & Vanpaemel, W. (2016). Increasing transparency through a multiverse analysis. *Perspectives on Psychological Science, 11*(5), 702–712.
+
 van der Bles, A. M., van der Linden, S., Freeman, A. L. J., & Spiegelhalter, D. J. (2020). The effects of communicating uncertainty on public trust in facts and numbers. *Proceedings of the National Academy of Sciences, 117*(14), 7672–7683.
 
 Vera Institute of Justice. (2024). *Incarceration trends* [Data set].
+
+Young, C., & Holsteen, K. (2017). Model uncertainty and robustness: A computational framework for multimodel analysis. *Sociological Methods & Research, 46*(1), 3–40.
 
 ```{=latex}
 \endgroup
