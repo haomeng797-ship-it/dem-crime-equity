@@ -186,9 +186,79 @@ fell about 2.6 percent a year and the Black rate about 2.7 percent a year. Most 
 racial incarceration over this period is a nationwide decline that has little to do with state
 democracy, and an analysis that left time out would mistake that tide for its own discovery. The
 within-state association is therefore real and consistent in direction, but it is modest, and the
-argument is stronger for saying so plainly. One thing this average still cannot reveal is whether
-states resemble one another in how democracy and punishment move together, or whether a single
-number hides very different state experiences. To see that, we have to look at whole trajectories.
+argument is stronger for saying so plainly.
+
+# From multiverse to model
+
+The first two steps treated the choice of measure and the choice of comparison as separate decisions.
+They are not. The four measures and the within and between contrasts are all summaries of the same two
+underlying quantities: how heavily a state imprisons its Black residents, how heavily it imprisons its
+white residents, and how each of those moves with democracy. So rather than walk the choices one at a
+time, I can fit a single model of those two quantities and read every choice off the one set of
+estimates it implies.
+
+The model carries two outcomes at once, the log Black rate and the log white rate, each depending on
+democracy in the same within/between split as the previous section, with a random intercept for each
+state and the two outcomes free to correlate. It is Bayesian, fit with brms, and it converged cleanly.
+The coefficients are scaled per standard deviation of democracy, so they are not directly comparable in
+size to the previous table, but their signs and pattern are the same.
+
+```{r bayes-expansion}
+#| code-summary: "Fit or load the joint Bayesian model and read the four measures off one posterior (brms)"
+suppressMessages({library(brms); library(posterior)})
+bd <- df |>
+  filter(is.finite(black_prison_pop_rate), is.finite(white_prison_pop_rate),
+         black_prison_pop_rate > 0, white_prison_pop_rate > 0, is.finite(democracy)) |>
+  mutate(logB = log(black_prison_pop_rate), logW = log(white_prison_pop_rate)) |>
+  group_by(state_abbr) |> mutate(demM_raw = mean(democracy)) |> ungroup() |>
+  mutate(demW_raw = democracy - demM_raw, yearc = (year - 2011) / 10)
+sm <- bd |> distinct(state_abbr, demM_raw)
+bd$demM <- (bd$demM_raw - mean(sm$demM_raw)) / sd(sm$demM_raw)
+bd$demW <- bd$demW_raw / sd(bd$demW_raw)
+fit_path <- file.path(proj, "bayes_fit.rds")
+if (file.exists(fit_path)) {
+  fit <- readRDS(fit_path)
+} else {
+  fit <- brm(bf(logB ~ demW + demM + yearc + (1 | p | state_abbr)) +
+             bf(logW ~ demW + demM + yearc + (1 | p | state_abbr)) + set_rescor(TRUE),
+             data = bd,
+             prior = c(prior(normal(0, 1), class = b, resp = "logB"),
+                       prior(normal(0, 1), class = b, resp = "logW")),
+             chains = 4, iter = 4000, warmup = 1000, seed = 20260620,
+             cores = 4, refresh = 0, control = list(adapt_delta = 0.95))
+  saveRDS(fit, fit_path)
+}
+dr <- as_draws_df(fit)
+ci <- function(x) sprintf("%+.3f [%+.3f, %+.3f]", median(x), quantile(x, .025), quantile(x, .975))
+Bb <- dr$b_logB_demM; Wb <- dr$b_logW_demM
+Bw <- dr$b_logB_demW; Ww <- dr$b_logW_demW
+tibble(
+  Measure = c("Black/White ratio", "absolute Black rate", "absolute White rate"),
+  `Between-state (per 1 SD)` = c(ci(Bb - Wb), ci(Bb), ci(Wb)),
+  `Within-state (per 1 SD)`  = c(ci(Bw - Ww), ci(Bw), ci(Ww))
+) |> kable(align = "lcc")
+```
+
+![The four measures of racial inequality as contrasts of one posterior. The Black/White ratio (red) sits above zero only because white imprisonment (blue) falls faster than the Black rate (grey); a single posterior produces a rising ratio and a falling white rate at once.](../figures/06_bayes_contrasts.png)
+
+The table and the figure tell one story. Between states, stronger democracy goes with a much lower
+white rate and a roughly flat Black rate, so the ratio, which is just their difference, comes out
+positive: the alarming cross-sectional pattern is the white denominator again, now derived rather than
+asserted. Within states the two rates fall together and the ratio barely moves. Because every number
+comes from the same posterior, I can also ask how reliably the measures disagree. The probability that
+democracy raises the ratio while leaving the white rate lower, the exact shape of the first step's
+reversal, is about 0.99; the weaker claim, that the ratio rises while the absolute Black rate falls,
+holds with probability about 0.68, lower only because the Black rate sits close to flat. The reversal
+is not a fragile accident of one comparison but a near-certain feature of how the two rates move.
+
+None of this is causal. The model rearranges the same observational evidence more economically; it does
+not identify an effect. Its value is to show, in one place, that the disagreements among the measures
+are not four findings but four sides of one model, and to put a number on how much each choice matters.
+The code is in `R/08_bayes_expansion.R`.
+
+One thing even this unified model cannot reveal is whether states resemble one another in how democracy
+and punishment move together, or whether a single number hides very different state experiences. To see
+that, we have to look at whole trajectories.
 
 # A typology of state trajectories
 
