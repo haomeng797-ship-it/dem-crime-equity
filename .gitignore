@@ -15,8 +15,8 @@
 # misc
 *.log
 
-# Bayesian fit cache (regenerable by R/08_bayes_expansion.R; ~16 MB, too big for git)
-bayes_fit.rds
+# Bayesian fit caches (regenerable by R/08 and R/09; large, too big for git)
+bayes_fit*.rds
 
 # Public repo is English-only; Chinese / bilingual versions are kept locally
 # for the author's own reference and are never published.

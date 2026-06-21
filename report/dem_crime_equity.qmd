@@ -190,6 +190,12 @@ argument is stronger for saying so plainly.
 
 # From multiverse to model
 
+The heading marks a move. The first two steps were a small multiverse, one question carried through
+choices that should not change the answer so the disagreements could show; this section turns that
+multiverse into a single Bayesian model, in which the same choices reappear as contrasts of one
+posterior. The multiverse is the better tool for revealing that the choices matter; the model is the
+better tool for saying how much, and how reliably.
+
 The first two steps treated the choice of measure and the choice of comparison as separate decisions.
 They are not. The four measures and the within and between contrasts are all summaries of the same two
 underlying quantities: how heavily a state imprisons its Black residents, how heavily it imprisons its

@@ -274,6 +274,12 @@ effect into a small one.
 
 # From multiverse to model
 
+The title marks a move. The four demonstrations are a small multiverse, one question carried through
+choices that should not change the answer so that the disagreements among the answers can show; this
+section turns that multiverse into a single Bayesian model, in which the same choices reappear as
+contrasts of one posterior. The multiverse is the better tool for revealing that the choices matter;
+the model is the better tool for saying how much, and how reliably.
+
 The first two demonstrations treated the choice of measure and the choice of comparison as
 separate forks in the analysis. They are not separate. The four measures and the within and
 between contrasts are all summaries of the same two underlying quantities: how heavily a state
