@@ -327,6 +327,12 @@ is uncertain. The reversal is therefore not a fragile accident of one arbitrary 
 near-certain feature of how the two rates move, and the model lets us report it as a probability
 rather than as a juxtaposition of figures.
 
+The pattern is not an artifact of the likelihood or of region. Replacing the Gaussian model on the
+log rates with a negative-binomial count model on the raw counts leaves the estimates essentially
+unchanged, and adjusting for census region as a fixed effect shrinks the between-state ratio effect
+only modestly, from about +0.14 to +0.11, while the falling white rate and the near-certain reversal
+both hold.
+
 None of this makes the relationship causal. The model rearranges the same observational evidence
 more economically; it does not identify an effect. Its value is methodological. The earlier
 demonstrations show, in the accessible form of a multiverse, that the answer moves with the

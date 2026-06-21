@@ -44,11 +44,14 @@ if (file.exists(mf)) { dr <- as_draws_df(readRDS(mf))
   report(dr$b_logB_demM - dr$b_logW_demM, dr$b_logB_demM, dr$b_logW_demM,
          "MAIN  Gaussian on log-rate (R/08)") }
 
-# --- Robustness 1: add region as its own level ---
-fp1 <- file.path(proj, "bayes_fit_region.rds")
+# --- Robustness 1: adjust for region as a FIXED effect.
+# Only 4 census regions, too few to estimate a random-effect variance (a random level here gives a
+# funnel: divergences, low ESS). With <5 groups the standard move is fixed effects (Gelman & Hill).
+# This asks the cleaner question: within regions, does the between-state pattern survive?
+fp1 <- file.path(proj, "bayes_fit_regionfe.rds")
 if (file.exists(fp1)) fit1 <- readRDS(fp1) else {
-  fit1 <- brm(bf(logB ~ demW + demM + yearc + (1 | p | state_abbr) + (1 | r | region)) +
-              bf(logW ~ demW + demM + yearc + (1 | p | state_abbr) + (1 | r | region)) +
+  fit1 <- brm(bf(logB ~ demW + demM + yearc + region + (1 | p | state_abbr)) +
+              bf(logW ~ demW + demM + yearc + region + (1 | p | state_abbr)) +
               set_rescor(TRUE), data = d,
               prior = c(prior(normal(0, 1), class = b, resp = "logB"),
                         prior(normal(0, 1), class = b, resp = "logW")),
@@ -57,7 +60,7 @@ if (file.exists(fp1)) fit1 <- readRDS(fp1) else {
   saveRDS(fit1, fp1) }
 d1 <- as_draws_df(fit1)
 report(d1$b_logB_demM - d1$b_logW_demM, d1$b_logB_demM, d1$b_logW_demM,
-       "ROBUSTNESS 1  + region level (states nested in regions)")
+       "ROBUSTNESS 1  + region fixed effect")
 cat("   max Rhat:", round(max(rhat(fit1), na.rm = TRUE), 3), "\n")
 
 # --- Robustness 2: negative-binomial count model with population offset ---
