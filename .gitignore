@@ -24,3 +24,5 @@ bayes_fit*.rds
 *_zh.pdf
 *_zh.html
 *bilingual*
+_pretty_render.md
+_pretty_header.tex

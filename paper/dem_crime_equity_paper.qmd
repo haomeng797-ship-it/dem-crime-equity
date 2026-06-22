@@ -12,9 +12,9 @@ abstract: |
   choice between comparing states and following one state over time shrinks a striking pattern to a
   small one, a clustering method reads in more structure than the data hold, and Florida's 2018
   Amendment 4 reads as sweeping or as a non-event depending on whether one consults its text or its
-  turnout. Second, and as the main contribution, it shows this multiverse of choices is not a loose
+  turnout. Second, and as the main contribution, it shows the competing measures and comparison designs are not a loose
   collection of separate analyses but the shadow of one model: a joint Bayesian multilevel model of the
-  underlying imprisonment rates, in which the competing measures reappear as contrasts of a single
+  underlying imprisonment rates, in which they reappear as contrasts of a single
   posterior and the reversal is reported as a probability rather than a row of figures. One substantive
   result earns its own line: the Black/White ratio improves with democracy only because the white
   imprisonment rate falls, not because Black imprisonment does, a reminder that a widely used equity
@@ -83,7 +83,7 @@ execute:
 
 # Introduction
 
-A finding rarely survives retelling intact. As a result moves from the analysis to the abstract to the
+A finding rarely survives retelling intact. As that finding moves from the analysis to the abstract to the
 headline, its conditions fall away, and a claim that began as tentative comes to sound certain. The
 same number, framed one way, points to individual responsibility; framed another way, it indicts
 institutions, even though nothing underneath has changed. Quantitative social science is especially
@@ -112,7 +112,7 @@ The point is not any single number, but the pattern across them: measurement, de
 decide what we are able to conclude, and careful choices keep overturning the answer that looked
 settled. That much is an old lesson, pressed for years under banners like data feminism and QuantCrit
 and formalized as multiverse analysis. The contribution here is to take the next step. After walking
-the four choices, the paper shows they are not four separate analyses but one: a single Bayesian model
+the four choices, the paper shows that the central two, of measure and comparison, are not separate analyses but one: a single Bayesian model
 of the underlying rates, in which the competing measures reappear as contrasts of one posterior, so
 that the reversal can be reported as a probability rather than displayed as a row of figures. The
 case, race and democracy and punishment, matters in its own right, yet here it mainly serves to make
@@ -134,7 +134,7 @@ a relative measure alone can send a trend in opposite directions (Kjellsson, Ger
 Moonesinghe & Beckles, 2015). Framing does comparable work even when the numbers are held fixed.
 Describing a gap as one of "achievement" rather than "opportunity," for instance, shifts where readers
 locate its causes, away from structures and toward individuals, without altering a single statistic
-(Quinn, 2025). And as a result travels outward from the model that produced it, the qualifications
+(Quinn, 2025). And as a finding travels outward from the model that produced it, the qualifications
 that gave it meaning tend to drop away, so that a conditional finding begins to circulate as a settled
 fact (van der Bles, van der Linden, Freeman, & Spiegelhalter, 2020; Merry, 2016). A more constructive
 response to the same problem is to stop hiding the choices and report a result across all of the
@@ -304,7 +304,7 @@ effect into a small one.
 
 The title marks a move. The four demonstrations are a small multiverse, one question carried through
 choices that should not change the answer so that the disagreements among the answers can show; this
-section turns that multiverse into a single Bayesian model, in which the same choices reappear as
+section turns the core of that multiverse into a single Bayesian model, in which the measure and comparison choices reappear as
 contrasts of one posterior. The multiverse is the better tool for revealing that the choices matter;
 the model is the better tool for saying how much, and how reliably.
 
@@ -327,8 +327,8 @@ specification. This is the multiverse the rest of the section sets out to discip
 
 The first two demonstrations treated the choice of measure and the choice of comparison as
 separate forks in the analysis. They are not separate. The four measures and the within and
-between contrasts are all summaries of the same two underlying quantities: how heavily a state
-imprisons its Black residents, how heavily it imprisons its white residents, and how each of those
+between contrasts are all summaries of the same two underlying quantities, how heavily a state
+imprisons its Black residents and how heavily it imprisons its white residents, and how each of those
 moves with democracy. Rather than walk the forks one at a time, then, we can fit a single model of
 those two quantities and read every fork off the one set of estimates it implies.
 
@@ -373,7 +373,7 @@ ignoring the serial dependence would inflate it to 0.99, so the modeled figure i
 weaker version, that the ratio rises while the absolute Black rate falls, is no better than a coin
 toss, about 0.54, because the Black rate is too close to flat to sign. So the dependable claim is the
 specific one: more democratic states post a higher ratio while imprisoning white residents at lower
-rates. That reversal is not a fragile accident of one arbitrary comparison. It is a near-certain
+rates. That reversal is not a fragile accident of one arbitrary comparison. It is a robust
 feature of how the two rates move, reported as a probability that has already paid the price of the
 autocorrelation.
 
