@@ -40,9 +40,24 @@ format:
         \usepackage{fancyhdr}
         \pagestyle{fancy}
         \fancyhf{}
+        \fancyhead[L]{THE MEASURE MAKES THE FINDING}
         \fancyhead[R]{\thepage}
         \renewcommand{\headrulewidth}{0pt}
-        \fancypagestyle{plain}{\fancyhf{}\fancyhead[R]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+        \fancypagestyle{plain}{\fancyhf{}\fancyhead[L]{THE MEASURE MAKES THE FINDING}\fancyhead[R]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+        \usepackage{titling}
+        \pretitle{\begin{center}\normalsize\bfseries}
+        \posttitle{\par\end{center}\vskip 0.5em}
+        \preauthor{\begin{center}\normalsize}
+        \postauthor{\par\end{center}}
+        \predate{\begin{center}\normalsize}
+        \postdate{\par\end{center}}
+        \usepackage{titlesec}
+        \titleformat{\section}{\normalsize\bfseries\centering}{}{0em}{}
+        \titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+        \titlespacing*{\section}{0pt}{12pt}{2pt}
+        \titlespacing*{\subsection}{0pt}{12pt}{2pt}
+        \usepackage{indentfirst}
+        \AtBeginDocument{\setlength{\parindent}{0.5in}\setlength{\parskip}{0pt}}
   html:
     theme: cosmo
     toc: true
