@@ -17,9 +17,9 @@ abstract: |
   trajectories shows that the states which became more democratic decarcerated the most, while
   those that backslid did so least. Finally, Florida's 2018 Amendment 4, the largest restoration of
   felon voting rights in modern U.S. history, produced no measurable change in turnout, because a
-  follow-up law (SB7066) first required people to pay outstanding court fines. The recurring lesson
-  is that careful choices about measurement and design repeatedly overturn the convenient story,
-  and that lesson is the report's central point. Methodologically it applies mixed models,
+  follow-up law (SB7066) first required people to pay outstanding court fines. Again and again, careful
+  choices about measurement and design overturn the convenient story, and that is the report's
+  central point. Methodologically it applies mixed models,
   group-based trajectory modeling, and synthetic control.
 format:
   html:
@@ -54,18 +54,18 @@ in how the same system treats different groups. Put together, these three give o
 health of a state's democracy related to racial inequality in its prisons, and can a democratic
 reform change behavior on the ground?
 
-The honest answer turns out to depend almost entirely on how the question is asked, and that
-dependence is the report's real subject. I proceed in four steps, arranged so that each one tests,
-and then revises, the conclusion the previous step suggested. The first step measures inequality
-across states and finds a result that looks striking but proves fragile. The second replaces the
-cross-section with comparisons of each state against itself over time, which removes the fragility
-and isolates a smaller but more credible signal. The third asks whether states fall into distinct
-trajectory types, which adds texture while remaining descriptive. The fourth uses a natural
-experiment to ask, for once, a genuinely causal question. Read in sequence the steps form a single
-argument: the convenient cross-sectional story does not survive careful measurement, the careful
-version of it is real but modest, and the one place where cause can be tested directly shows a
-reform undone by its own fine print. The contribution is therefore less a new fact about democracy
-and crime than a disciplined account of how much the answer moves when the method improves.
+The honest answer depends almost entirely on how the question is asked, and that dependence is the
+report's real subject. I proceed in four steps, each one testing and then revising the conclusion
+the step before it reached. The first measures inequality across states; the result looks alarming,
+and a closer comparison takes the alarm apart. The second tracks each state against itself over
+time, which dissolves that result and leaves a smaller signal worth trusting. The third asks whether
+states sort into trajectory types; they do, loosely, though the method reads in more order than the
+data really hold. The fourth turns to a natural experiment, the single point where cause can be
+tested directly. Read in order, the steps make one argument: the convenient cross-sectional story
+does not survive careful measurement, the version that survives is modest, and the reform that
+should have moved the numbers was undone by its own fine print. The contribution is methodological.
+It shows how far the answer travels as the method improves, not a new fact about democracy and
+crime.
 
 # Data and measures
 
@@ -185,8 +185,8 @@ term in every model, however, is neither within nor between democracy but the ye
 fell about 2.6 percent a year and the Black rate about 2.7 percent a year. Most of the movement in
 racial incarceration over this period is a nationwide decline that has little to do with state
 democracy, and an analysis that left time out would mistake that tide for its own discovery. The
-within-state association is therefore real and consistent in direction, but it is modest, and the
-argument is stronger for saying so plainly.
+within-state association is consistent in direction and modest in size, and the argument is
+stronger for saying so plainly.
 
 # From multiverse to model
 
@@ -255,7 +255,7 @@ comes from the same posterior, I can also ask how reliably the measures disagree
 democracy raises the ratio while leaving the white rate lower, the exact shape of the first step's
 reversal, is about 0.99; the weaker claim, that the ratio rises while the absolute Black rate falls,
 holds with probability about 0.68, lower only because the Black rate sits close to flat. The reversal
-is not a fragile accident of one comparison but a near-certain feature of how the two rates move.
+is a near-certain feature of how the two rates move, not a fragile accident of one comparison.
 
 None of this is causal. The model rearranges the same observational evidence more economically; it does
 not identify an effect. Its value is to show, in one place, that the disagreements among the measures
@@ -339,13 +339,12 @@ a nearly flat line rather than the steep drop that re-enfranchising 1.4 million 
 The explanation is that a second law passed in mid-2019, SB7066, required people to pay all
 outstanding court fines and fees before regaining the vote. That payment requirement works as a
 wealth test on the franchise, and it falls hardest on poor and disproportionately Black Floridians.
-The null is therefore not the absence of a story but the signature of one: a democratic expansion
+The null is itself the story: a democratic expansion
 was largely cancelled by a second, regressive measure before it could change behavior. This is the
 cleanest causal statement the report can make, and it closes the arc the earlier sections opened.
-Where the cross-section offered a striking but artifactual link, and the within-state and trajectory
-analyses offered a real but modest one, the single deliberate intervention available to test shows
-that even a large and direct expansion of democratic rights can come to little once its
-implementation is undone.
+The cross-section offered a link that turned out to be an artifact; the within-state and trajectory
+analyses offered a small one. The single deliberate intervention available to test shows that even a
+large, direct expansion of democratic rights can come to little once its implementation is undone.
 
 # Limitations
 
@@ -376,11 +375,11 @@ power in mind.
 The four steps make one argument, and it is worth stating plainly. The relationship between state
 democracy and racial inequality in incarceration is weaker and far more measurement-dependent than a
 single cross-section suggests. The ratio that is reported most often points the wrong way for a
-mechanical reason. The credible link, visible only within states over time, is real but small beside
+mechanical reason. The credible link, visible only within states over time, is small beside
 a national decline in incarceration. And the one reform clean enough to test causally left no mark on
 turnout because a second law neutralized it. None of these is a breakthrough on its own. Together
-they make a more useful point: on a question like this the method is not a technicality but the
-finding itself, and disciplined measurement and design repeatedly overturn the convenient answer.
+they make a more useful point: on a question like this the method carries the
+finding, and disciplined measurement and design repeatedly overturn the convenient answer.
 That is the habit the analysis was built to demonstrate, and the whole pipeline is reproducible from
 raw data to figures.
 
