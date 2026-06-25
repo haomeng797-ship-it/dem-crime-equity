@@ -111,7 +111,7 @@ open(MD, "w").write(title_block + "\n" + body)
 header = r"""\usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\scshape The Measure Makes the Finding}
+\fancyhead[L]{\small THE MEASURE MAKES THE FINDING}
 \fancyhead[R]{\small\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\cfoot{\small\thepage}\renewcommand{\headrulewidth}{0.4pt}}
