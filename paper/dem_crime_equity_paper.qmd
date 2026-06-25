@@ -4,23 +4,20 @@ subtitle: "How measurement, design, and framing shape what we conclude about rac
 author: "Miura Meng"
 date: today
 abstract: |
-  That analytic choices, not just the data, shape what we conclude about inequality is by now well
-  established, from data feminism and QuantCrit to formal multiverse and specification-curve analysis.
-  This paper adds two things to that tradition. First, it carries one high-stakes question, race,
-  democracy, and punishment across the U.S. states, through four ordinary analytic decisions and shows
-  how far the answer moves and how reliably: the choice of inequality measure can flip the sign, the
-  choice between comparing states and following one state over time shrinks a striking pattern to a
-  small one, a clustering method reads in more structure than the data hold, and Florida's 2018
-  Amendment 4 reads as sweeping or as a non-event depending on whether one consults its text or its
-  turnout. Second, and as the main contribution, it shows the competing measures and comparison designs are not a loose
-  collection of separate analyses but the shadow of one model: a joint Bayesian multilevel model of the
-  underlying imprisonment rates, in which they reappear as contrasts of a single
-  posterior and the reversal is reported as a probability rather than a row of figures. One substantive
-  result earns its own line: the Black/White ratio improves with democracy only because the white
-  imprisonment rate falls, not because Black imprisonment does, a reminder that a widely used equity
-  metric can move for reasons that have nothing to do with how Black people are treated. Methods
-  include multilevel models, group-based trajectory modeling, synthetic control, and Bayesian model
-  expansion.
+  What we conclude about inequality depends not only on the data but on the choices we make in handling
+  them, a point pressed for years under banners like data feminism and QuantCrit and formalized in
+  multiverse analysis. This paper makes it concrete. It takes one high-stakes question, race, democracy,
+  and punishment across the U.S. states, and carries it through four ordinary analytic choices: which
+  measure of inequality to report, whether to compare states or follow each over time, how many groups
+  to read into the data, and whether to judge a reform by its text or its effect. The answer moves at
+  every step, and at the first it flips outright. One of these reversals travels well beyond the case:
+  the Black/White imprisonment ratio improves with democracy only because the white rate falls, not
+  because Black imprisonment does, so a widely used equity metric can move for reasons that have nothing
+  to do with how Black people are treated. The deeper point is that the competing measures are not
+  separate analyses but one model: a joint Bayesian multilevel model of the underlying imprisonment
+  rates, in which they reappear as contrasts of a single posterior, and the sign reversal is reported
+  as a probability rather than a row of figures. Methods include multilevel models, group-based
+  trajectory modeling, synthetic control, and Bayesian model expansion.
 format:
   pdf:
     pdf-engine: xelatex
@@ -95,8 +92,7 @@ punishment, and can restoring the vote to people with felony convictions change 
 though, the argument is methodological, because at every step the answer turns on a decision that is
 easy to make without noticing. Which measure of inequality should be reported? Should states be
 compared with one another, or each state with itself over time? How many groups should be read into
-the data? And is a reform "large" by its text or by its effect? Each of these choices, it turns out,
-can flip the conclusion.
+the data? And is a reform "large" by its text or by its effect? Each of these choices can flip the conclusion.
 
 The paper proceeds in four demonstrations, and each one revises the one before it.
 
@@ -110,8 +106,8 @@ The paper proceeds in four demonstrations, and each one revises the one before i
 
 The point is not any single number, but the pattern across them: measurement, design, and framing
 decide what we are able to conclude, and careful choices keep overturning the answer that looked
-settled. That much is an old lesson, pressed for years under banners like data feminism and QuantCrit
-and formalized as multiverse analysis. The contribution here is to take the next step. After walking
+settled. That much is an old lesson, pressed for years under banners like data feminism and QuantCrit. The
+contribution here is to take the next step. After walking
 the four choices, the paper shows that the central two, of measure and comparison, are not separate analyses but one: a single Bayesian model
 of the underlying rates, in which the competing measures reappear as contrasts of one posterior, so
 that the reversal can be reported as a probability rather than displayed as a row of figures. The
@@ -142,13 +138,13 @@ defensible ones, the approach formalized as the garden of forking paths and the 
 specification-curve analyses it motivated (Gelman & Loken, 2014; Steegen et al., 2016; Simonsohn et
 al., 2020; Young & Holsteen, 2017). This paper works in that tradition.
 
-As a principle, none of this is new. What it has lacked is a compact, concrete demonstration: a single
+What this tradition has lacked is a compact, concrete demonstration: a single
 consequential question carried through the ordinary choices an analyst makes, with the answer shown to
 move at each step. That is what this paper sets out to provide. It takes one case and walks it through
 four routine decisions, treating each decision as part of the analysis rather than as a preliminary to
-it. The contribution, then, is not the insight that measurement and framing matter, which is by now
-well established, but the worked example that shows how much they matter, and how readily they
-compound, once a real claim about racial inequality is at stake. The contribution is methodological in
+it. The contribution is not the insight that measurement and framing matter, but the worked example that
+shows how much they matter, and how readily they compound, once a real claim about racial inequality
+is at stake. The contribution is methodological in
 a second sense as well: the paper shows that a multiverse of measurement and design choices, usually
 presented as a row of separate results, can be reorganized as contrasts of a single Bayesian model
 that both explains the disagreements and quantifies how reliable they are.
@@ -238,7 +234,7 @@ they do not merely differ in strength; they point in different directions.
 
 The reason comes into focus once we look at what the ratio is made of. It is the Black rate divided by
 the white rate, so its value depends as much on the denominator as on the numerator. More democratic
-states, it turns out, imprison white residents at strikingly low rates, and that small denominator
+states imprison white residents at strikingly low rates, and that small denominator
 does the arithmetic work, inflating the ratio even in a state where Black imprisonment is no higher
 than average. The South illustrates the same mechanism in reverse. Southern states post lower ratios,
 but not because they treat Black and white residents more evenly; they imprison white residents
@@ -473,10 +469,9 @@ effect. Florida's disenfranchised share fell only from 1.25 percent of the votin
 2018 to 1.16 percent in 2020 and 1.14 percent in 2022, a nearly flat line rather than the steep drop
 that re-enfranchising 1.4 million people would imply. The explanation is SB7066, which required people
 to pay all outstanding court fines and fees before regaining the vote, a requirement that works as a
-wealth test on the franchise and falls hardest on poor and disproportionately Black citizens. By its
-text the reform enfranchised more than a million people; by its effect it enfranchised few. Which
-description counts as true depends on whether one reads the statute or the turnout, and here, once
-again, the framing is the finding.
+wealth test on the franchise and falls hardest on poor and disproportionately Black citizens. On paper
+the reform enfranchised more than a million people. In practice it reached few, and whether you call
+it sweeping or empty depends on which number you read.
 
 # Discussion
 
@@ -491,15 +486,15 @@ rates, as the middle section did, recovers the competing measures as contrasts o
 it shows why the choices matter and lets the reversal be reported as a probability rather than a
 juxtaposition of figures.
 
-That measurement and framing carry this weight is, as the background made clear, a well-worn point in
-the literature. What is easy to lose, stated only in the abstract, is how concretely and how quickly
+What is easy to lose, stated only as a principle, is how concretely and how quickly
 the choices bite, and how they accumulate. Here they are shown one after another, with numbers, on a
 case where the stakes are real: the most-cited measure of racial disparity in incarceration points the
 wrong way for a mechanical reason, and a celebrated voting-rights reform reads as a triumph or a
-non-event depending on the frame. For anyone who studies inequality, the practical counsel is cheap to
-follow. Carry more than one measure. Separate within from between. Treat data-driven groups as
-descriptions rather than kinds. Judge a policy by its effect rather than its text. And when the
-measures disagree, read the disagreement as a finding rather than a nuisance.
+non-event depending on the frame. For anyone who studies inequality, the practical counsel is cheap. Report more than one measure, and
+when they disagree, say so instead of quietly keeping the one that reads best. Keep within-state
+change separate from between-state differences. Treat the groups a clustering routine hands you as a
+convenient summary, not a discovery. And judge a policy by what it does, not by what its text
+promises.
 
 Stated plainly, most of the substantive takeaways are modest. State democracy and racial inequality in
 punishment are linked weakly at best; any within-state link is small beside a national decline in
