@@ -4,20 +4,19 @@ subtitle: "How measurement, design, and framing shape what we conclude about rac
 author: "Miura Meng"
 date: today
 abstract: |
-  What we conclude about inequality depends not only on the data but on the choices we make in handling
-  them, a point pressed for years under banners like data feminism and QuantCrit and formalized in
-  multiverse analysis. This paper makes it concrete. It takes one high-stakes question, race, democracy,
-  and punishment across the U.S. states, and carries it through four ordinary analytic choices: which
-  measure of inequality to report, whether to compare states or follow each over time, how many groups
-  to read into the data, and whether to judge a reform by its text or its effect. The answer moves at
-  every step, and at the first it flips outright. One of these reversals travels well beyond the case:
-  the Black/White imprisonment ratio improves with democracy only because the white rate falls, not
-  because Black imprisonment does, so a widely used equity metric can move for reasons that have nothing
-  to do with how Black people are treated. The deeper point is that the competing measures are not
-  separate analyses but one model: a joint Bayesian multilevel model of the underlying imprisonment
-  rates, in which they reappear as contrasts of a single posterior, and the sign reversal is reported
-  as a probability rather than a row of figures. Methods include multilevel models, group-based
-  trajectory modeling, synthetic control, and Bayesian model expansion.
+  This paper asks whether American states with healthier democracies treat Black and white residents
+  more equally in their prisons, and finds that the answer is mostly an artifact of how the gap is
+  measured. The usual measure, the Black/White imprisonment ratio, runs higher in more democratic
+  states. Taken at face value, that says democratic health and racial fairness in punishment work
+  against each other. But the ratio is higher there only because those states imprison white residents
+  so rarely, not because they imprison Black residents more. By the absolute Black rate, those states
+  are no worse, even a little better. The paper carries the same question through three further choices
+  an analyst barely notices, comparing states against each other rather than against their own past,
+  sorting them into trajectory types, and reading Florida's 2018 felon re-enfranchisement by its text
+  against its turnout. Each choice moves the answer. A single Bayesian model of the underlying
+  imprisonment rates then derives the competing measures as contrasts of one posterior, so their
+  disagreement is reported as a probability, not a row of conflicting numbers. In a field that
+  quantifies racial injustice with ratios and gaps, the measure of disparity is often the finding.
 format:
   pdf:
     pdf-engine: xelatex
@@ -80,39 +79,41 @@ execute:
 
 # Introduction
 
-A finding rarely survives retelling intact. As that finding moves from the analysis to the abstract to the
-headline, its conditions fall away, and a claim that began as tentative comes to sound certain. The
-same number, framed one way, points to individual responsibility; framed another way, it indicts
-institutions, even though nothing underneath has changed. Quantitative social science is especially
-exposed to this, because a single summary figure can quietly carry all the choices that produced it.
+How equally the American criminal justice system treats Black and white people is among the most
+consequential questions in the study of race and punishment, and in practice it is answered with a
+single statistic. Most often that statistic is the Black/White imprisonment ratio, and a great deal of
+policy and scholarship rests on it. But racial disparity has no canonical measure. It can be written
+as a ratio, as an absolute rate, or as a gap, and these do not move together: on the same data they
+can disagree about whether a place is becoming more equal or less, and sometimes about the direction
+itself.
 
-This paper takes that vulnerability as its subject. On the surface it asks a substantive question:
-across the U.S. states, does a healthier democracy go together with less racial inequality in
-punishment, and can restoring the vote to people with felony convictions change anything? Underneath,
-though, the argument is methodological, because at every step the answer turns on a decision that is
-easy to make without noticing. Which measure of inequality should be reported? Should states be
-compared with one another, or each state with itself over time? How many groups should be read into
-the data? And is a reform "large" by its text or by its effect? Each of these choices can flip the conclusion.
+The usual response is to argue about which measure is the right one. That argument does not end,
+because each measure answers a slightly different question, and a researcher can nearly always find
+the one that supports a preferred conclusion. The case in this paper makes the stakes concrete. Asked
+whether more democratic states punish Black and white residents more equally, the most-cited measure
+says inequality is worse where democracy is healthier. The reading is an artifact of the denominator:
+the ratio is sensitive to the white rate, which collapses in more democratic states, so the metric can
+climb without anything changing for Black residents. By a different measure, those same states are no
+more punitive toward Black residents than anywhere else. This disagreement is not noise to be cleaned
+up by choosing a better number. It is built into the fact that four summary statistics are being asked
+to stand in for two underlying quantities.
 
-The paper proceeds in four demonstrations, and each one revises the one before it.
+That observation points to a different approach. Rather than choose among the competing measures, I
+model the two quantities they all summarize: the rates at which a state imprisons its Black and its
+white residents. In a single Bayesian framework, every measure, the ratio, the gap, the absolute
+rates, emerges as a contrast of one posterior. The measures stop being rival summaries and become
+different views of the same estimated quantities. Their disagreement, which the conventional approach
+leaves the reader to reconcile, becomes something the model states directly, as a probability. This is
+the paper's central contribution: not a verdict on which measure of racial disparity is correct, but a
+way to avoid having to choose one.
 
-- The first measures racial inequality across states. By one common measure, more democratic states
-  look more unequal; by three others, they look the same or better.
-- The second compares each state with itself over time, and the cross-state result largely dissolves.
-- The third sorts states into trajectory types. The types are real enough to describe, but the method
-  reads in more structure than the data can support.
-- The fourth treats Florida's 2018 voting-rights reform as a natural experiment. By its text it freed
-  1.4 million voters; by its effect it changed almost nothing.
-
-The point is not any single number, but the pattern across them: measurement, design, and framing
-decide what we are able to conclude, and careful choices keep overturning the answer that looked
-settled. That much is an old lesson, pressed for years under banners like data feminism and QuantCrit. The
-contribution here is to take the next step. After walking
-the four choices, the paper shows that the central two, of measure and comparison, are not separate analyses but one: a single Bayesian model
-of the underlying rates, in which the competing measures reappear as contrasts of one posterior, so
-that the reversal can be reported as a probability rather than displayed as a row of figures. The
-case, race and democracy and punishment, matters in its own right, yet here it mainly serves to make
-that argument concrete.
+The paper earns that model rather than assuming it. The earlier sections carry the same question
+through four ordinary analytic choices and show how far each one moves the conclusion: the measure of
+disparity, the comparison between states and within them, a clustering of states into types, and the
+reading of a major voting-rights reform. Only with those choices on the table does the unifying model
+do its work. The substantive case, race, democracy, and punishment across the U.S. states, is worth
+studying for its own sake; it is also the clearest setting I know in which to show why measurement
+needs a model rather than a verdict.
 
 # Background
 
