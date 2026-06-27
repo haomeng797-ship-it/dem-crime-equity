@@ -1,6 +1,6 @@
 ---
 title: "The Measure Makes the Finding"
-subtitle: "How measurement, design, and framing shape what we conclude about race, democracy, and punishment in the U.S. states"
+subtitle: "Racial disparity, democracy, and punishment in the U.S. states"
 author: "Miura Meng"
 date: today
 abstract: |
@@ -478,13 +478,14 @@ it sweeping or empty depends on which number you read.
 The four demonstrations make a single argument. In each, a routine decision settles the result: a
 measure of inequality reverses the sign, a comparison design shrinks a striking effect to a small one,
 a clustering method offers more structure than the data hold, and a reform reads as sweeping or
-negligible depending on whether one consults its text or its effect. The substantive conclusions
-matter, but they are secondary to this. On questions like these, measurement, design, and framing are
-not technicalities to be settled before the real work begins; they are where the answer is actually
-made. And the demonstrations need not stay separate. Fitting one Bayesian model of the underlying
-rates, as the middle section did, recovers the competing measures as contrasts of a single posterior;
-it shows why the choices matter and lets the reversal be reported as a probability rather than a
-juxtaposition of figures.
+negligible depending on whether one consults its text or its effect. That such choices can decide the
+answer is not, by itself, a new point. The contribution is what the middle section does with it.
+Rather than argue over which measure of racial disparity is correct, it fits one Bayesian model of the
+two underlying rates, the rates at which a state imprisons its Black and its white residents, and
+reads each competing measure off that model as a contrast of its posterior. The disagreement among the
+measures, left elsewhere for the reader to settle, becomes a quantity the model reports, as a
+probability. This is the paper's central methodological move: not the reminder that measurement
+matters, but a way to stop choosing among measures and model what they summarize.
 
 What is easy to lose, stated only as a principle, is how concretely and how quickly
 the choices bite, and how they accumulate. Here they are shown one after another, with numbers, on a
@@ -521,7 +522,8 @@ methodological point: that the answer depends on how we measure and frame the qu
 on the data. Change the measure and a disparity reverses; change the comparison and an effect shrinks;
 change the frame and a reform that freed a million voters did almost nothing. The lesson is not that
 the data are useless, but that the choices made around them deserve as much scrutiny as the findings
-themselves. On the questions of who is punished and who may vote, that scrutiny is not optional.
+themselves. When the measures disagree, the better response is to model what they share, not to crown
+one. On the questions of who is punished and who may vote, that scrutiny is not optional.
 
 # References {.unnumbered}
 
