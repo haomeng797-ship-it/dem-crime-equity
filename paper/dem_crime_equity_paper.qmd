@@ -152,8 +152,7 @@ that both explains the disagreements and quantifies how reliable they are.
 ## Measuring racial disparity in incarceration
 
 The most common summary of racial disparity in imprisonment is a single ratio, the Black imprisonment
-rate divided by the white rate. Its appeal is obvious, but it is a quotient, and a quotient can change
-because its numerator changes, because its denominator changes, or because of both at once. A state
+rate divided by the white rate. Its appeal is obvious, but a ratio can move for more than one reason. A state
 can post a high ratio because it imprisons Black residents at an unusually high rate, or because it
 imprisons white residents at an unusually low one, and these are very different social facts that the
 ratio reports identically. Criminologists have long shown that conclusions about racial
