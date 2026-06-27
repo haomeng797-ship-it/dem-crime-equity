@@ -236,7 +236,7 @@ The reason comes into focus once we look at what the ratio is made of. It is the
 the white rate, so its value depends as much on the denominator as on the numerator. More democratic
 states imprison white residents at strikingly low rates, and that small denominator
 does the arithmetic work, inflating the ratio even in a state where Black imprisonment is no higher
-than average. The South illustrates the same mechanism in reverse. Southern states post lower ratios,
+than average. The South shows the reverse. Southern states post lower ratios,
 but not because they treat Black and white residents more evenly; they imprison white residents
 heavily too, and the large white denominator pulls the ratio down. The regional averages put numbers
 on this. White imprisonment runs about 230 per 100,000 in the more democratic Northeast and about 535
@@ -423,8 +423,8 @@ part of the analysis.
 
 The state-level patterns are associations, not causes, and to get closer to cause I turn to a natural
 experiment. In 2018 Florida passed Amendment 4, restoring the vote to about 1.4 million people with
-felony convictions, the largest such restoration in modern U.S. history. With only one treated state
-the appropriate tool is synthetic control (Abadie, Diamond, & Hainmueller, 2010), implemented with the
+felony convictions, the largest such restoration in modern U.S. history. With a single treated state
+I use synthetic control (Abadie, Diamond, & Hainmueller, 2010), implemented with the
 tidysynth package (Dunford, 2023). The method assembles a synthetic Florida from a weighted combination
 of states that did not change their felon-voting laws, chosen so that the combination reproduces
 Florida's turnout history before the reform, and then reads the reform's effect as the gap that opens
@@ -507,11 +507,10 @@ together, the demonstrations show how easily the convenient answer turns out to 
 
 Several limits bound the claims. Aggregate turnout is a blunt instrument: even a fully effective
 Amendment 4, involving about 8 percent of the voting-age population, most of whom never register or
-vote, might move statewide turnout by less than a point, below what this design can detect, so the null
-means there was no large aggregate effect rather than that re-enfranchisement is pointless, and a
-sharper test would follow the formerly incarcerated individually in voter files. The first three
-demonstrations are observational rather than experimental, and they support the framing of the question
-rather than a causal answer to it. State democracy and incarceration are themselves estimated
+vote, might move statewide turnout by less than a point, below what this design can pick up. The null means the effect was too small for this test to see,
+not that re-enfranchisement does nothing, and a sharper test would follow the formerly incarcerated
+themselves in voter files. The first three
+demonstrations are observational. They help frame the question; they do not answer it causally. State democracy and incarceration are themselves estimated
 quantities. And the synthetic control rests on a single treated state, an imperfect midterm pre-fit, a
 small pool of clean donor states, and a 2020 treatment year disrupted by the pandemic.
 

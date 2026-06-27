@@ -96,7 +96,7 @@ would imply that democratic health and racial fairness in punishment pull in opp
 
 ![Across states, averaged over 2016 to 2020, the Black/White incarceration ratio rises with the State Democracy Index.](../figures/01_dem_vs_disparity.png)
 
-The result does not survive a change of measure, and seeing why is the whole point of this section.
+The result does not survive a change of measure. Here is why.
 If I hold the democracy axis fixed and substitute four definitions of racial inequity, the
 correlation does not merely weaken. It changes sign.
 
@@ -127,9 +127,8 @@ rate, a smaller white rate inflates the ratio even when Black incarceration has 
 South shows a lower ratio not because it punishes Black and white residents more equally, but
 because it imprisons white residents at high rates too, which enlarges the denominator. Measured by
 the absolute Black rate, more democratic states are if anything slightly better, and the absolute
-gap is essentially flat. The lesson is uncomfortable but specific: the number reported most often,
-the ratio, is the one most likely to mislead, because it can move for reasons that have nothing to
-do with how Black residents are treated. And it has a direct methodological consequence. If a
+gap is essentially flat. The number reported most often, the ratio, is also the one most likely to mislead: it can move for
+reasons that have nothing to do with how Black residents are treated. And it has a direct methodological consequence. If a
 single cross-section can be turned upside down by the choice of denominator, then comparing
 different states is too weak an instrument for a question that sounds causal. The natural correction
 is to stop comparing states with one another and start comparing each state with itself.
@@ -308,13 +307,13 @@ purpose.
 
 # A causal test: Florida's Amendment 4
 
-Such a moment exists. In 2018 Florida passed Amendment 4, which restored voting rights to roughly
+One state did exactly that. In 2018 Florida passed Amendment 4, which restored voting rights to roughly
 1.4 million people with felony convictions, the largest single restoration in modern U.S. history.
-This is the rare case in which a piece of democratic practice, the right to vote, was expanded
-deliberately and at scale, which lets us ask whether expanding it changed behavior rather than
-merely moved alongside it.
+Because the vote was expanded deliberately and all at once, Florida is one of the few places where
+we can ask whether the expansion actually moved turnout, and not just whether turnout drifted the
+same way on its own.
 
-With only one treated state, the appropriate tool is synthetic control (Abadie, Diamond, and
+With a single treated state, I use synthetic control (Abadie, Diamond, and
 Hainmueller, 2010). The method builds a "synthetic Florida" from a weighted combination of states
 that did not change their felon-voting laws, chosen so that the combination reproduces Florida's
 turnout history before the reform, and then reads the reform's effect as the gap that opens
@@ -341,7 +340,7 @@ outstanding court fines and fees before regaining the vote. That payment require
 wealth test on the franchise, and it falls hardest on poor and disproportionately Black Floridians.
 The null is itself the story: a democratic expansion
 was largely cancelled by a second, regressive measure before it could change behavior. This is the
-cleanest causal statement the report can make, and it closes the arc the earlier sections opened.
+cleanest causal statement the report can make, and it ties back to where the earlier sections began.
 The cross-section offered a link that turned out to be an artifact; the within-state and trajectory
 analyses offered a small one. The single deliberate intervention available to test shows that even a
 large, direct expansion of democratic rights can come to little once its implementation is undone.
@@ -353,14 +352,13 @@ rather than in a footnote.
 
 Aggregate turnout is a blunt instrument. Even a fully effective Amendment 4 (about 8 percent of the
 voting-age population, most of whom never register or vote) might move statewide turnout by less than
-one point, below what this design can detect. The null therefore means there was no large aggregate
-effect, not that re-enfranchisement is pointless, and a sharper test would follow the formerly
-incarcerated individually in voter files.
+one point, below what this design can detect. The null says the effect was too small for this test to see, not that re-enfranchisement does
+nothing. A finer test would follow the formerly incarcerated themselves through the voter files.
 
-The cross-sectional, mixed-model, and trajectory sections are observational rather than experimental.
-The mixed models adjust for fixed differences between states but do not identify a cause, and the
-trajectory classes are descriptive and confounded with region. They support the framing of the
-question, not a causal answer to it.
+The first three sections are observational. The mixed models adjust for fixed differences between
+states, but they still cannot show that democracy causes anything, and the trajectory classes only
+describe how groups of states moved, region and all. So these sections help frame the question. They
+do not answer it.
 
 State democracy and incarceration are themselves estimated quantities. A fuller treatment would
 compare alternative measures and carry the resulting estimation error through the analysis.
@@ -380,7 +378,7 @@ a national decline in incarceration. And the one reform clean enough to test cau
 turnout because a second law neutralized it. None of these is a breakthrough on its own. Together
 they make a more useful point: on a question like this the method carries the
 finding, and disciplined measurement and design repeatedly overturn the convenient answer.
-That is the habit the analysis was built to demonstrate, and the whole pipeline is reproducible from
+That habit is what the analysis is meant to show, and the whole pipeline is reproducible from
 raw data to figures.
 
 Three extensions would sharpen the argument, each aimed at the weakest link above. Individual
@@ -389,7 +387,7 @@ following the formerly incarcerated themselves rather than the entire electorate
 across the many states that changed felon-voting rules between 2016 and 2022 would turn a single case
 into many and improve both statistical power and external validity. And alternative trajectory
 estimators with bootstrap resampling would show how firm the five-class typology really is. Each of
-these tightens a specific claim the report has deliberately tried not to overstate.
+these tightens a claim I deliberately kept cautious.
 
 # References
 
