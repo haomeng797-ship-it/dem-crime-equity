@@ -1,17 +1,15 @@
 # Democracy, Crime, and Equity in the U.S. States
 
 ### The Measure Makes the Finding
-*How measurement, design, and framing shape what we conclude about race, democracy, and punishment in the U.S. states.*
+*Racial disparity, democracy, and punishment in the U.S. states.*
 
-A small, reproducible study in R on public state-level data, asking whether stronger state democracy tracks less racial inequality in incarceration, and whether felon re-enfranchisement changes it. Its through-line is methodological: across four routine choices about measurement and design, the same data points in different directions, so a finding that looks like it is about race and democracy often turns on the analyst's choices. The full argument and results are in the paper, linked below.
+A small, reproducible study in R on public state-level data, asking whether stronger state democracy tracks less racial inequality in incarceration, and whether felon re-enfranchisement changes it. The point is mostly methodological: run the same question through four ordinary choices about measurement and design and the answer keeps shifting, so what looks like a finding about race and democracy often comes down to the analyst's choices. The full argument and results are in the paper, linked below.
 
 **Author:** Miura Meng
 
 ## Read it
 
-The main write-up is a short academic paper, **"The Measure Makes the Finding."** It argues that the
-link between democracy, race, and punishment is decided less by the data than by how inequality is
-measured and how the study is designed.
+The main write-up is a short paper, **"The Measure Makes the Finding."**
 
 - [Read the paper (web)](https://haomeng797-ship-it.github.io/dem-crime-equity/paper/dem_crime_equity_paper.html)
 - [The paper as a formatted PDF](https://haomeng797-ship-it.github.io/dem-crime-equity/paper/dem_crime_equity_paper.pdf)
@@ -55,8 +53,8 @@ Rebuilding the paper and report documents is optional and not needed to check th
 | `data/` | `state_dem_incarceration.{rds,csv}`, the merged dataset built by `R/01` |
 | `figures/` | generated figures for the web (Charter, PNG 300 dpi) |
 | `figures_pdf/` | the same figure set in Times, for the PDF paper |
-| `paper/` | the workshop paper: Quarto source + rendered PDF and HTML (English) |
-| `report/` | the longer data report: Quarto source + rendered HTML (English) |
+| `paper/` | the paper: Quarto source + rendered PDF and HTML |
+| `report/` | the longer data report: Quarto source + rendered HTML |
 
 ## Data sources
 
