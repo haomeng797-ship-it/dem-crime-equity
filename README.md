@@ -24,19 +24,13 @@ The matching `.qmd` files are the Quarto sources.
 
 ## Reproduce
 
-Requires R (>= 4.5) and [Quarto](https://quarto.org). Rendering the PDF also needs a LaTeX engine (`quarto install tinytex`) and the Times New Roman / Charter fonts used in the figures (both ship with macOS; install them on Linux/Windows to match the figures exactly). Install the R packages:
+The analysis needs only R (>= 4.5). Install the packages:
 
 ```r
 install.packages(c("dplyr", "tidyr", "ggplot2", "lme4", "gbmt", "tidysynth", "ragg", "ggrepel", "knitr"))
 ```
 
-From the repository root, regenerate everything — both figure sets, all analyses, and the rendered paper and report — with one script:
-
-```bash
-bash run_all.sh
-```
-
-Or run the steps by hand, in order:
+Then run the scripts in order to rebuild the merged dataset, every model, and the figures:
 
 ```bash
 Rscript R/01_load_merge.R          # build the merged state-year dataset
@@ -46,15 +40,11 @@ Rscript R/04_within_state_models.R # within/between mixed models
 Rscript R/05_gbtm_trajectories.R   # trajectory typology
 Rscript R/06_causal_amendment4.R   # Florida synthetic control
 Rscript R/07_robustness.R          # synthetic-control robustness checks
-
-quarto render report/dem_crime_equity.qmd       # the report (HTML)
-quarto render paper/dem_crime_equity_paper.qmd  # the paper (PDF + HTML)
 ```
 
-`R/00_theme.R` holds the shared figure style (font and palette) and is sourced by the plotting
-scripts. Figures are generated twice: `figures/` uses the Charter font for the web, and
-`figures_pdf/` uses Times to match the PDF paper. The scripts write `figures/` by default; prefix a
-run with `FIG_FONT="Times New Roman" FIG_OUTDIR="figures_pdf"` to produce the PDF set.
+`R/00_theme.R` holds the shared figure style and is sourced by the plotting scripts; figures land in `figures/`.
+
+Rebuilding the paper and report documents is optional and not needed to check the analysis. It also requires [Quarto](https://quarto.org) (and, for the PDF, `quarto install tinytex` plus the Times New Roman / Charter fonts used in the figures). The one-liner `bash run_all.sh` runs the whole pipeline end to end: the analysis, both figure sets, and the rendered documents.
 
 ## Repository layout
 
