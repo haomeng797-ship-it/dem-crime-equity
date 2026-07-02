@@ -26,3 +26,6 @@ bayes_fit*.rds
 *bilingual*
 _pretty_render.md
 _pretty_header.tex
+
+# Submission artifacts (blinded manuscript, title page, cover letter) — local only
+/submission/
