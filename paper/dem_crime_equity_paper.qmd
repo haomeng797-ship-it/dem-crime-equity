@@ -184,7 +184,7 @@ first, a condition critics likened to a poll tax and a federal appeals court all
 
 The analysis combines three public datasets, each at the state-year level. The State Democracy Index
 2.0 (Grumbach & Bitton, 2024) scores the fifty states from 2000 to 2023, with higher values meaning
-more democratic. The Vera Institute's Incarceration Trends provides race-specific imprisonment rates
+more democratic. The Vera Institute's Incarceration Trends (Vera Institute of Justice, 2024) provides race-specific imprisonment rates
 per 100,000; the Black and white rates used here run from 1990 to 2022. The UF Election Lab turnout
 series (McDonald, 2023) gives voting-age-population (VAP) turnout for each even-year election, along
 with the number of people disenfranchised by a felony record.
@@ -296,97 +296,6 @@ real it looks depends on whether the strong year-to-year persistence is modeled.
 for saying so. One choice of comparison, cross-section against within-state, has already turned a striking
 effect into a small one.
 
-# From multiverse to model
-
-The title marks a move. The four demonstrations are a small multiverse, one question carried through
-choices that should not change the answer so that the disagreements among the answers can show; this
-section turns the core of that multiverse into a single Bayesian model, in which the measure and comparison choices reappear as
-contrasts of one posterior. The multiverse is the better tool for revealing that the choices matter;
-the model is the better tool for saying how much, and how reliably.
-
-Before collapsing the choices into a model, it helps to see them all at once. Figure 4 is the full
-specification curve: the democracy-inequality effect estimated under every crossing of the four
-inequality measures, the two comparison designs, and the year trend in or out, sixteen defensible
-specifications in all, with each outcome standardized so the effects are comparable. The estimates run
-from clearly negative to clearly positive. The most negative are the white imprisonment rate compared
-across states; the most positive are the Black/White ratio compared across states; the within-state
-specifications sit near zero. The sign of the headline is chosen at the same moment as the
-specification. This is the multiverse the rest of the section sets out to discipline.
-
-::: {.content-visible when-format="pdf"}
-![The democracy-inequality effect across sixteen defensible specifications (four inequality measures, two comparison designs, year trend in or out), each outcome standardized. The sign runs from clearly negative (the white rate compared across states) to clearly positive (the Black/White ratio compared across states); within-state specifications sit near zero.](../figures_pdf/07_spec_curve.png){width=95%}
-:::
-
-::: {.content-visible when-format="html"}
-![The democracy-inequality effect across sixteen defensible specifications (four inequality measures, two comparison designs, year trend in or out), each outcome standardized. The sign runs from clearly negative (the white rate compared across states) to clearly positive (the Black/White ratio compared across states); within-state specifications sit near zero.](../figures/07_spec_curve.png){width=95%}
-:::
-
-The first two demonstrations treated the choice of measure and the choice of comparison as
-separate forks in the analysis. They are not separate. The four measures and the within and
-between contrasts are all summaries of the same two underlying quantities, how heavily a state
-imprisons its Black residents and how heavily it imprisons its white residents, and how each of those
-moves with democracy. Rather than walk the forks one at a time, then, we can fit a single model of
-those two quantities and read every fork off the one set of estimates it implies.
-
-To do this I fit one joint multilevel model with two outcomes at once, the log Black imprisonment
-rate and the log white rate, each allowed to depend on democracy. Democracy enters in the Mundlak
-form of the second demonstration, split into a between-state part, a state's long-run average, and
-a within-state part, its year-to-year deviation; each state keeps its own intercept, and the two
-outcomes' intercepts and residuals are free to correlate; within each state the residuals follow a
-first-order autoregressive process, so the strong year-to-year persistence the third demonstration
-warned about is modeled rather than assumed away. The model is Bayesian, fit with weakly informative
-priors using the brms package (Bürkner, 2017), and it converged cleanly, with every R-hat below 1.01
-and no divergent transitions; the autoregressive parameter is estimated near 0.95 to 0.98, which is
-just how serially dependent these series are. The coefficients below are scaled per one standard
-deviation of democracy rather than per index point, so their sizes are not directly comparable to
-those in the second demonstration, but their signs and pattern are the same.
-
-Once the model is fit, three of the four measures are no longer separate analyses but contrasts of
-one posterior, and the fourth, the raw Black-minus-white gap, a simple function of it (Figure 5).
-Between states, a one standard deviation increase in democracy goes with white imprisonment lower by
-about 0.13 log points (95 percent credible interval −0.25 to −0.01) and Black imprisonment that is
-essentially flat (−0.01, −0.11 to +0.09). The ratio effect is just the difference between these two,
-and it comes out positive, about +0.12 (+0.01 to +0.23), for exactly the reason the first
-demonstration gave: the ratio rises not because Black imprisonment rises but because the white
-denominator falls. The alarming cross-sectional pattern and the reassuring one are the same posterior,
-read two ways. Within states, once that serial dependence is modeled, the year-to-year effects shrink
-toward zero and their intervals straddle it; the modest within-state link of the second demonstration
-is itself sensitive to whether that dependence is acknowledged.
-
-::: {.content-visible when-format="pdf"}
-![The four measures of racial inequality as contrasts of one posterior. Each density is the effect of a one standard deviation increase in between-state democracy on one quantity. The Black/White ratio (red) sits above zero only because white imprisonment (blue) falls faster than the Black rate (grey); a single posterior produces a rising ratio and a falling white rate at the same time.](../figures_pdf/06_bayes_contrasts.png){width=90%}
-:::
-
-::: {.content-visible when-format="html"}
-![The four measures of racial inequality as contrasts of one posterior. Each density is the effect of a one standard deviation increase in between-state democracy on one quantity. The Black/White ratio (red) sits above zero only because white imprisonment (blue) falls faster than the Black rate (grey); a single posterior produces a rising ratio and a falling white rate at the same time.](../figures/06_bayes_contrasts.png){width=90%}
-:::
-
-Holding the measures inside one model buys something the side-by-side comparison cannot. Because
-every contrast is computed from the same draws, we can ask not just whether the measures disagree
-but how reliably they do. The posterior probability that democracy raises the ratio while leaving
-white imprisonment lower, the exact shape of the first demonstration's reversal, is about 0.97;
-ignoring the serial dependence would inflate it to 0.99, so the modeled figure is the honest one. The
-weaker version, that the ratio rises while the absolute Black rate falls, is no better than a coin
-toss, about 0.54, because the Black rate is too close to flat to sign. So the dependable claim is the
-specific one: more democratic states post a higher ratio while imprisoning white residents at lower
-rates. That reversal is not a fragile accident of one arbitrary comparison. It is a robust
-feature of how the two rates move, reported as a probability that has already paid the price of the
-autocorrelation.
-
-The reversal also survives the other obvious checks. Replacing the Gaussian likelihood on the log
-rates with a negative-binomial count model on the raw counts, and adding census region as a fixed
-effect, each reproduces a positive between-state ratio effect carried by the falling white rate.
-
-None of this makes the relationship causal. The model rearranges the same observational evidence
-more economically; it does not identify an effect. Its value is methodological. The earlier
-demonstrations show, in the accessible form of a multiverse, that the answer moves with the
-analyst's choices; this model shows why, by placing those choices as contrasts of a single set of
-estimates, and it puts a number on how much each choice matters. A multiverse is the better way to
-reveal the problem, and a model that absorbs the sources of variation is the more disciplined way
-to study it (Gelman et al., 2012). The two are complementary, and the counsel to carry more than
-one measure only gains force once the measures can be shown to be one model seen from different
-sides.
-
 # Demonstration 3: a method that reads in more than the data hold
 
 An average describes the typical state but conceals the differences between states, and those
@@ -473,13 +382,104 @@ wealth test on the franchise and falls hardest on poor and disproportionately Bl
 the reform enfranchised more than a million people. In practice it reached few, and whether you call
 it sweeping or empty depends on which number you read.
 
+# From multiverse to model
+
+This section marks a move. The four demonstrations are a small multiverse, one question carried through
+choices that should not change the answer so that the disagreements among the answers can show; this
+section turns the core of that multiverse into a single Bayesian model, in which the measure and comparison choices reappear as
+contrasts of one posterior. The multiverse is the better tool for revealing that the choices matter;
+the model is the better tool for saying how much, and how reliably.
+
+Before collapsing the choices into a model, it helps to see them all at once. Figure 4 is the full
+specification curve: the democracy-inequality effect estimated under every crossing of the four
+inequality measures, the two comparison designs, and the year trend in or out, sixteen defensible
+specifications in all, with each outcome standardized so the effects are comparable. The estimates run
+from clearly negative to clearly positive. The most negative are the white imprisonment rate compared
+across states; the most positive are the Black/White ratio compared across states; the within-state
+specifications sit near zero. The sign of the headline is chosen at the same moment as the
+specification. This is the multiverse the rest of the section sets out to discipline.
+
+::: {.content-visible when-format="pdf"}
+![The democracy-inequality effect across sixteen defensible specifications (four inequality measures, two comparison designs, year trend in or out), each outcome standardized. The sign runs from clearly negative (the white rate compared across states) to clearly positive (the Black/White ratio compared across states); within-state specifications sit near zero.](../figures_pdf/07_spec_curve.png){width=95%}
+:::
+
+::: {.content-visible when-format="html"}
+![The democracy-inequality effect across sixteen defensible specifications (four inequality measures, two comparison designs, year trend in or out), each outcome standardized. The sign runs from clearly negative (the white rate compared across states) to clearly positive (the Black/White ratio compared across states); within-state specifications sit near zero.](../figures/07_spec_curve.png){width=95%}
+:::
+
+The first two demonstrations treated the choice of measure and the choice of comparison as
+separate forks in the analysis. They are not separate. The four measures and the within and
+between contrasts are all summaries of the same two underlying quantities, how heavily a state
+imprisons its Black residents and how heavily it imprisons its white residents, and how each of those
+moves with democracy. Rather than walk the forks one at a time, then, we can fit a single model of
+those two quantities and read every fork off the one set of estimates it implies.
+
+To do this I fit one joint multilevel model with two outcomes at once, the log Black imprisonment
+rate and the log white rate, each allowed to depend on democracy. Democracy enters in the Mundlak
+form of the second demonstration, split into a between-state part, a state's long-run average, and
+a within-state part, its year-to-year deviation; each state keeps its own intercept, and the two
+outcomes' intercepts and residuals are free to correlate; within each state the residuals follow a
+first-order autoregressive process, so the strong year-to-year persistence the second demonstration
+warned about is modeled rather than assumed away. The model is Bayesian, fit with weakly informative
+priors using the brms package (Bürkner, 2017), and it converged cleanly, with every R-hat below 1.01
+and no divergent transitions; the autoregressive parameter is estimated near 0.95 to 0.98, which is
+just how serially dependent these series are. The coefficients below are scaled per one standard
+deviation of democracy rather than per index point, so their sizes are not directly comparable to
+those in the second demonstration, but their signs and pattern are the same.
+
+Once the model is fit, three of the four measures are no longer separate analyses but contrasts of
+one posterior, and the fourth, the raw Black-minus-white gap, a simple function of it (Figure 5).
+Between states, a one standard deviation increase in democracy goes with white imprisonment lower by
+about 0.13 log points (95 percent credible interval −0.25 to −0.01) and Black imprisonment that is
+essentially flat (−0.01, −0.11 to +0.09). The ratio effect is just the difference between these two,
+and it comes out positive, about +0.12 (+0.01 to +0.23), for exactly the reason the first
+demonstration gave: the ratio rises not because Black imprisonment rises but because the white
+denominator falls. The alarming cross-sectional pattern and the reassuring one are the same posterior,
+read two ways. Within states, once that serial dependence is modeled, the year-to-year effects shrink
+toward zero and their intervals straddle it; the modest within-state link of the second demonstration
+is itself sensitive to whether that dependence is acknowledged.
+
+::: {.content-visible when-format="pdf"}
+![The four measures of racial inequality as contrasts of one posterior. Each density is the effect of a one standard deviation increase in between-state democracy on one quantity. The Black/White ratio (red) sits above zero only because white imprisonment (blue) falls faster than the Black rate (grey); a single posterior produces a rising ratio and a falling white rate at the same time.](../figures_pdf/06_bayes_contrasts.png){width=90%}
+:::
+
+::: {.content-visible when-format="html"}
+![The four measures of racial inequality as contrasts of one posterior. Each density is the effect of a one standard deviation increase in between-state democracy on one quantity. The Black/White ratio (red) sits above zero only because white imprisonment (blue) falls faster than the Black rate (grey); a single posterior produces a rising ratio and a falling white rate at the same time.](../figures/06_bayes_contrasts.png){width=90%}
+:::
+
+Holding the measures inside one model buys something the side-by-side comparison cannot. Because
+every contrast is computed from the same draws, we can ask not just whether the measures disagree
+but how reliably they do. The posterior probability that democracy raises the ratio while leaving
+white imprisonment lower, the exact shape of the first demonstration's reversal, is about 0.97;
+ignoring the serial dependence would inflate it to 0.99, so the modeled figure is the honest one. The
+weaker version, that the ratio rises while the absolute Black rate falls, is no better than a coin
+toss, about 0.54, because the Black rate is too close to flat to sign. So the dependable claim is the
+specific one: more democratic states post a higher ratio while imprisoning white residents at lower
+rates. That reversal is not a fragile accident of one arbitrary comparison. It is a robust
+feature of how the two rates move, reported as a probability that has already paid the price of the
+autocorrelation.
+
+The reversal also survives the other obvious checks. Replacing the Gaussian likelihood on the log
+rates with a negative-binomial count model on the raw counts, and adding census region as a fixed
+effect, each reproduces a positive between-state ratio effect carried by the falling white rate.
+
+None of this makes the relationship causal. The model rearranges the same observational evidence
+more economically; it does not identify an effect. Its value is methodological. The earlier
+demonstrations show, in the accessible form of a multiverse, that the answer moves with the
+analyst's choices; this model shows why, by placing those choices as contrasts of a single set of
+estimates, and it puts a number on how much each choice matters. A multiverse is the better way to
+reveal the problem, and a model that absorbs the sources of variation is the more disciplined way
+to study it (Gelman et al., 2012). The two are complementary, and the counsel to carry more than
+one measure only gains force once the measures can be shown to be one model seen from different
+sides.
+
 # Discussion
 
 The four demonstrations make a single argument. In each, a routine decision settles the result: a
 measure of inequality reverses the sign, a comparison design shrinks a striking effect to a small one,
 a clustering method offers more structure than the data hold, and a reform reads as sweeping or
 negligible depending on whether one consults its text or its effect. That such choices can decide the
-answer is not, by itself, a new point. The contribution is what the middle section does with it.
+answer is not, by itself, a new point. The contribution is what the unifying model does with it.
 Rather than argue over which measure of racial disparity is correct, it fits one Bayesian model of the
 two underlying rates, the rates at which a state imprisons its Black and its white residents, and
 reads each competing measure off that model as a contrast of its posterior. The disagreement among the
