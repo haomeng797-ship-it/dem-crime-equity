@@ -41,8 +41,12 @@ cat("balanced states:", length(balanced),
     "| after dropping reformers:", n_distinct(panel$state),
     "(Florida + ", n_distinct(panel$state) - 1, "clean donors )\n\n")
 
-# --- first stage: Florida's disenfranchised-felon rate (did Amendment 4 bite?) ---
-cat("Florida 2012-2022  (felon_rate = % of VAP disenfranchised by felony):\n")
+# --- context: Florida's supervision-based ineligible-felon rate (NOT a first stage) ---
+# CAUTION: McDonald's INELIGIBLE_FELONS_TOTAL counts prison + probation + parole only;
+# his docs state post-sentence disenfranchisement is deliberately NOT estimated. Amendment 4
+# targeted post-sentence citizens, so this series cannot measure the reform's uptake.
+# For that, see Morse (2021, Calif. L. Rev.) and the Sentencing Project's Locked Out series.
+cat("Florida 2012-2022  (felon_rate = % of VAP under correctional supervision and ineligible):\n")
 print(d |> filter(state == "Florida", year >= 2012) |>
         transmute(year, vap_turnout, felons, felon_rate = round(felon_rate, 2)), row.names = FALSE)
 

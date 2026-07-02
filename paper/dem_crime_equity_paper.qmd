@@ -185,16 +185,15 @@ first, a condition critics likened to a poll tax and a federal appeals court all
 The analysis combines three public datasets, each at the state-year level. The State Democracy Index
 2.0 (Grumbach & Bitton, 2024) scores the fifty states from 2000 to 2023, with higher values meaning
 more democratic. The Vera Institute's Incarceration Trends (Vera Institute of Justice, 2024) provides race-specific imprisonment rates
-per 100,000; the Black and white rates used here run from 1990 to 2022. The UF Election Lab turnout
-series (McDonald, 2023) gives voting-age-population (VAP) turnout for each even-year election, along
-with the number of people disenfranchised by a felony record.
+per 100,000, counting people held in state prisons rather than local jails, ages 15 to 64; the Black
+and white rates used here run from 1990 to 2022. The UF Election Lab turnout
+series (McDonald, 2023) gives voting-age-population (VAP) turnout for each even-year election.
 
 Because racial inequality has no single definition, the paper follows three measures side by side: the
 Black/White rate ratio, the absolute Black rate, and the gap between the Black and white rates. Over
 this period the national ratio sits near a median of 5.4. For the natural experiment the outcome is
 VAP turnout, whose denominator is the voting-age population and so does not move mechanically when
-people are re-enfranchised, and the first-stage quantity is the share of the voting-age population
-disenfranchised by a felony record.
+people are re-enfranchised.
 
 # Demonstration 1: the measure decides the sign
 
@@ -206,11 +205,11 @@ racial fairness in punishment are in tension, and that the states doing democrac
 treating Black and white residents most unequally behind bars.
 
 ::: {.content-visible when-format="pdf"}
-![Across states, averaged over 2016 to 2020, the Black/White incarceration ratio rises with the State Democracy Index.](../figures_pdf/01_dem_vs_disparity.png){width=85%}
+![Across states, averaged over 2016 to 2020, the Black/White imprisonment ratio rises with the State Democracy Index.](../figures_pdf/01_dem_vs_disparity.png){width=85%}
 :::
 
 ::: {.content-visible when-format="html"}
-![Across states, averaged over 2016 to 2020, the Black/White incarceration ratio rises with the State Democracy Index.](../figures/01_dem_vs_disparity.png){width=85%}
+![Across states, averaged over 2016 to 2020, the Black/White imprisonment ratio rises with the State Democracy Index.](../figures/01_dem_vs_disparity.png){width=85%}
 :::
 
 Before accepting that, it is worth asking whether the result is a fact about the world or a fact about
@@ -285,7 +284,7 @@ of variation are estimated side by side rather than confused with each other (Fi
 The contrast is clean. The alarming cross-sectional result for the ratio turns out to be entirely
 between-state, at about +0.18, and to vanish within states, at about +0.01. In other words, it reflects
 which states are which, not what happens when a given state's democracy changes. Within states,
-stronger democracy goes with lower incarceration of both groups, by roughly −0.04 for the Black rate
+stronger democracy goes with lower imprisonment of both groups, by roughly −0.04 for the Black rate
 and −0.05 for the white rate in log points per index point, and because the two rates fall together the
 ratio barely moves, exactly as the first demonstration would predict. The largest term in every model,
 however, is neither within nor between democracy but the year trend: the ratio fell about 2.6 percent a
@@ -303,21 +302,21 @@ differences are part of the story. So the next question is whether states fall i
 according to how democracy and incarceration moved together. Group-based trajectory modeling,
 developed in criminology by Nagin and Land (1993) to classify offending over the life course, is built
 for exactly this. Using the gbmt package (Magrini, 2022), it sorts the fifty states by their joint
-path from 2000 to 2022 on two series at once, democracy and the logged Black incarceration rate, and
+path from 2000 to 2022 on two series at once, democracy and the logged Black imprisonment rate, and
 the BIC selects five well-separated classes, with an average assignment probability near 0.99
 (Figure 4).
 
 ::: {.content-visible when-format="pdf"}
-![Five state trajectory classes from the gbmt model. Each line is a class-mean path for democracy, Black incarceration, and the Black/White ratio.](../figures_pdf/04_gbtm_classes.png){width=100%}
+![Five state trajectory classes from the gbmt model. Each line is a class-mean path for democracy, Black imprisonment, and the Black/White ratio.](../figures_pdf/04_gbtm_classes.png){width=100%}
 :::
 
 ::: {.content-visible when-format="html"}
-![Five state trajectory classes from the gbmt model. Each line is a class-mean path for democracy, Black incarceration, and the Black/White ratio.](../figures/04_gbtm_classes.png){width=100%}
+![Five state trajectory classes from the gbmt model. Each line is a class-mean path for democracy, Black imprisonment, and the Black/White ratio.](../figures/04_gbtm_classes.png){width=100%}
 :::
 
 The classes arrange themselves along a single spectrum. States that grew more democratic decarcerated
 the most, while those that backslid the furthest, the group Grumbach (2023) calls the laboratories of
-backsliding, reduced Black incarceration the least and even saw their white rate climb. This is the
+backsliding, reduced Black imprisonment the least and even saw their white rate climb. This is the
 same relationship as before, now drawn as a contrast between recognizable groups of states. The method
 invites overreading, though, and resisting that is the lesson here. Every class decarcerated, because
 the national decline runs through all of them, so the groups differ in degree rather than in
@@ -374,13 +373,15 @@ therefore best read as a fluctuation around zero rather than as turnout suppress
 statistically distinguishable from zero and reverses when individual donors are removed.
 
 A null result is only worth reporting if its source is visible, and here it is. The reform barely took
-effect. Florida's disenfranchised share fell only from 1.25 percent of the voting-age population in
-2018 to 1.16 percent in 2020 and 1.14 percent in 2022, a nearly flat line rather than the steep drop
-that re-enfranchising 1.4 million people would imply. The explanation is SB7066, which required people
-to pay all outstanding court fines and fees before regaining the vote, a requirement that works as a
-wealth test on the franchise and falls hardest on poor and disproportionately Black citizens. On paper
-the reform enfranchised more than a million people. In practice it reached few, and whether you call
-it sweeping or empty depends on which number you read.
+effect. SB7066 required people to pay all outstanding court fines, fees, and restitution before
+regaining the vote, and the fullest empirical account of the amendment's aftermath finds that unpaid
+court debt kept most of the people it covered from regaining the vote (Morse, 2021). The requirement
+works as a wealth test on the franchise and falls hardest on poor and disproportionately Black
+citizens. Its effect is visible in the counts: in 2024, six years after the amendment passed, more
+than 700,000 Floridians who had completed their sentences remained disenfranchised for unpaid legal
+financial obligations, more than in any other state (The Sentencing Project, 2024). On paper the
+reform enfranchised more than a million people. In practice it reached few, and whether you call it
+sweeping or empty depends on which number you read.
 
 # From multiverse to model
 
@@ -440,11 +441,11 @@ toward zero and their intervals straddle it; the modest within-state link of the
 is itself sensitive to whether that dependence is acknowledged.
 
 ::: {.content-visible when-format="pdf"}
-![The four measures of racial inequality as contrasts of one posterior. Each density is the effect of a one standard deviation increase in between-state democracy on one quantity. The Black/White ratio (red) sits above zero only because white imprisonment (blue) falls faster than the Black rate (grey); a single posterior produces a rising ratio and a falling white rate at the same time.](../figures_pdf/06_bayes_contrasts.png){width=90%}
+![The competing measures of racial inequality as contrasts of one posterior. Each density is the effect of a one standard deviation increase in between-state democracy on one quantity; the raw Black-minus-white gap (not shown) is a simple function of the two rates. The Black/White ratio (red) sits above zero only because white imprisonment (blue) falls faster than the Black rate (grey); a single posterior produces a rising ratio and a falling white rate at the same time.](../figures_pdf/06_bayes_contrasts.png){width=90%}
 :::
 
 ::: {.content-visible when-format="html"}
-![The four measures of racial inequality as contrasts of one posterior. Each density is the effect of a one standard deviation increase in between-state democracy on one quantity. The Black/White ratio (red) sits above zero only because white imprisonment (blue) falls faster than the Black rate (grey); a single posterior produces a rising ratio and a falling white rate at the same time.](../figures/06_bayes_contrasts.png){width=90%}
+![The competing measures of racial inequality as contrasts of one posterior. Each density is the effect of a one standard deviation increase in between-state democracy on one quantity; the raw Black-minus-white gap (not shown) is a simple function of the two rates. The Black/White ratio (red) sits above zero only because white imprisonment (blue) falls faster than the Black rate (grey); a single posterior produces a rising ratio and a falling white rate at the same time.](../figures/06_bayes_contrasts.png){width=90%}
 :::
 
 Holding the measures inside one model buys something the side-by-side comparison cannot. Because
@@ -533,6 +534,11 @@ the data are useless, but that the choices made around them deserve as much scru
 themselves. When the measures disagree, the better response is to model what they share, not to crown
 one. On the questions of who is punished and who may vote, that scrutiny is not optional.
 
+# Data and code availability {.unnumbered}
+
+All data are public and documented in the repository. Code and data to rebuild the merged dataset,
+every model, and every figure are available at https://github.com/haomeng797-ship-it/dem-crime-equity.
+
 # References {.unnumbered}
 
 ```{=latex}
@@ -578,6 +584,8 @@ McDonald, M. P. (2023). *United States Elections Project: Voter turnout data, 19
 Merry, S. E. (2016). *The seductions of quantification: Measuring human rights, gender violence, and sex trafficking*. University of Chicago Press.
 
 Moonesinghe, R., & Beckles, G. L. A. (2015). Measuring health disparities: A comparison of absolute and relative disparities. *PeerJ, 3*, e1438.
+
+Morse, M. (2021). The future of felon disenfranchisement reform: Evidence from the campaign to restore voting rights in Florida. *California Law Review, 109*(3).
 
 Mundlak, Y. (1978). On the pooling of time series and cross section data. *Econometrica, 46*(1), 69–85.
 
