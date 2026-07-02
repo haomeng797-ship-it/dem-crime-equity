@@ -433,19 +433,19 @@ and a placebo test provides inference by asking how unusual Florida's gap is aga
 computed for every donor state.
 
 ::: {.content-visible when-format="pdf"}
-![Florida compared with synthetic Florida on VAP turnout. The observed series (grey) tracks the synthetic series (pink) before and after the reform.](../figures_pdf/05_synth_trends.png){width=80%}
+![Florida compared with synthetic Florida on VAP turnout. The observed series (red) tracks the synthetic series (grey) before and after the reform.](../figures_pdf/05_synth_trends.png){width=80%}
 :::
 
 ::: {.content-visible when-format="html"}
-![Florida compared with synthetic Florida on VAP turnout. The observed series (grey) tracks the synthetic series (pink) before and after the reform.](../figures/05_synth_trends.png){width=80%}
+![Florida compared with synthetic Florida on VAP turnout. The observed series (red) tracks the synthetic series (grey) before and after the reform.](../figures/05_synth_trends.png){width=80%}
 :::
 
 ::: {.content-visible when-format="pdf"}
-![Placebo test. Florida's post-treatment gap (pink) sits inside the cloud of donor-state placebos.](../figures_pdf/05_synth_placebos.png){width=80%}
+![Placebo test. Florida's post-treatment gap (red) sits inside the cloud of donor-state placebos.](../figures_pdf/05_synth_placebos.png){width=80%}
 :::
 
 ::: {.content-visible when-format="html"}
-![Placebo test. Florida's post-treatment gap (pink) sits inside the cloud of donor-state placebos.](../figures/05_synth_placebos.png){width=80%}
+![Placebo test. Florida's post-treatment gap (red) sits inside the cloud of donor-state placebos.](../figures/05_synth_placebos.png){width=80%}
 :::
 
 The pre-reform fit is close, with a 2016 gap of only 0.07 points, which lends the comparison
@@ -506,6 +506,8 @@ Black imprisonment does. A widely reported equity metric can move for reasons th
 with how Black people are treated, and that is worth knowing wherever the ratio is used. Taken
 together, the demonstrations show how easily the convenient answer turns out to be wrong.
 
+## Limitations
+
 Several limits bound the claims. Aggregate turnout is a blunt instrument: even a fully effective
 Amendment 4, involving about 8 percent of the voting-age population, most of whom never register or
 vote, might move statewide turnout by less than a point, below what this design can pick up. The null means the effect was too small for this test to see,
@@ -514,6 +516,12 @@ themselves in voter files. The first three
 demonstrations are observational. They help frame the question; they do not answer it causally. State democracy and incarceration are themselves estimated
 quantities. And the synthetic control rests on a single treated state, an imperfect midterm pre-fit, a
 small pool of clean donor states, and a 2020 treatment year disrupted by the pandemic.
+
+Two scope limits matter as well. The racial contrast is binary: Black and white imprisonment rates
+are the series Vera reports most completely, so Latino, Native American, and other groups, and the
+states' uneven recording of Hispanic ethnicity, fall outside the analysis. And the state is the unit
+throughout. State rates average over counties that differ sharply in policing and prosecution, so
+nothing here speaks to disparity within a state.
 
 # Conclusion
 
