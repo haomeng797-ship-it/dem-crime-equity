@@ -26,7 +26,7 @@ p <- ggplot(st, aes(democracy, bw_ratio)) +
   geom_point(aes(color = region), size = 2.6) +
   scale_color_manual(values = region_pal) +
   labs(
-    title    = "Weaker state democracy, wider racial incarceration gap?",
+    title    = "More democratic states, higher Black/White prison-rate ratios?",
     subtitle = "Each point = one U.S. state, averaged 2016-2020.  y = Black-to-White prison-rate ratio.",
     x = "State Democracy Index 2.0  (higher = more democratic)",
     y = "Black / White prison-rate ratio",
