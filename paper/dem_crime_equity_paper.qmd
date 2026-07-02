@@ -305,7 +305,7 @@ developed in criminology by Nagin and Land (1993) to classify offending over the
 for exactly this. Using the gbmt package (Magrini, 2022), it sorts the fifty states by their joint
 path from 2000 to 2022 on two series at once, democracy and the logged Black incarceration rate, and
 the BIC selects five well-separated classes, with an average assignment probability near 0.99
-(Figure 6).
+(Figure 4).
 
 ::: {.content-visible when-format="pdf"}
 ![Five state trajectory classes from the gbmt model. Each line is a class-mean path for democracy, Black incarceration, and the Black/White ratio.](../figures_pdf/04_gbtm_classes.png){width=100%}
@@ -358,9 +358,9 @@ computed for every donor state.
 :::
 
 The pre-reform fit is close, with a 2016 gap of only 0.07 points, which lends the comparison
-credibility (Figure 7). After the reform, the gaps are −1.4 points in 2020 and −4.8 in 2022, both
+credibility (Figure 5). After the reform, the gaps are −1.4 points in 2020 and −4.8 in 2022, both
 negative rather than positive, and the placebo test returns a p-value of about 0.14, meaning Florida is
-not unusual among the donor states (Figure 8). Amendment 4 produced no measurable increase in turnout.
+not unusual among the donor states (Figure 6). Amendment 4 produced no measurable increase in turnout.
 
 Two further checks indicate the null is robust rather than an artifact of the specification. An in-time
 placebo that moves the treatment back to 2016, before the reform, yields only small gaps in the
@@ -390,7 +390,7 @@ section turns the core of that multiverse into a single Bayesian model, in which
 contrasts of one posterior. The multiverse is the better tool for revealing that the choices matter;
 the model is the better tool for saying how much, and how reliably.
 
-Before collapsing the choices into a model, it helps to see them all at once. Figure 4 is the full
+Before collapsing the choices into a model, it helps to see them all at once. Figure 7 is the full
 specification curve: the democracy-inequality effect estimated under every crossing of the four
 inequality measures, the two comparison designs, and the year trend in or out, sixteen defensible
 specifications in all, with each outcome standardized so the effects are comparable. The estimates run
@@ -428,7 +428,7 @@ deviation of democracy rather than per index point, so their sizes are not direc
 those in the second demonstration, but their signs and pattern are the same.
 
 Once the model is fit, three of the four measures are no longer separate analyses but contrasts of
-one posterior, and the fourth, the raw Black-minus-white gap, a simple function of it (Figure 5).
+one posterior, and the fourth, the raw Black-minus-white gap, a simple function of it (Figure 8).
 Between states, a one standard deviation increase in democracy goes with white imprisonment lower by
 about 0.13 log points (95 percent credible interval −0.25 to −0.01) and Black imprisonment that is
 essentially flat (−0.01, −0.11 to +0.09). The ratio effect is just the difference between these two,
