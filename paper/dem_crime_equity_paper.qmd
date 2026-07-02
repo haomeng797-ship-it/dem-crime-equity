@@ -41,7 +41,7 @@ format:
         \renewcommand{\headrulewidth}{0pt}
         \fancypagestyle{plain}{\fancyhf{}\fancyhead[L]{THE MEASURE MAKES THE FINDING}\fancyhead[R]{\thepage}\renewcommand{\headrulewidth}{0pt}}
         \usepackage{titling}
-        \pretitle{\begin{center}\normalsize\bfseries}
+        \pretitle{\begin{center}\large\bfseries}
         \posttitle{\par\end{center}\vskip 0.5em}
         \preauthor{\begin{center}\normalsize}
         \postauthor{\par\end{center}}
