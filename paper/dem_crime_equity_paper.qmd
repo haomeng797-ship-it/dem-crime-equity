@@ -90,9 +90,9 @@ can disagree about whether a place is becoming more equal or less, and sometimes
 itself.
 
 This paper shows that the most-used of these measures can improve or deteriorate for reasons that
-have nothing to do with how Black residents are treated; it develops an alternative, one joint
+have nothing to do with how Black residents are treated. It develops an alternative, one joint
 Bayesian model of the two imprisonment rates the measures summarize, in which every measure becomes a
-contrast of a single posterior and their disagreement becomes a probability the model reports; and it
+contrast of a single posterior and their disagreement becomes a probability the model reports, and it
 traces what that means for the institutions that grade states with the ratio.
 
 The usual response is to argue about which measure is the right one. Criminology has long recognized
@@ -282,7 +282,7 @@ of racial equality. Nor is the flip a special property of the democracy index. P
 and the governor's party, common structural determinants of incarceration and political economy,
 reproduce the same pattern across the four measures. By the ratio, states with Republican governors
 rank among the most racially equal, because the governor's party correlates with white imprisonment
-and is essentially unrelated to Black imprisonment; the appendix reports the full grid.
+and is essentially unrelated to Black imprisonment; Appendix C reports the full grid.
 
 The same arithmetic runs through the field's most-quoted trend. Nationally, the Black/White
 prison-rate ratio narrowed from about 7.4 in 2000 to 4.2 in 2019, a development widely and rightly
@@ -291,7 +291,7 @@ Black imprisonment falling; the other 29 percent came from white imprisonment ri
 percent over those years, the years of the opioid crisis. More than a quarter of the improvement in
 the most-cited equity trend is the denominator moving in a direction no one celebrates. Extending the
 window through 2022 shrinks the white-rate share to about 5 percent, because pandemic-era declines
-pulled the white rate back down; the appendix gives the decomposition.
+pulled the white rate back down; Appendix B gives the decomposition.
 
 # Demonstration 2: comparing states, or comparing a state with itself
 
@@ -396,7 +396,7 @@ The pre-reform fit is close, with a 2016 gap of only 0.07 points, which lends th
 credibility (Figure 5). After the reform, the gaps are −1.4 points in 2020 and −4.8 in 2022, both
 negative rather than positive. The placebo test returns a permutation p-value of about 0.14: Florida
 ranks third of the twenty-one units on the post-to-pre prediction error ratio, high in the placebo
-distribution but short of conventional significance (Figure 6; the appendix reports the donor pool,
+distribution but short of conventional significance (Figure 6; Appendix A reports the donor pool,
 weights, and fit diagnostics). Amendment 4 produced no measurable increase in turnout.
 
 Two further checks indicate the null is robust rather than an artifact of the specification. An in-time
@@ -687,15 +687,15 @@ Young, C., & Holsteen, K. (2017). Model uncertainty and robustness: A computatio
 \endgroup
 ```
 
-# Appendix: synthetic control details {.unnumbered}
+# Appendix A: synthetic control details {.unnumbered}
 
 Twenty-nine states have a complete VAP-turnout series across the twelve even-year elections from
-2000 to 2022. Setting aside Florida as the treated unit and dropping the twelve states that also
-changed their felon-voting rules between 2016 and 2022 (California, Colorado, Connecticut, Iowa,
-Kentucky, Louisiana, Nevada, New Jersey, New Mexico, New York, Virginia, and Washington) leaves
-twenty clean donors: Alaska, Arizona, Hawaii, Idaho, Illinois, Indiana, Kansas, Maryland,
-Massachusetts, Michigan, Montana, New Hampshire, North Dakota, Ohio, Oregon, Rhode Island, South
-Dakota, Utah, Vermont, and Wyoming.
+2000 to 2022: Florida, the treated unit; eight states that also changed their felon-voting rules
+between 2016 and 2022 and are therefore dropped (California, Louisiana, Nevada, New Jersey, New
+Mexico, New York, Virginia, and Washington; four further reformers, Colorado, Connecticut, Iowa, and
+Kentucky, already fail the completeness screen); and twenty clean donors: Alaska, Arizona, Hawaii,
+Idaho, Illinois, Indiana, Kansas, Maryland, Massachusetts, Michigan, Montana, New Hampshire, North
+Dakota, Ohio, Oregon, Rhode Island, South Dakota, Utah, Vermont, and Wyoming.
 
 Synthetic Florida is built from mean pre-period turnout over 2000 to 2018 and turnout in the
 presidential years 2008, 2012, and 2016. The optimizer places almost all weight on four donors:
@@ -706,12 +706,13 @@ points, and the 2016 gap is 0.07 points.
 Year-by-year gaps between Florida and synthetic Florida are +1.5 points in 2014, +0.1 in 2016, +1.2
 in 2018, then −1.4 in 2020 and −4.8 in 2022. The post-to-pre mean squared prediction error ratio is
 9.2, which places Florida third among the twenty-one units; permutation inference on that rank gives
-p = 3/21, about 0.14. The in-time placebo that moves treatment to 2016 fits the genuinely
-pre-treatment years with an RMSPE of 1.64 and produces small positive gaps, +0.6 points in 2012 and
-+1.1 in 2014. Dropping each weighted donor in turn leaves the 2020 gap between −1.6 and +1.1 points
+p = 3/21, about 0.14. The in-time placebo that moves treatment back to 2016 fits the genuinely
+pre-treatment years with an RMSPE of 1.64 (gaps of +0.6 points in 2012 and +1.1 in 2014) and, in the
+placebo's own post-period, produces only the small positive gaps reported in the text, +1.0 in 2016
+and +2.1 in 2018, the opposite sign of the true post-reform gaps. Dropping each weighted donor in turn leaves the 2020 gap between −1.6 and +1.1 points
 and the 2022 gap between −5.4 and +1.3.
 
-# Appendix: decomposing the national trend {.unnumbered}
+# Appendix B: decomposing the national trend {.unnumbered}
 
 National Black and white prison rates are aggregated from the Vera counts and populations (prison,
 ages 15 to 64), using only the fifty states with data in both endpoint years so that changes in which
@@ -722,7 +723,7 @@ and 0.16 from the white rate, a 71/29 split. Extending the window from 2000 to 2
 split, because pandemic-era declines left the white rate only 3 percent above its 2000 level. The
 script that produces these figures is in the repository.
 
-# Appendix: the sign flip generalizes beyond democracy {.unnumbered}
+# Appendix C: the sign flip generalizes beyond democracy {.unnumbered}
 
 Demonstration 1 varies the measure while holding the democracy axis fixed. This appendix varies the
 axis. Three common structural determinants of incarceration and political economy take the place of
