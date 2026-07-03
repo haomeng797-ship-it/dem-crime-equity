@@ -526,6 +526,13 @@ states' uneven recording of Hispanic ethnicity, fall outside the analysis. And t
 throughout. State rates average over counties that differ sharply in policing and prosecution, so
 nothing here speaks to disparity within a state.
 
+A further interpretive limit concerns what the democracy score can and cannot separate. The State
+Democracy Index moves with party control of state government, with region, and with a state's broader
+political culture, and the analysis does not try to pull these apart. The robustness check that adds
+census region as a fixed effect preserves the reversal, but a "democracy" coefficient here is best
+read as tracking a bundle of liberal state governance rather than democratic institutions in
+isolation. Distinguishing the two would take a design built for that question.
+
 # Conclusion
 
 This paper has used one case, race and democracy and punishment in the U.S. states, to make a
