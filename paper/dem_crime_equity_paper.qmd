@@ -87,7 +87,10 @@ as a ratio, as an absolute rate, or as a gap, and these do not move together: on
 can disagree about whether a place is becoming more equal or less, and sometimes about the direction
 itself.
 
-The usual response is to argue about which measure is the right one. That argument does not end,
+The usual response is to argue about which measure is the right one. Criminology has long recognized
+this debate: whether racial disproportionality looks large or small hinges on the benchmark in the
+denominator, on the attribution of differential involvement, and on the data source itself (Beck &
+Blumstein, 2018; Cesario et al., 2019; Sabol et al., 2025). The argument does not end,
 because each measure answers a slightly different question, and a researcher can nearly always find
 the one that supports a preferred conclusion. The case in this paper makes the stakes concrete. Asked
 whether more democratic states punish Black and white residents more equally, the most-cited measure
