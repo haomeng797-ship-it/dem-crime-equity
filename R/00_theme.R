@@ -55,6 +55,9 @@ theme_set(theme_poli())
 
 # high-resolution save via the ragg device (crisp text, system fonts)
 save_fig <- function(plot, file, width = 8, height = 5) {
+  if (Sys.getenv("FIG_JOURNAL", "") == "1") {      # journal set: no in-figure headlines/footers
+    plot <- plot + ggplot2::labs(title = NULL, subtitle = NULL, caption = NULL)
+  }
   outdir <- Sys.getenv("FIG_OUTDIR", "")           # default "" -> save to figures/ as written
   if (nzchar(outdir)) file <- sub("/figures/", paste0("/", outdir, "/"), file, fixed = TRUE)
   dir.create(dirname(file), showWarnings = FALSE, recursive = TRUE)

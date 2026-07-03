@@ -47,3 +47,9 @@ sv <- function(f) ggsave(f, p, width=8.5, height=5, dpi=300, device=ragg::agg_pn
 Sys.unsetenv("FIG_FONT"); source(file.path(proj,"R","00_theme.R")); sv(file.path(proj,"figures","07_spec_curve.png"))
 Sys.setenv(FIG_FONT="Times New Roman"); source(file.path(proj,"R","00_theme.R")); sv(file.path(proj,"figures_pdf","07_spec_curve.png"))
 cat("saved figures/07_spec_curve.png + figures_pdf/07_spec_curve.png\n")
+# journal set: Times, no in-figure headline (caption carries the description)
+p_j <- p + labs(title = NULL, subtitle = NULL, caption = NULL)
+dir.create(file.path(proj, "figures_journal"), showWarnings = FALSE)
+ggsave(file.path(proj, "figures_journal", "07_spec_curve.png"), p_j,
+       width = 8.5, height = 5, dpi = 300, device = ragg::agg_png, bg = "white")
+cat("saved figures_journal/07_spec_curve.png\n")
