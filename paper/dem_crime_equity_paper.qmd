@@ -100,7 +100,10 @@ this debate: whether racial disproportionality looks large or small hinges on th
 denominator, on the attribution of differential involvement, and on the data source itself (Beck &
 Blumstein, 2018; Cesario et al., 2019; Sabol et al., 2025). The argument does not end,
 because each measure answers a slightly different question, and a researcher can nearly always find
-the one that supports a preferred conclusion. The case in this paper makes the stakes concrete. Asked
+the one that supports a preferred conclusion: by one measure New Jersey runs the widest racial
+disparity in imprisonment in the country, by another its Black imprisonment rate sits below the
+national average, and both readings are available to whoever prefers them. The case in this paper
+makes the stakes concrete. Asked
 whether more democratic states punish Black and white residents more equally, the most-cited measure
 says inequality is worse where democracy is healthier. The reading is an artifact of the denominator:
 the ratio is sensitive to the white rate, which collapses in more democratic states, so the metric can
@@ -148,16 +151,16 @@ defensible ones, the approach formalized as the garden of forking paths and the 
 specification-curve analyses it motivated (Gelman & Loken, 2014; Steegen et al., 2016; Simonsohn et
 al., 2020; Young & Holsteen, 2017). This paper works in that tradition.
 
-What this tradition has lacked is a compact, concrete demonstration: a single
-consequential question carried through the ordinary choices an analyst makes, with the answer shown to
-move at each step. That is what this paper sets out to provide. It takes one case and walks it through
-four routine decisions, treating each decision as part of the analysis rather than as a preliminary to
-it. The contribution is not the insight that measurement and framing matter, but the worked example that
-shows how much they matter, and how readily they compound, once a real claim about racial inequality
-is at stake. The contribution is methodological in
-a second sense as well: the paper shows that a multiverse of measurement and design choices, usually
-presented as a row of separate results, can be reorganized as contrasts of a single Bayesian model
-that both explains the disagreements and quantifies how reliable they are.
+What this tradition has lacked is a way past the choice itself. The paper's central contribution is
+to provide one: a multiverse of measurement and design choices, usually presented as a row of separate
+results, can be reorganized as contrasts of a single Bayesian model that both explains the
+disagreements and quantifies how reliable they are. The second contribution is the demonstration that
+motivates the model: a single consequential question carried through the ordinary choices an analyst
+makes, with the answer shown to move at each step. The paper takes one case and walks it through four
+routine decisions, treating each decision as part of the analysis rather than as a preliminary to it.
+The point is not the insight that measurement and framing matter, but the worked example that shows
+how much they matter, and how readily they compound, once a real claim about racial inequality is at
+stake.
 
 ## Measuring racial disparity in incarceration
 
@@ -228,7 +231,7 @@ treating Black and white residents most unequally behind bars.
 :::
 
 Before accepting that, it is worth asking whether the result is a fact about the world or a fact about
-the ratio. The test is simple. I hold the horizontal axis fixed, so the measure of democracy never
+the ratio. I hold the horizontal axis fixed, so the measure of democracy never
 changes, and I substitute different measures of "racial inequality" on the vertical axis (Figure 2). If
 the relationship is real, it should survive the substitution. It does not. The Black/White ratio
 correlates positively with democracy, at about +0.26, which is the pattern we just saw. The absolute
@@ -326,7 +329,7 @@ $\beta_{\mathrm{w}}$ are the between- and within-state coefficients plotted in F
 ![Within-state versus between-state democracy coefficients. The cross-sectional ratio effect (orange) disappears within states (blue).](../figures/03_within_between.png){width=85%}
 :::
 
-The contrast is clean. The alarming cross-sectional result for the ratio turns out to be entirely
+The alarming cross-sectional result for the ratio turns out to be entirely
 between-state, at about +0.18, and to vanish within states, at about +0.01. In other words, it reflects
 which states are which, not what happens when a given state's democracy changes. Within states,
 stronger democracy goes with lower imprisonment of both groups, by roughly −0.04 for the Black rate
@@ -336,8 +339,8 @@ however, is neither within nor between democracy but the year trend: the ratio f
 year and the Black rate about 2.7 percent, a nationwide decline that has little to do with state
 democracy. An analysis that left time out would mistake that tide for its own discovery. So the
 within-state link points consistently downward, but it is modest, and, as the later model shows, how
-real it looks depends on whether the strong year-to-year persistence is modeled. The paper is stronger
-for saying so. One choice of comparison, cross-section against within-state, has already turned a striking
+real it looks depends on whether the strong year-to-year persistence is modeled. One choice of
+comparison, cross-section against within-state, has already turned a striking
 effect into a small one.
 
 # Demonstration 3: a method that reads in more than the data hold
