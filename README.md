@@ -9,8 +9,6 @@ A small, reproducible study in R on public state-level data, asking whether stro
 
 ## Read it
 
-The main write-up is a short paper, **"The Measure Makes the Finding."**
-
 - [Read the paper (web)](https://haomeng797-ship-it.github.io/dem-crime-equity/paper/dem_crime_equity_paper.html)
 - [The paper as a formatted PDF](https://haomeng797-ship-it.github.io/dem-crime-equity/paper/dem_crime_equity_paper.pdf)
 
