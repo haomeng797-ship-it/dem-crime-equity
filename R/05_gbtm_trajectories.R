@@ -75,11 +75,11 @@ cat("\nregion mix by class:\n"); print(table(class = cls2$class, region = cls2$r
 traj <- grid |>
   group_by(class, year) |>
   summarise(`State Democracy Index` = mean(democracy, na.rm = TRUE),
-            `Black incarceration rate (per 100k)` = mean(black_prison_pop_rate, na.rm = TRUE),
+            `Black prison rate (per 100k)` = mean(black_prison_pop_rate, na.rm = TRUE),
             `Black / White ratio` = mean(bw_ratio, na.rm = TRUE), .groups = "drop") |>
   pivot_longer(-c(class, year), names_to = "series", values_to = "value") |>
   mutate(series = factor(series, levels = c("State Democracy Index",
-            "Black incarceration rate (per 100k)", "Black / White ratio")))
+            "Black prison rate (per 100k)", "Black / White ratio")))
 
 p <- ggplot(traj, aes(year, value, color = class)) +
   geom_line(linewidth = 0.7) +
