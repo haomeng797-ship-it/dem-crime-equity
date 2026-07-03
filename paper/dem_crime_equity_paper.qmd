@@ -172,7 +172,8 @@ population is placed in the denominator (Cesario et al., 2019), and even on the 
 source and racial-classification scheme, which can widen or narrow the measured Black/White gap
 (Sabol et al., 2025). Rather than commit to one measure in advance, this paper carries
 three in parallel, the ratio, the absolute Black rate, and the gap between the Black and white rates,
-and treats their disagreement as part of the evidence.
+alongside the white rate that underlies them all, and treats their disagreement as part of the
+evidence.
 
 ## The case: state democracy, disenfranchisement, and Florida
 
@@ -202,8 +203,9 @@ per 100,000, counting people held in state prisons rather than local jails, ages
 and white rates used here run from 1990 to 2022. The UF Election Lab turnout
 series (McDonald, 2023) gives voting-age-population (VAP) turnout for each even-year election.
 
-Because racial inequality has no single definition, the paper follows three measures side by side: the
-Black/White rate ratio, the absolute Black rate, and the gap between the Black and white rates. Over
+Because racial inequality has no single definition, the paper follows three disparity measures side by
+side, the Black/White rate ratio, the absolute Black rate, and the gap between the Black and white
+rates, plus the white rate that underlies them. Over
 this period the national ratio sits near a median of 5.4. For the natural experiment the outcome is
 VAP turnout, whose denominator is the voting-age population and so does not move mechanically when
 people are re-enfranchised.
@@ -237,11 +239,11 @@ correlates strongly negatively, at about −0.34. Four measures of the supposedl
 they do not merely differ in strength; they point in different directions.
 
 ::: {.content-visible when-format="pdf"}
-![The same democracy axis against four measures of racial inequity. The sign of the relationship flips depending on the measure.](../figures_pdf/02_equity_measures.png){width=95%}
+![The same democracy axis against four measures of racial inequality. The sign of the relationship flips depending on the measure.](../figures_pdf/02_equity_measures.png){width=95%}
 :::
 
 ::: {.content-visible when-format="html"}
-![The same democracy axis against four measures of racial inequity. The sign of the relationship flips depending on the measure.](../figures/02_equity_measures.png){width=95%}
+![The same democracy axis against four measures of racial inequality. The sign of the relationship flips depending on the measure.](../figures/02_equity_measures.png){width=95%}
 :::
 
 The reason comes into focus once we look at what the ratio is made of. It is the Black rate divided by
@@ -410,7 +412,8 @@ Two further checks indicate the null is robust rather than an artifact of the sp
 placebo that moves the treatment back to 2016, before the reform, yields only small gaps in the
 genuinely pre-treatment years, about +1.0 points in 2016 and +2.1 in 2018; these are modest and
 positive, the opposite sign of the post-reform gaps, so the design does not manufacture the result,
-though the 2018 gap signals a mild pre-existing drift. A leave-one-out analysis that re-fits the model
+though the 2018 gap signals a mild pre-existing drift, plausibly including mobilization by the
+Amendment 4 campaign itself, which was on the November 2018 ballot. A leave-one-out analysis that re-fits the model
 dropping each weighted donor in turn, with synthetic Florida drawing mainly on Arizona and New
 Hampshire, leaves the 2020 gap between −1.6 and +1.1 points and the 2022 gap between −5.4 and +1.3,
 straddling zero in every case, so no single donor drives the estimate. The negative 2022 gap is
@@ -670,7 +673,7 @@ Merry, S. E. (2016). *The seductions of quantification: Measuring human rights, 
 
 Moonesinghe, R., & Beckles, G. L. A. (2015). Measuring health disparities: A comparison of absolute and relative disparities. *PeerJ, 3*, e1438. https://doi.org/10.7717/peerj.1438
 
-Morse, M. (2021). The future of felon disenfranchisement reform: Evidence from the campaign to restore voting rights in Florida. *California Law Review, 109*(3).
+Morse, M. (2021). The future of felon disenfranchisement reform: Evidence from the campaign to restore voting rights in Florida. *California Law Review, 109*(3), 1143.
 
 Muller, C. (2012). Northward migration and the rise of racial disparity in American incarceration, 1880–1950. *American Journal of Sociology, 118*(2), 281–326. https://doi.org/10.1086/666384
 
