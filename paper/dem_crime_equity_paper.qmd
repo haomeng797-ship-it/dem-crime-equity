@@ -102,7 +102,7 @@ Blumstein, 2018; Cesario et al., 2019; Sabol et al., 2025). The argument does no
 because each measure answers a slightly different question, and a researcher can nearly always find
 the one that supports a preferred conclusion: by one measure New Jersey runs the widest racial
 disparity in imprisonment in the country, by another its Black imprisonment rate sits below the
-national average, and both readings are available to whoever prefers them. The case in this paper
+national average (Nellis, 2021), and both readings are available to whoever prefers them. The case in this paper
 makes the stakes concrete. Asked
 whether more democratic states punish Black and white residents more equally, the most-cited measure
 says inequality is worse where democracy is healthier. The reading is an artifact of the denominator:
