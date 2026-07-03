@@ -80,7 +80,7 @@ execute:
 # Introduction
 
 How equally the American criminal justice system treats Black and white people is among the most
-consequential questions in the study of race and punishment, and in practice it is answered with a
+consequential questions in the study of race and punishment (Western, 2006), and in practice it is answered with a
 single statistic. Most often that statistic is the Black/White imprisonment ratio, and a great deal of
 policy and scholarship rests on it. But racial disparity has no canonical measure. It can be written
 as a ratio, as an absolute rate, or as a gap, and these do not move together: on the same data they
@@ -123,17 +123,15 @@ A claim about inequality is never simply a reading of the evidence. It is also a
 choices made in turning evidence into a number, and a number into a sentence. Scholars writing under
 banners such as data feminism and QuantCrit have pressed this point in recent years, arguing that data
 are not neutral and that statistics, far from speaking for themselves, carry the assumptions of
-whoever collected, classified, and summarized them (D'Ignazio & Klein, 2020; Gillborn, Warmington, &
-Demack, 2018). The complaint is not that quantification is worthless but that it hides its own
+whoever collected, classified, and summarized them (D'Ignazio & Klein, 2020; Gillborn et al., 2018). The complaint is not that quantification is worthless but that it hides its own
 premises. Measurement of inequality is a clear example: faced with the same data, an analyst can often
 choose the measure that best supports a preferred conclusion, and the decision between an absolute and
-a relative measure alone can send a trend in opposite directions (Kjellsson, Gerdtham, & Petrie, 2015;
-Moonesinghe & Beckles, 2015). Framing does comparable work even when the numbers are held fixed.
+a relative measure alone can send a trend in opposite directions (Kjellsson et al., 2015; Moonesinghe & Beckles, 2015). Framing does comparable work even when the numbers are held fixed.
 Describing a gap as one of "achievement" rather than "opportunity," for instance, shifts where readers
 locate its causes, away from structures and toward individuals, without altering a single statistic
 (Quinn, 2025). And as a finding travels outward from the model that produced it, the qualifications
 that gave it meaning tend to drop away, so that a conditional finding begins to circulate as a settled
-fact (van der Bles, van der Linden, Freeman, & Spiegelhalter, 2020; Merry, 2016). A more constructive
+fact (van der Bles et al., 2020; Merry, 2016). A more constructive
 response to the same problem is to stop hiding the choices and report a result across all of the
 defensible ones, the approach formalized as the garden of forking paths and the multiverse and
 specification-curve analyses it motivated (Gelman & Loken, 2014; Steegen et al., 2016; Simonsohn et
@@ -159,22 +157,26 @@ imprisons white residents at an unusually low one, and these are very different 
 ratio reports identically. Criminologists have long shown that conclusions about racial
 disproportionality hinge on such choices: on how much of a gap is attributed to differential
 involvement rather than to downstream processing (Beck & Blumstein, 2018), on which benchmark
-population is placed in the denominator (Cesario, Johnson, & Terrill, 2019), and even on the data
+population is placed in the denominator (Cesario et al., 2019), and even on the data
 source and racial-classification scheme, which can widen or narrow the measured Black/White gap
-(Sabol, Johnson, & Lynch, 2025). Rather than commit to one measure in advance, this paper carries
+(Sabol et al., 2025). Rather than commit to one measure in advance, this paper carries
 three in parallel, the ratio, the absolute Black rate, and the gap between the Black and white rates,
 and treats their disagreement as part of the evidence.
 
 ## The case: state democracy, disenfranchisement, and Florida
 
-State democracy can be measured and tracked. The State Democracy Index scores each state on features
+Criminology gives reasons to expect a link between state politics and race-specific punishment:
+racial threat theory predicts more punitive control where the Black population looms larger (Blalock,
+1967), and state imprisonment rates respond to partisan control and conservative public opinion
+(Jacobs & Carmichael, 2001). State democracy itself can be measured and tracked. The State Democracy
+Index scores each state on features
 such as electoral participation, the fairness of district maps, and the accessibility of voting, and
 those scores move over time, including downward in a subset of states (Grumbach, 2022, 2023). Criminal
 disenfranchisement, meanwhile, is one of the oldest and most racially loaded boundaries on the vote.
 Many states wrote or expanded these laws in the decades after the Civil War, some in terms understood
 at the time as a way to limit Black political power, and the legacy persists: roughly four million
 Americans remain barred from voting by a felony record, with Black citizens barred at several times
-the rate of others (Manza & Uggen, 2006; The Sentencing Project, 2024). Florida concentrated this
+the rate of others (Behrens et al., 2003; Manza & Uggen, 2006; The Sentencing Project, 2024). Florida concentrated this
 history into a single recent episode. In 2018 its voters passed Amendment 4, restoring the vote to
 about 1.4 million people upon completion of their sentences. Within months, however, the legislature
 passed SB7066, which redefined "completion" to require paying all outstanding court fines and fees
@@ -242,7 +244,9 @@ on this. White imprisonment runs about 230 per 100,000 in the more democratic No
 in the South, more than twice as high, while the Black rate stays within a much narrower band, roughly
 1,460 to 2,060 across the four regions. The ratio therefore runs highest on average across the
 low-white-rate Northeast and lowest across the high-white-rate South, even though the South is the less
-democratic region. The measure reported most often,
+democratic region. The regional pattern itself is old: northern states have posted wider Black/White
+imprisonment disparities than southern ones since long before the current policy era (Muller, 2012).
+The measure reported most often,
 then, is also the one most exposed to movement that has nothing to do with how Black people are
 treated, since a state can climb the ratio simply by incarcerating fewer white people. Judged by the
 absolute Black rate, more democratic states look slightly better; judged by the gap, they look no
@@ -252,7 +256,7 @@ three sentences. Only the measure has.
 This is not a quirk of incarceration data. The divergence between absolute and relative measures of
 disparity is a known formal result, demonstrated in health research where the two can move in opposite
 directions over the same period (Moonesinghe & Beckles, 2015), and the dependence of measured racial
-disparity on such choices has been shown directly for imprisonment (Sabol, Johnson, & Lynch, 2025).
+disparity on such choices has been shown directly for imprisonment (Sabol et al., 2025).
 What the figure adds is a vivid sense of how cleanly the choice can reverse a headline: one decision,
 made before any modeling begins, has already settled whether democracy looks like a friend or an enemy
 of racial equality.
@@ -332,7 +336,7 @@ part of the analysis.
 The state-level patterns are associations, not causes, and to get closer to cause I turn to a natural
 experiment. In 2018 Florida passed Amendment 4, restoring the vote to about 1.4 million people with
 felony convictions, the largest such restoration in modern U.S. history. With a single treated state
-I use synthetic control (Abadie, Diamond, & Hainmueller, 2010), implemented with the
+I use synthetic control (Abadie et al., 2010), implemented with the
 tidysynth package (Dunford, 2023). The method assembles a synthetic Florida from a weighted combination
 of states that did not change their felon-voting laws, chosen so that the combination reproduces
 Florida's turnout history before the reform, and then reads the reform's effect as the gap that opens
@@ -379,7 +383,7 @@ effect. SB7066 required people to pay all outstanding court fines, fees, and res
 regaining the vote, and the fullest empirical account of the amendment's aftermath finds that unpaid
 court debt kept most of the people it covered from regaining the vote (Morse, 2021). The requirement
 works as a wealth test on the franchise and falls hardest on poor and disproportionately Black
-citizens. Its effect is visible in the counts: in 2024, six years after the amendment passed, more
+citizens (Meredith & Morse, 2017). Its effect is visible in the counts: in 2024, six years after the amendment passed, more
 than 700,000 Floridians who had completed their sentences remained disenfranchised for unpaid legal
 financial obligations, more than in any other state (The Sentencing Project, 2024). On paper the
 reform enfranchised more than a million people. In practice it reached few, and whether you call it
@@ -513,7 +517,7 @@ together, the demonstrations show how easily the convenient answer turns out to 
 
 Several limits bound the claims. Aggregate turnout is a blunt instrument: even a fully effective
 Amendment 4, involving about 8 percent of the voting-age population, most of whom never register or
-vote, might move statewide turnout by less than a point, below what this design can pick up. The null means the effect was too small for this test to see,
+vote (Uggen & Manza, 2002), might move statewide turnout by less than a point, below what this design can pick up. The null means the effect was too small for this test to see,
 not that re-enfranchisement does nothing, and a sharper test would follow the formerly incarcerated
 themselves in voter files. The first three
 demonstrations are observational. They help frame the question; they do not answer it causally. State democracy and incarceration are themselves estimated
@@ -527,7 +531,8 @@ throughout. State rates average over counties that differ sharply in policing an
 nothing here speaks to disparity within a state.
 
 A further interpretive limit concerns what the democracy score can and cannot separate. The State
-Democracy Index moves with party control of state government, with region, and with a state's broader
+Democracy Index moves with party control of state government, the very lever the punishment
+literature emphasizes (Jacobs & Carmichael, 2001), with region, and with a state's broader
 political culture, and the analysis does not try to pull these apart. The robustness check that adds
 census region as a fixed effect preserves the reversal, but a "democracy" coefficient here is best
 read as tracking a bundle of liberal state governance rather than democratic institutions in
@@ -562,6 +567,10 @@ Bates, D., Mächler, M., Bolker, B., & Walker, S. (2015). Fitting linear mixed-e
 
 Beck, A. J., & Blumstein, A. (2018). Racial disproportionality in U.S. state prisons: Accounting for the effects of racial and ethnic differences in criminal involvement, arrests, sentencing, and time served. *Journal of Quantitative Criminology, 34*(3), 853–883.
 
+Behrens, A., Uggen, C., & Manza, J. (2003). Ballot manipulation and the "menace of Negro domination": Racial threat and felon disenfranchisement in the United States, 1850–2002. *American Journal of Sociology, 109*(3), 559–605.
+
+Blalock, H. M. (1967). *Toward a theory of minority-group relations*. Wiley.
+
 Bürkner, P.-C. (2017). brms: An R package for Bayesian multilevel models using Stan. *Journal of Statistical Software, 80*(1), 1–28.
 
 Cesario, J., Johnson, D. J., & Terrill, W. (2019). Is there evidence of racial disparity in police use of deadly force? Analyses of officer-involved fatal shootings in 2015–2016. *Social Psychological and Personality Science, 10*(5), 586–595.
@@ -582,6 +591,8 @@ Grumbach, J. M. (2023). Laboratories of democratic backsliding. *American Politi
 
 Grumbach, J. M., & Bitton, F. (2024). *State Democracy Index 2.0* [Data set]. Democracy Policy Lab, University of California, Berkeley.
 
+Jacobs, D., & Carmichael, J. T. (2001). The politics of punishment across time and space: A pooled time-series analysis of imprisonment rates. *Social Forces, 80*(1), 61–89.
+
 Kjellsson, G., Gerdtham, U.-G., & Petrie, D. (2015). Lies, damned lies, and health inequality measurements: Understanding the value judgments. *Epidemiology, 26*(5), 673–680.
 
 Magrini, A. (2022). *gbmt: Group-based multivariate trajectory modeling* [R package].
@@ -590,11 +601,15 @@ Manza, J., & Uggen, C. (2006). *Locked out: Felon disenfranchisement and America
 
 McDonald, M. P. (2023). *United States Elections Project: Voter turnout data, 1980–2022* [Data set]. UF Election Lab, University of Florida.
 
+Meredith, M., & Morse, M. (2017). Discretionary disenfranchisement: The case of legal financial obligations. *The Journal of Legal Studies, 46*(2), 309–338.
+
 Merry, S. E. (2016). *The seductions of quantification: Measuring human rights, gender violence, and sex trafficking*. University of Chicago Press.
 
 Moonesinghe, R., & Beckles, G. L. A. (2015). Measuring health disparities: A comparison of absolute and relative disparities. *PeerJ, 3*, e1438.
 
 Morse, M. (2021). The future of felon disenfranchisement reform: Evidence from the campaign to restore voting rights in Florida. *California Law Review, 109*(3).
+
+Muller, C. (2012). Northward migration and the rise of racial disparity in American incarceration, 1880–1950. *American Journal of Sociology, 118*(2), 281–326.
 
 Mundlak, Y. (1978). On the pooling of time series and cross section data. *Econometrica, 46*(1), 69–85.
 
@@ -610,9 +625,13 @@ Simonsohn, U., Simmons, J. P., & Nelson, L. D. (2020). Specification curve analy
 
 Steegen, S., Tuerlinckx, F., Gelman, A., & Vanpaemel, W. (2016). Increasing transparency through a multiverse analysis. *Perspectives on Psychological Science, 11*(5), 702–712.
 
+Uggen, C., & Manza, J. (2002). Democratic contraction? Political consequences of felon disenfranchisement in the United States. *American Sociological Review, 67*(6), 777–803.
+
 van der Bles, A. M., van der Linden, S., Freeman, A. L. J., & Spiegelhalter, D. J. (2020). The effects of communicating uncertainty on public trust in facts and numbers. *Proceedings of the National Academy of Sciences, 117*(14), 7672–7683.
 
 Vera Institute of Justice. (2024). *Incarceration trends* [Data set].
+
+Western, B. (2006). *Punishment and inequality in America*. Russell Sage Foundation.
 
 Young, C., & Holsteen, K. (2017). Model uncertainty and robustness: A computational framework for multimodel analysis. *Sociological Methods & Research, 46*(1), 3–40.
 
