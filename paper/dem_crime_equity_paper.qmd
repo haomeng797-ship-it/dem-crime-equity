@@ -307,7 +307,14 @@ average, which holds the between-state variation that the earlier figures relied
 each year's deviation from that average, which holds the within-state variation that tracks change over
 time. The split follows Mundlak (1978). I then fit a linear mixed model with a random intercept for
 each state and a common year trend, using the lme4 package (Bates et al., 2015), so that the two kinds
-of variation are estimated side by side rather than confused with each other (Figure 3).
+of variation are estimated side by side rather than confused with each other (Figure 3). In equation
+form,
+
+$$y_{st} = \alpha_s + \beta_{\mathrm{b}}\,\bar{D}_s + \beta_{\mathrm{w}}\,(D_{st} - \bar{D}_s) + \gamma\,t + \varepsilon_{st}, \qquad \alpha_s \sim N(\alpha_0, \sigma^2_\alpha),$$
+
+where $y_{st}$ is one log outcome (the Black rate, the white rate, or their ratio) in state $s$ and
+year $t$, $\bar{D}_s$ is the state's long-run mean democracy score, and $\beta_{\mathrm{b}}$ and
+$\beta_{\mathrm{w}}$ are the between- and within-state coefficients plotted in Figure 3.
 
 ::: {.content-visible when-format="pdf"}
 ![Within-state versus between-state democracy coefficients. The cross-sectional ratio effect (orange) disappears within states (blue).](../figures_pdf/03_within_between.png){width=85%}
@@ -459,8 +466,20 @@ form of the second demonstration, split into a between-state part, a state's lon
 a within-state part, its year-to-year deviation; each state keeps its own intercept, and the two
 outcomes' intercepts and residuals are free to correlate; within each state the residuals follow a
 first-order autoregressive process, so the strong year-to-year persistence the second demonstration
-warned about is modeled rather than assumed away. The model is Bayesian, fit with weakly informative
-priors using the brms package (Bürkner, 2017), and it converged cleanly, with every R-hat below 1.01
+warned about is modeled rather than assumed away. Written out,
+
+$$\log B_{st} = \alpha^{B}_{s} + \beta^{B}_{\mathrm{b}}\,\bar{D}_{s} + \beta^{B}_{\mathrm{w}}\,\tilde{D}_{st} + \gamma^{B}\,t + \varepsilon^{B}_{st},$$
+
+$$\log W_{st} = \alpha^{W}_{s} + \beta^{W}_{\mathrm{b}}\,\bar{D}_{s} + \beta^{W}_{\mathrm{w}}\,\tilde{D}_{st} + \gamma^{W}\,t + \varepsilon^{W}_{st},$$
+
+with $\bar{D}_{s}$ and $\tilde{D}_{st}$ the standardized between- and within-state democracy terms,
+$t$ a scaled year trend, state intercepts $(\alpha^{B}_{s}, \alpha^{W}_{s})$ drawn from a bivariate normal
+with a freely estimated correlation, first-order autoregressive residuals
+$\varepsilon_{st} = \rho\,\varepsilon_{s,t-1} + u_{st}$ within each state, and the contemporaneous
+shocks $u^{B}_{st}$ and $u^{W}_{st}$ also free to correlate. Regression slopes carry Normal(0, 1)
+priors; all other priors are the brms defaults. The between-state ratio effect in Figure 8 is the
+posterior contrast $\beta^{B}_{\mathrm{b}} - \beta^{W}_{\mathrm{b}}$. The model is fit with the brms
+package (Bürkner, 2017) and converged cleanly, with every R-hat below 1.01
 and no divergent transitions; the autoregressive parameter is estimated near 0.95 to 0.98, which is
 just how serially dependent these series are. The coefficients below are scaled per one standard
 deviation of democracy rather than per index point, so their sizes are not directly comparable to
@@ -603,39 +622,39 @@ every model, and every figure are available at https://github.com/haomeng797-shi
 \setlength{\leftskip}{0.5in}
 ```
 
-Abadie, A., Diamond, A., & Hainmueller, J. (2010). Synthetic control methods for comparative case studies: Estimating the effect of California's tobacco control program. *Journal of the American Statistical Association, 105*(490), 493–505.
+Abadie, A., Diamond, A., & Hainmueller, J. (2010). Synthetic control methods for comparative case studies: Estimating the effect of California's tobacco control program. *Journal of the American Statistical Association, 105*(490), 493–505. https://doi.org/10.1198/jasa.2009.ap08746
 
-Bates, D., Mächler, M., Bolker, B., & Walker, S. (2015). Fitting linear mixed-effects models using lme4. *Journal of Statistical Software, 67*(1), 1–48.
+Bates, D., Mächler, M., Bolker, B., & Walker, S. (2015). Fitting linear mixed-effects models using lme4. *Journal of Statistical Software, 67*(1), 1–48. https://doi.org/10.18637/jss.v067.i01
 
-Beck, A. J., & Blumstein, A. (2018). Racial disproportionality in U.S. state prisons: Accounting for the effects of racial and ethnic differences in criminal involvement, arrests, sentencing, and time served. *Journal of Quantitative Criminology, 34*(3), 853–883.
+Beck, A. J., & Blumstein, A. (2018). Racial disproportionality in U.S. state prisons: Accounting for the effects of racial and ethnic differences in criminal involvement, arrests, sentencing, and time served. *Journal of Quantitative Criminology, 34*(3), 853–883. https://doi.org/10.1007/s10940-017-9357-6
 
-Behrens, A., Uggen, C., & Manza, J. (2003). Ballot manipulation and the "menace of Negro domination": Racial threat and felon disenfranchisement in the United States, 1850–2002. *American Journal of Sociology, 109*(3), 559–605.
+Behrens, A., Uggen, C., & Manza, J. (2003). Ballot manipulation and the "menace of Negro domination": Racial threat and felon disenfranchisement in the United States, 1850–2002. *American Journal of Sociology, 109*(3), 559–605. https://doi.org/10.1086/378647
 
 Blalock, H. M. (1967). *Toward a theory of minority-group relations*. Wiley.
 
-Bürkner, P.-C. (2017). brms: An R package for Bayesian multilevel models using Stan. *Journal of Statistical Software, 80*(1), 1–28.
+Bürkner, P.-C. (2017). brms: An R package for Bayesian multilevel models using Stan. *Journal of Statistical Software, 80*(1), 1–28. https://doi.org/10.18637/jss.v080.i01
 
-Cesario, J., Johnson, D. J., & Terrill, W. (2019). Is there evidence of racial disparity in police use of deadly force? Analyses of officer-involved fatal shootings in 2015–2016. *Social Psychological and Personality Science, 10*(5), 586–595.
+Cesario, J., Johnson, D. J., & Terrill, W. (2019). Is there evidence of racial disparity in police use of deadly force? Analyses of officer-involved fatal shootings in 2015–2016. *Social Psychological and Personality Science, 10*(5), 586–595. https://doi.org/10.1177/1948550618775108
 
 D'Ignazio, C., & Klein, L. F. (2020). *Data feminism*. MIT Press.
 
 Dunford, E. (2023). *tidysynth: A tidy implementation of the synthetic control method* [R package].
 
-Gelman, A., Hill, J., & Yajima, M. (2012). Why we (usually) don't have to worry about multiple comparisons. *Journal of Research on Educational Effectiveness, 5*(2), 189–211.
+Gelman, A., Hill, J., & Yajima, M. (2012). Why we (usually) don't have to worry about multiple comparisons. *Journal of Research on Educational Effectiveness, 5*(2), 189–211. https://doi.org/10.1080/19345747.2011.618213
 
-Gelman, A., & Loken, E. (2014). The statistical crisis in science. *American Scientist, 102*(6), 460–465.
+Gelman, A., & Loken, E. (2014). The statistical crisis in science. *American Scientist, 102*(6), 460–465. https://doi.org/10.1511/2014.111.460
 
-Gillborn, D., Warmington, P., & Demack, S. (2018). QuantCrit: Education, policy, "Big Data" and principles for a critical race theory of statistics. *Race Ethnicity and Education, 21*(2), 158–179.
+Gillborn, D., Warmington, P., & Demack, S. (2018). QuantCrit: Education, policy, "Big Data" and principles for a critical race theory of statistics. *Race Ethnicity and Education, 21*(2), 158–179. https://doi.org/10.1080/13613324.2017.1377417
 
 Grumbach, J. M. (2022). *Laboratories against democracy: How national parties transformed state politics*. Princeton University Press.
 
-Grumbach, J. M. (2023). Laboratories of democratic backsliding. *American Political Science Review, 117*(3), 967–984.
+Grumbach, J. M. (2023). Laboratories of democratic backsliding. *American Political Science Review, 117*(3), 967–984. https://doi.org/10.1017/S0003055422000934
 
 Grumbach, J. M., & Bitton, F. (2024). *State Democracy Index 2.0* [Data set]. Democracy Policy Lab, University of California, Berkeley.
 
-Jacobs, D., & Carmichael, J. T. (2001). The politics of punishment across time and space: A pooled time-series analysis of imprisonment rates. *Social Forces, 80*(1), 61–89.
+Jacobs, D., & Carmichael, J. T. (2001). The politics of punishment across time and space: A pooled time-series analysis of imprisonment rates. *Social Forces, 80*(1), 61–89. https://doi.org/10.1353/sof.2001.0070
 
-Kjellsson, G., Gerdtham, U.-G., & Petrie, D. (2015). Lies, damned lies, and health inequality measurements: Understanding the value judgments. *Epidemiology, 26*(5), 673–680.
+Kjellsson, G., Gerdtham, U.-G., & Petrie, D. (2015). Lies, damned lies, and health inequality measurements: Understanding the value judgments. *Epidemiology, 26*(5), 673–680. https://doi.org/10.1097/EDE.0000000000000319
 
 Magrini, A. (2022). *gbmt: Group-based multivariate trajectory modeling* [R package].
 
@@ -645,19 +664,19 @@ Mauer, M. (2007). Racial impact statements as a means of reducing unwarranted se
 
 McDonald, M. P. (2023). *United States Elections Project: Voter turnout data, 1980–2022* [Data set]. UF Election Lab, University of Florida.
 
-Meredith, M., & Morse, M. (2017). Discretionary disenfranchisement: The case of legal financial obligations. *The Journal of Legal Studies, 46*(2), 309–338.
+Meredith, M., & Morse, M. (2017). Discretionary disenfranchisement: The case of legal financial obligations. *The Journal of Legal Studies, 46*(2), 309–338. https://doi.org/10.1086/694323
 
 Merry, S. E. (2016). *The seductions of quantification: Measuring human rights, gender violence, and sex trafficking*. University of Chicago Press.
 
-Moonesinghe, R., & Beckles, G. L. A. (2015). Measuring health disparities: A comparison of absolute and relative disparities. *PeerJ, 3*, e1438.
+Moonesinghe, R., & Beckles, G. L. A. (2015). Measuring health disparities: A comparison of absolute and relative disparities. *PeerJ, 3*, e1438. https://doi.org/10.7717/peerj.1438
 
 Morse, M. (2021). The future of felon disenfranchisement reform: Evidence from the campaign to restore voting rights in Florida. *California Law Review, 109*(3).
 
-Muller, C. (2012). Northward migration and the rise of racial disparity in American incarceration, 1880–1950. *American Journal of Sociology, 118*(2), 281–326.
+Muller, C. (2012). Northward migration and the rise of racial disparity in American incarceration, 1880–1950. *American Journal of Sociology, 118*(2), 281–326. https://doi.org/10.1086/666384
 
-Mundlak, Y. (1978). On the pooling of time series and cross section data. *Econometrica, 46*(1), 69–85.
+Mundlak, Y. (1978). On the pooling of time series and cross section data. *Econometrica, 46*(1), 69–85. https://doi.org/10.2307/1913646
 
-Nagin, D. S., & Land, K. C. (1993). Age, criminal careers, and population heterogeneity: Specification and estimation of a nonparametric, mixed Poisson model. *Criminology, 31*(3), 327–362.
+Nagin, D. S., & Land, K. C. (1993). Age, criminal careers, and population heterogeneity: Specification and estimation of a nonparametric, mixed Poisson model. *Criminology, 31*(3), 327–362. https://doi.org/10.1111/j.1745-9125.1993.tb01133.x
 
 Nellis, A. (2021). *The color of justice: Racial and ethnic disparity in state prisons*. The Sentencing Project.
 
@@ -669,19 +688,19 @@ Sabol, W. J., Johnson, T. L., & Lynch, J. P. (2025). Discrepancies in measures o
 
 The Sentencing Project. (2024). *Locked out 2024: Four million denied voting rights due to a felony conviction*.
 
-Simonsohn, U., Simmons, J. P., & Nelson, L. D. (2020). Specification curve analysis. *Nature Human Behaviour, 4*(11), 1208–1214.
+Simonsohn, U., Simmons, J. P., & Nelson, L. D. (2020). Specification curve analysis. *Nature Human Behaviour, 4*(11), 1208–1214. https://doi.org/10.1038/s41562-020-0912-z
 
-Steegen, S., Tuerlinckx, F., Gelman, A., & Vanpaemel, W. (2016). Increasing transparency through a multiverse analysis. *Perspectives on Psychological Science, 11*(5), 702–712.
+Steegen, S., Tuerlinckx, F., Gelman, A., & Vanpaemel, W. (2016). Increasing transparency through a multiverse analysis. *Perspectives on Psychological Science, 11*(5), 702–712. https://doi.org/10.1177/1745691616658637
 
-Uggen, C., & Manza, J. (2002). Democratic contraction? Political consequences of felon disenfranchisement in the United States. *American Sociological Review, 67*(6), 777–803.
+Uggen, C., & Manza, J. (2002). Democratic contraction? Political consequences of felon disenfranchisement in the United States. *American Sociological Review, 67*(6), 777–803. https://doi.org/10.2307/3088970
 
-van der Bles, A. M., van der Linden, S., Freeman, A. L. J., & Spiegelhalter, D. J. (2020). The effects of communicating uncertainty on public trust in facts and numbers. *Proceedings of the National Academy of Sciences, 117*(14), 7672–7683.
+van der Bles, A. M., van der Linden, S., Freeman, A. L. J., & Spiegelhalter, D. J. (2020). The effects of communicating uncertainty on public trust in facts and numbers. *Proceedings of the National Academy of Sciences, 117*(14), 7672–7683. https://doi.org/10.1073/pnas.1913678117
 
 Vera Institute of Justice. (2024). *Incarceration trends* [Data set].
 
 Western, B. (2006). *Punishment and inequality in America*. Russell Sage Foundation.
 
-Young, C., & Holsteen, K. (2017). Model uncertainty and robustness: A computational framework for multimodel analysis. *Sociological Methods & Research, 46*(1), 3–40.
+Young, C., & Holsteen, K. (2017). Model uncertainty and robustness: A computational framework for multimodel analysis. *Sociological Methods & Research, 46*(1), 3–40. https://doi.org/10.1177/0049124115610347
 
 ```{=latex}
 \endgroup
