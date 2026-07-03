@@ -2336,6 +2336,7 @@ window.Quarto = {
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   <li><a href="#appendix-synthetic-control-details" id="toc-appendix-synthetic-control-details" class="nav-link" data-scroll-target="#appendix-synthetic-control-details">Appendix: synthetic control details</a></li>
   <li><a href="#appendix-decomposing-the-national-trend" id="toc-appendix-decomposing-the-national-trend" class="nav-link" data-scroll-target="#appendix-decomposing-the-national-trend">Appendix: decomposing the national trend</a></li>
+  <li><a href="#appendix-the-sign-flip-generalizes-beyond-democracy" id="toc-appendix-the-sign-flip-generalizes-beyond-democracy" class="nav-link" data-scroll-target="#appendix-the-sign-flip-generalizes-beyond-democracy">Appendix: the sign flip generalizes beyond democracy</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../dem_crime_equity_paper.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
@@ -2389,7 +2390,8 @@ window.Quarto = {
 
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>How equally the American criminal justice system treats Black and white people is among the most consequential questions in the study of race and punishment (Western, 2006), and in practice it is answered with a single statistic. Most often that statistic is the Black/White imprisonment ratio, and a great deal of policy and scholarship rests on it. But racial disparity has no canonical measure. It can be written as a ratio, as an absolute rate, or as a gap, and these do not move together: on the same data they can disagree about whether a place is becoming more equal or less, and sometimes about the direction itself.</p>
+<p>How equally the American criminal justice system treats Black and white people is among the most consequential questions in the study of race and punishment (Western, 2006), and in practice it is answered with a single statistic. Most often that statistic is the Black/White imprisonment ratio, and a great deal of policy and scholarship rests on it: the federal juvenile justice system grades states with a rate ratio of exactly this form, and the most-cited state rankings of imprisonment disparity are orderings of it. But racial disparity has no canonical measure. It can be written as a ratio, as an absolute rate, or as a gap, and these do not move together: on the same data they can disagree about whether a place is becoming more equal or less, and sometimes about the direction itself.</p>
+<p>This paper shows that the most-used of these measures can improve or deteriorate for reasons that have nothing to do with how Black residents are treated; it develops an alternative, one joint Bayesian model of the two imprisonment rates the measures summarize, in which every measure becomes a contrast of a single posterior and their disagreement becomes a probability the model reports; and it traces what that means for the institutions that grade states with the ratio.</p>
 <p>The usual response is to argue about which measure is the right one. Criminology has long recognized this debate: whether racial disproportionality looks large or small hinges on the benchmark in the denominator, on the attribution of differential involvement, and on the data source itself (Beck &amp; Blumstein, 2018; Cesario et al., 2019; Sabol et al., 2025). The argument does not end, because each measure answers a slightly different question, and a researcher can nearly always find the one that supports a preferred conclusion. The case in this paper makes the stakes concrete. Asked whether more democratic states punish Black and white residents more equally, the most-cited measure says inequality is worse where democracy is healthier. The reading is an artifact of the denominator: the ratio is sensitive to the white rate, which collapses in more democratic states, so the metric can climb without anything changing for Black residents. By a different measure, those same states are no more punitive toward Black residents than anywhere else. This disagreement is not noise to be cleaned up by choosing a better number. It is built into the fact that four summary statistics are being asked to stand in for two underlying quantities.</p>
 <p>That observation points to a different approach. Rather than choose among the competing measures, I model the two quantities they all summarize: the rates at which a state imprisons its Black and its white residents. In a single Bayesian framework, every measure, the ratio, the gap, the absolute rates, emerges as a contrast of one posterior. The measures stop being rival summaries and become different views of the same estimated quantities. Their disagreement, which the conventional approach leaves the reader to reconcile, becomes something the model states directly, as a probability. This is the paper’s central contribution: not a verdict on which measure of racial disparity is correct, but a way to avoid having to choose one.</p>
 <p>The paper earns that model rather than assuming it. The earlier sections carry the same question through four ordinary analytic choices and show how far each one moves the conclusion: the measure of disparity, the comparison between states and within them, a clustering of states into types, and the reading of a major voting-rights reform. Only with those choices on the table does the unifying model do its work. The substantive case, race, democracy, and punishment across the U.S. states, is worth studying for its own sake; it is also the clearest setting I know in which to show why measurement needs a model rather than a verdict.</p>
@@ -2434,7 +2436,7 @@ window.Quarto = {
 <p>The reason comes into focus once we look at what the ratio is made of. It is the Black rate divided by the white rate, so its value depends as much on the denominator as on the numerator. The point is an identity rather than an observation: on the log scale,</p>
 <p><span class="math display">\[\log R = \log B - \log W,\]</span></p>
 <p>so for any state characteristic, the slope on the log ratio is the slope on the log Black rate minus the slope on the log white rate. A characteristic correlated with white imprisonment and unrelated to Black imprisonment will manufacture a disparity finding by arithmetic alone. Democracy turns out to be exactly such a characteristic. More democratic states imprison white residents at strikingly low rates, and that small denominator does the arithmetic work, inflating the ratio even in a state where Black imprisonment is no higher than average. The South shows the reverse. Southern states post lower ratios, but not because they treat Black and white residents more evenly; they imprison white residents heavily too, and the large white denominator pulls the ratio down. The regional averages put numbers on this. White imprisonment runs about 230 per 100,000 in the more democratic Northeast and about 535 in the South, more than twice as high, while the Black rate stays within a much narrower band, roughly 1,460 to 2,060 across the four regions. The ratio therefore runs highest on average across the low-white-rate Northeast and lowest across the high-white-rate South, even though the South is the less democratic region. The regional pattern itself is old: northern states have posted wider Black/White imprisonment disparities than southern ones since long before the current policy era (Muller, 2012). The measure reported most often, then, is also the one most exposed to movement that has nothing to do with how Black people are treated, since a state can climb the ratio simply by incarcerating fewer white people. Judged by the absolute Black rate, more democratic states look slightly better; judged by the gap, they look no different; judged by the ratio, they look worse. Nothing about the data has changed between those three sentences. Only the measure has.</p>
-<p>This is not a quirk of incarceration data. The divergence between absolute and relative measures of disparity is a known formal result, demonstrated in health research where the two can move in opposite directions over the same period (Moonesinghe &amp; Beckles, 2015), and the dependence of measured racial disparity on such choices has been shown directly for imprisonment (Sabol et al., 2025). What the figure adds is a vivid sense of how cleanly the choice can reverse a headline: one decision, made before any modeling begins, has already settled whether democracy looks like a friend or an enemy of racial equality.</p>
+<p>This is not a quirk of incarceration data. The divergence between absolute and relative measures of disparity is a known formal result, demonstrated in health research where the two can move in opposite directions over the same period (Moonesinghe &amp; Beckles, 2015), and the dependence of measured racial disparity on such choices has been shown directly for imprisonment (Sabol et al., 2025). What the figure adds is a vivid sense of how cleanly the choice can reverse a headline: one decision, made before any modeling begins, has already settled whether democracy looks like a friend or an enemy of racial equality. Nor is the flip a special property of the democracy index. Poverty, urbanization, and the governor’s party, common structural determinants of incarceration and political economy, reproduce the same pattern across the four measures. By the ratio, states with Republican governors rank among the most racially equal, because the governor’s party correlates with white imprisonment and is essentially unrelated to Black imprisonment; the appendix reports the full grid.</p>
 <p>The same arithmetic runs through the field’s most-quoted trend. Nationally, the Black/White prison-rate ratio narrowed from about 7.4 in 2000 to 4.2 in 2019, a development widely and rightly read as progress. Decomposed on the log scale, though, only 71 percent of that narrowing came from Black imprisonment falling; the other 29 percent came from white imprisonment rising, by about 17 percent over those years, the years of the opioid crisis. More than a quarter of the improvement in the most-cited equity trend is the denominator moving in a direction no one celebrates. Extending the window through 2022 shrinks the white-rate share to about 5 percent, because pandemic-era declines pulled the white rate back down; the appendix gives the decomposition.</p>
 </section>
 <section id="demonstration-2-comparing-states-or-comparing-a-state-with-itself" class="level1" data-number="5">
@@ -2574,6 +2576,52 @@ window.Quarto = {
 <section id="appendix-decomposing-the-national-trend" class="level1 unnumbered">
 <h1 class="unnumbered">Appendix: decomposing the national trend</h1>
 <p>National Black and white prison rates are aggregated from the Vera counts and populations (prison, ages 15 to 64), using only the fifty states with data in both endpoint years so that changes in which states report cannot masquerade as trend. From 2000 to 2019 the Black rate fell from about 2,516 to 1,697 per 100,000, a 33 percent decline, while the white rate rose from about 342 to 400, a 17 percent increase. On the log scale the ratio’s decline of 0.55 splits into 0.39 from the Black rate and 0.16 from the white rate, a 71/29 split. Extending the window from 2000 to 2022 gives a 95/5 split, because pandemic-era declines left the white rate only 3 percent above its 2000 level. The script that produces these figures is in the repository.</p>
+</section>
+<section id="appendix-the-sign-flip-generalizes-beyond-democracy" class="level1 unnumbered">
+<h1 class="unnumbered">Appendix: the sign flip generalizes beyond democracy</h1>
+<p>Demonstration 1 varies the measure while holding the democracy axis fixed. This appendix varies the axis. Three common structural determinants of incarceration and political economy take the place of the State Democracy Index: the poverty rate (Census SAIPE, averaged over 2016 to 2020), the percent of the population living in urban areas (2020 Census), and the governor’s party (January 2019, the midpoint of the window). The four disparity measures are state means over 2016 to 2020, as in Figure 2. The correlations across the fifty states:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">State characteristic</th>
+<th style="text-align: right;">Ratio</th>
+<th style="text-align: right;">Black rate</th>
+<th style="text-align: right;">White rate</th>
+<th style="text-align: right;">Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">State Democracy Index</td>
+<td style="text-align: right;">+.26</td>
+<td style="text-align: right;">−.14</td>
+<td style="text-align: right;">−.34</td>
+<td style="text-align: right;">−.04</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Poverty rate</td>
+<td style="text-align: right;">−.40</td>
+<td style="text-align: right;">+.18</td>
+<td style="text-align: right;">+.52</td>
+<td style="text-align: right;">+.02</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Percent urban</td>
+<td style="text-align: right;">+.27</td>
+<td style="text-align: right;">−.12</td>
+<td style="text-align: right;">−.27</td>
+<td style="text-align: right;">−.04</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Republican governor</td>
+<td style="text-align: right;">−.42</td>
+<td style="text-align: right;">+.02</td>
+<td style="text-align: right;">+.38</td>
+<td style="text-align: right;">−.10</td>
+</tr>
+</tbody>
+</table>
+<p>Every axis reproduces the flip. Poorer states look more equal by the ratio only because they imprison white residents at much higher rates; their Black rates are slightly higher, not lower. Urbanization mirrors the democracy index. The governor’s party is the cleanest case: it correlates with white imprisonment and is essentially unrelated to Black imprisonment, so by the ratio, states with Republican governors rank among the most racially equal. These are descriptive snapshots; the governor’s party stands in for a bundle of policy and regional differences, and no partisan effect is claimed. Recoding the party variable as the share of the window’s years with a Republican governor gives the same pattern (ratio −.27, white rate +.27, Black rate +.08). The covariate file and the script that produces the table are in the repository.</p>
 </section>
 
 </main>
