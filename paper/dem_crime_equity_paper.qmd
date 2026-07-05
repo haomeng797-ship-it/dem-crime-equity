@@ -83,7 +83,7 @@ How equally the American criminal justice system treats Black and white people i
 consequential questions in the study of race and punishment (Western, 2006), and in practice it is answered with a
 single statistic. Most often that statistic is the Black/White imprisonment ratio, and a great deal of
 policy and scholarship rests on it: the federal juvenile justice system grades states with a rate
-ratio of exactly this form, and the most-cited state rankings of imprisonment disparity are orderings
+ratio of exactly this form, and the best-known state rankings of imprisonment disparity are orderings
 of it. But racial disparity has no canonical measure. It can be written
 as a ratio, as an absolute rate, or as a gap, and these do not move together: on the same data they
 can disagree about whether a place is becoming more equal or less, and sometimes about the direction
@@ -301,7 +301,7 @@ prison-rate ratio narrowed from about 7.4 in 2000 to 4.2 in 2019, a development 
 read as progress. Decomposed on the log scale, though, only 71 percent of that narrowing came from
 Black imprisonment falling; the other 29 percent came from white imprisonment rising, by about 17
 percent over those years, the years of the opioid crisis. More than a quarter of the improvement in
-the most-cited equity trend is the denominator moving in a direction no one celebrates. Extending the
+this celebrated trend is the denominator moving in a direction no one celebrates. Extending the
 window through 2022 shrinks the white-rate share to about 5 percent, because pandemic-era declines
 pulled the white rate back down; Appendix B gives the decomposition.
 
@@ -560,7 +560,7 @@ matters, but a way to stop choosing among measures and model what they summarize
 
 What is easy to lose, stated only as a principle, is how concretely and how quickly
 the choices bite, and how they accumulate. Here they are shown one after another, with numbers, on a
-case where the stakes are real: the most-cited measure of racial disparity in incarceration points the
+case where the stakes are real: the most common measure of racial disparity in incarceration points the
 wrong way for a mechanical reason, and a celebrated voting-rights reform reads as a triumph or a
 non-event depending on the frame. For anyone who studies inequality, the practical counsel is cheap. Report more than one measure, and
 when they disagree, say so instead of quietly keeping the one that reads best. Keep within-state
@@ -580,7 +580,7 @@ states measure themselves with the Relative Rate Index, a minority-to-white rate
 of a state's formula grant at stake (Office of Juvenile Justice and Delinquency Prevention [OJJDP],
 n.d.). Racial impact statements, adopted first in Iowa and since considered across the states,
 evaluate proposed sentencing law with the same family of disparity measures (Mauer, 2007). And the
-most-cited state rankings of imprisonment disparity order states by the Black/White ratio: New
+best-known state rankings of imprisonment disparity order states by the Black/White ratio: New
 Jersey, Wisconsin, and Minnesota sit at the top, the very low-white-denominator states of Figure 1,
 and New Jersey holds the country's worst ratio while imprisoning Black residents at a rate below the
 national average (Nellis, 2021). These institutions reward and censure states, every day, with a
