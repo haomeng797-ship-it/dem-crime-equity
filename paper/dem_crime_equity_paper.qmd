@@ -257,9 +257,11 @@ they do not merely differ in strength; they point in different directions.
 
 The reason comes into focus once we look at what the ratio is made of. It is the Black rate divided by
 the white rate, so its value depends as much on the denominator as on the numerator. The point is an
-identity rather than an observation: on the log scale the ratio is just
-$\log R = \log B - \log W$, so a regression of the log ratio on any state characteristic splits
-exactly into two slopes,
+identity rather than an observation. On the log scale the ratio is a difference of the two log rates,
+
+$$\log R = \log B - \log W,$$
+
+so a regression of the log ratio on any state characteristic splits exactly into two slopes,
 
 $$\beta_{R} = \beta_{B} - \beta_{W},$$
 
