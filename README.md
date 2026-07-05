@@ -7,6 +7,8 @@ A small, reproducible study in R on public state-level data, asking whether stro
 
 **Author:** Miura Meng
 
+*Under review at the Journal of Quantitative Criminology (submitted 2026).*
+
 ## Read it
 
 - [Read the paper (web)](https://haomeng797-ship-it.github.io/dem-crime-equity/paper/dem_crime_equity_paper.html)
