@@ -1,7 +1,7 @@
 # 10_bayes_ar1.R -- address the over-confident P=0.99: the R/08 model ignored within-state serial
 # dependence (the autocorrelation Demonstration 3 itself flags). Refit the joint model with an AR(1)
-# residual structure per state, which widens the intervals honestly. Cross-outcome correlation is
-# carried by correlated state intercepts (rescor is incompatible with ar()).
+# residual structure per state, which widens the intervals honestly. Cross-outcome dependence enters
+# through correlated state intercepts AND residual correlation (rescor defaults to TRUE here).
 suppressPackageStartupMessages({ library(brms); library(dplyr); library(posterior) })
 proj <- Sys.getenv("DEM_CRIME_ROOT", unset = getwd())
 d <- read.csv(file.path(proj, "data", "state_dem_incarceration.csv")) |>
@@ -19,7 +19,7 @@ bfW <- bf(logW ~ demW + demM + yearc + (1|p|state_abbr) + ar(time = year, gr = s
 pr  <- c(prior(normal(0,1), class=b, resp="logB"), prior(normal(0,1), class=b, resp="logW"))
 fp <- file.path(proj, "bayes_fit_ar1.rds")
 if (file.exists(fp)) { fit <- readRDS(fp) } else {
-  fit <- brm(bfB + bfW, data = d, prior = pr, chains = 4, iter = 4000, warmup = 1000,
+  fit <- brm(bfB + bfW + set_rescor(TRUE), data = d, prior = pr, chains = 4, iter = 4000, warmup = 1000,
              seed = 20260620, cores = 4, refresh = 0, control = list(adapt_delta = 0.95, max_treedepth = 12))
   saveRDS(fit, fp)
 }
