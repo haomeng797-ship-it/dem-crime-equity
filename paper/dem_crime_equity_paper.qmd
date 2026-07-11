@@ -5,21 +5,18 @@ date: today
 abstract: |
   Every measure of racial disparity in imprisonment is a function of two quantities: the rate at
   which a state imprisons its Black residents and the rate at which it imprisons its white ones.
-  Four such summaries are in common use, and because each collapses two dimensions into one, each
-  discards different information; on the same data they can disagree about direction, not just
-  magnitude. This paper treats that disagreement as the object of study. It puts one substantive
-  question, whether more democratic U.S. states punish Black and white residents more equally,
-  through the four measures and through three further choices an analyst makes without noticing:
-  comparing states to each other or to their own past, pooling them or sorting them into trajectory
-  types, and judging a voting-rights reform by its text or by its effect. The answer changes at
-  nearly every fork, and the changes share an anatomy: white imprisonment falls with state democracy
-  while Black imprisonment stays flat, so a one-number summary can deteriorate with no change in how
-  Black residents are treated. The constructive step replaces the choice among summaries with an
-  estimate of the pair. A joint Bayesian model of the two rates returns every measure as a contrast
-  of one posterior, and the measures' disagreement becomes an estimable quantity: the probability
-  that stronger democracy raises the ratio while lowering white imprisonment is 0.97. For
-  institutions that attach formula grants and sentencing law to one of these numbers, the model
-  shows exactly where a finding lives.
+  Four summaries are in common use; because each collapses two dimensions into one, they
+  can disagree on the same data about direction, not just magnitude. This paper makes the
+  disagreement the object of study. It puts one question, whether more democratic
+  U.S. states punish Black and white residents more equally, through the four measures and
+  three further analytic choices: the comparison design, a clustering of states into types, and the
+  reading of a voting-rights reform. The answer changes at nearly every fork, and they share
+  an anatomy: white imprisonment falls with state democracy while Black imprisonment stays flat, so
+  a one-number summary can deteriorate with nothing changing for Black residents. Rather
+  than choose among summaries, I model the two rates jointly and read every measure off one
+  posterior. Disagreement becomes an estimable quantity: the probability that stronger democracy
+  raises the ratio while lowering white imprisonment is 0.97. Institutions that attach formula
+  grants and sentencing law to these numbers are grading, in part, the behavior of a denominator.
 format:
   pdf:
     pdf-engine: xelatex
@@ -67,10 +64,10 @@ format:
     fig-align: center
     fig-cap-location: bottom
 keywords:
-  - felony disenfranchisement
-  - voting rights
-  - racial disparities in incarceration
-  - court fines and fees
+  - incarceration
+  - state democracy
+  - multiverse analysis
+  - specification curve
   - synthetic control
 execute:
   echo: false
