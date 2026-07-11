@@ -37,10 +37,10 @@ p <- ggplot(res, aes(rank, est, color=measure, shape=design)) +
   scale_color_manual(values=c("Black/White ratio"="#AC827A","absolute Black rate"="#8C8C8E",
                               "absolute White rate"="#6F8AA1","Black-White gap"="#C29A47")) +
   scale_shape_manual(values=c("between-state"=16,"within-state"=17)) +
-  labs(title="The democracy-inequality effect across 16 defensible specifications",
+  labs(title="The democracy-inequality association across 16 specifications",
        subtitle=paste("Each point is one analytic choice (measure x comparison design x year-trend in/out).",
                       "The sign is set by the choices, not the data: it runs from clearly negative to clearly positive.", sep="\n"),
-       x="specification (ranked by effect)", y="standardized democracy effect (SD of outcome per SD)",
+       x="specification (ranked by estimate)", y="standardized democracy coefficient (SD of outcome per SD)",
        color=NULL, shape=NULL) +
   theme_poli(base_size=12) + theme(legend.position="top", legend.box="vertical")
 sv <- function(f) ggsave(f, p, width=8.5, height=5, dpi=300, device=ragg::agg_png, bg="white")

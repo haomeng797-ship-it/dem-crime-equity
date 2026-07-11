@@ -50,10 +50,13 @@ source(file.path(proj, "R", "00_theme.R"))
   scale_fill_manual(values=c("absolute White"="#6F8AA1","absolute Black"="#8C8C8E","Black/White ratio"="#AC827A"), guide="none") +
   scale_x_continuous(limits=c(-.4,.4)) +
   labs(title="The measures are contrasts of one posterior",
-       subtitle=paste("Effect of +1 SD between-state democracy (serial dependence modeled). The ratio is positive only",
-                      "because white imprisonment (blue) falls faster than Black: the denominator does the work.", sep="\n"),
-       x="effect on log rate per +1 SD democracy (between-state)", y=NULL) + theme_poli(base_size=13)
+       subtitle=paste("Between-state contrasts per +1 SD democracy (serial dependence modeled). The ratio is positive only",
+                      "because white imprisonment (blue) falls while Black (grey) stays flat: the denominator does the work.", sep="\n"),
+       x="posterior contrast per +1 SD democracy (between-state, log scale)", y=NULL) + theme_poli(base_size=13)
 .sv <- function(f) ggsave(f, .mk(), width=8, height=4.3, dpi=300, device=ragg::agg_png, bg="white")
 Sys.unsetenv("FIG_FONT"); source(file.path(proj,"R","00_theme.R")); .sv(file.path(proj,"figures","06_bayes_contrasts.png"))
 Sys.setenv(FIG_FONT="Times New Roman"); source(file.path(proj,"R","00_theme.R")); .sv(file.path(proj,"figures_pdf","06_bayes_contrasts.png"))
-cat("figure regenerated from AR(1) posterior\n")
+p_j <- .mk() + labs(title = NULL, subtitle = NULL)
+ggsave(file.path(proj, "figures_journal", "06_bayes_contrasts.png"), p_j,
+       width = 8, height = 4.3, dpi = 300, device = ragg::agg_png, bg = "white")
+cat("figure regenerated from AR(1) posterior (+ journal variant)\n")

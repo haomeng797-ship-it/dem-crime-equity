@@ -10,13 +10,13 @@ abstract: |
   disagreement the object of study. It puts one question, whether more democratic
   U.S. states punish Black and white residents more equally, through the four measures and
   three further analytic choices: the comparison design, a clustering of states into types, and the
-  reading of a voting-rights reform. The answer changes at nearly every fork, and they share
-  an anatomy: white imprisonment falls with state democracy while Black imprisonment stays flat, so
+  reading of a voting-rights reform. The answer changes at nearly every fork, and the changes share
+  one anatomy: white imprisonment falls with state democracy while Black imprisonment stays flat, so
   a one-number summary can deteriorate with nothing changing for Black residents. Rather
   than choose among summaries, I model the two rates jointly and read every measure off one
   posterior. Disagreement becomes an estimable quantity: the probability that stronger democracy
-  raises the ratio while lowering white imprisonment is 0.97. Institutions that attach formula
-  grants and sentencing law to these numbers are grading, in part, the behavior of a denominator.
+  goes with a higher ratio and lower white imprisonment is 0.97. Institutions that attach formula
+  grants and sentencing law to these numbers are grading, in part, a denominator.
 format:
   pdf:
     pdf-engine: xelatex
@@ -145,7 +145,7 @@ choose the measure that best supports a preferred conclusion, and the decision b
 a relative measure alone can send a trend in opposite directions (Kjellsson et al., 2015; Moonesinghe & Beckles, 2015). Framing does comparable work even when the numbers are held fixed.
 Describing a gap as one of "achievement" rather than "opportunity," for instance, shifts where readers
 locate its causes, away from structures and toward individuals, without altering a single statistic
-(Quinn, 2025). And as a finding travels outward from the model that produced it, the qualifications
+(Quinn, 2025). As a finding travels outward from the model that produced it, moreover, the qualifications
 that gave it meaning tend to drop away, so that a conditional finding begins to circulate as a settled
 fact (van der Bles et al., 2020; Merry, 2016). A more constructive
 response to the same problem is to stop hiding the choices and report a result across all of the
@@ -153,16 +153,16 @@ defensible ones, the approach formalized as the garden of forking paths and the 
 specification-curve analyses it motivated (Gelman & Loken, 2014; Steegen et al., 2016; Simonsohn et
 al., 2020; Young & Holsteen, 2017). This paper works in that tradition.
 
-What this tradition has lacked is a way past the choice itself. The paper's central contribution is
-to provide one: a multiverse of measurement and design choices, usually presented as a row of separate
-results, can be reorganized as contrasts of a single Bayesian model that both explains the
-disagreements and quantifies how reliable they are. The second contribution is the demonstration that
+What this tradition has lacked is a way past the choice itself. This paper offers one: a multiverse
+of measurement and design choices, usually presented as a row of separate results, can be
+reorganized as contrasts of a single Bayesian model that both explains the disagreements and
+quantifies how reliable they are. The components of that model are standard; what is new is the
+combination and the use it is put to. The second contribution is the demonstration that
 motivates the model: a single consequential question carried through the ordinary choices an analyst
 makes, with the answer shown to move at each step. The paper takes one case and walks it through four
 routine decisions, treating each decision as part of the analysis rather than as a preliminary to it.
-The point is not the insight that measurement and framing matter, but the worked example that shows
-how much they matter, and how readily they compound, once a real claim about racial inequality is at
-stake.
+The insight that measurement and framing matter is old; the worked example shows how much they
+matter, and how readily they compound, once a real claim about racial inequality is at stake.
 
 ## Measuring racial disparity in incarceration
 
@@ -205,12 +205,12 @@ The analysis combines three public datasets, each at the state-year level. The S
 2.0 (Grumbach & Bitton, 2024) scores the fifty states from 2000 to 2023, with higher values meaning
 more democratic. The Vera Institute's Incarceration Trends (Vera Institute of Justice, 2024) provides race-specific imprisonment rates
 per 100,000, counting people held in state prisons rather than local jails, ages 15 to 64; the Black
-and white rates used here run from 1990 to 2022. The UF Election Lab turnout
+and white rates are used here from 2000 to 2022, the years the State Democracy Index covers. The UF Election Lab turnout
 series (McDonald, 2023) gives voting-age-population (VAP) turnout for each even-year election.
 
-Because racial inequality has no single definition, the paper follows three disparity measures side by
-side, the Black/White rate ratio, the absolute Black rate, and the gap between the Black and white
-rates, plus the white rate that underlies them. Over
+Because racial inequality has no single definition, the paper follows four measures side by
+side: the Black/White rate ratio, the gap between the Black and white rates, and the two absolute
+rates, Black and white, that underlie them. Over
 this period the national ratio sits near a median of 5.4. For the natural experiment the outcome is
 VAP turnout, whose denominator is the voting-age population and so does not move mechanically when
 people are re-enfranchised.
@@ -239,7 +239,7 @@ the relationship is real, it should survive the substitution. It does not. The B
 correlates positively with democracy, at about +0.26, which is the pattern we just saw. The absolute
 Black imprisonment rate, though, correlates slightly negatively, at about −0.14, so by that measure
 more democratic states imprison Black residents at marginally lower rates rather than higher ones. The
-gap between the Black and white rates is essentially flat, at about −0.04. And the absolute white rate
+gap between the Black and white rates is essentially flat, at about −0.04. The absolute white rate, for its part,
 correlates strongly negatively, at about −0.34. Four measures of the supposedly same inequality, and
 they do not merely differ in strength; they point in different directions.
 
@@ -255,14 +255,16 @@ The reason comes into focus once we look at what the ratio is made of. It is the
 the white rate, so its value depends as much on the denominator as on the numerator. The point is an
 identity rather than an observation. On the log scale the ratio is a difference of the two log rates,
 
-$$\log R = \log B - \log W,$$
+$$\log R = \log B - \log W, \tag{1}$$
 
 so a regression of the log ratio on any state characteristic splits exactly into two slopes,
 
-$$\beta_{R} = \beta_{B} - \beta_{W},$$
+$$\beta_{R} = \beta_{B} - \beta_{W}, \tag{2}$$
 
 and a characteristic correlated with white imprisonment and unrelated to
-Black imprisonment will manufacture a disparity finding by arithmetic alone. Democracy turns out to
+Black imprisonment will manufacture a disparity finding by arithmetic alone. (The identity is exact for log-scale
+regression coefficients; raw-scale correlations, like those reported in Figure 2 and Appendix A,
+obey no such additivity.) Democracy turns out to
 be exactly such a characteristic. More democratic
 states imprison white residents at strikingly low rates, and that small denominator
 does the arithmetic work, inflating the ratio even in a state where Black imprisonment is no higher
@@ -286,13 +288,13 @@ This is not a quirk of incarceration data. The divergence between absolute and r
 disparity is a known formal result, demonstrated in health research where the two can move in opposite
 directions over the same period (Moonesinghe & Beckles, 2015), and the dependence of measured racial
 disparity on such choices has been shown directly for imprisonment (Sabol et al., 2025).
-What the figure adds is a vivid sense of how cleanly the choice can reverse a headline: one decision,
+What the figure adds is the size of the turn: one decision,
 made before any modeling begins, has already settled whether democracy looks like a friend or an enemy
 of racial equality. Nor is the flip a special property of the democracy index. Poverty, urbanization,
 and the governor's party, common structural determinants of incarceration and political economy,
 reproduce the same pattern across the four measures. By the ratio, states with Republican governors
 rank among the most racially equal, because the governor's party correlates with white imprisonment
-and is essentially unrelated to Black imprisonment; Appendix C reports the full grid.
+and is essentially unrelated to Black imprisonment; Appendix A reports the full grid.
 
 The same arithmetic runs through the field's most-quoted trend. Nationally, the Black/White
 prison-rate ratio narrowed from about 7.4 in 2000 to 4.2 in 2019, a development widely and rightly
@@ -355,25 +357,28 @@ differences are part of the story. So the next question is whether states fall i
 according to how democracy and incarceration moved together. Group-based trajectory modeling,
 developed in criminology by Nagin and Land (1993) to classify offending over the life course, is built
 for exactly this. Using the gbmt package (Magrini, 2022), it sorts the fifty states by their joint
-path from 2000 to 2022 on two series at once, democracy and the logged Black imprisonment rate, and
-the BIC selects five well-separated classes, with an average assignment probability near 0.99
-(Figure 4).
+path from 2000 to 2022 on two series at once, democracy and the logged Black imprisonment rate. A
+BIC search over two to five classes is lowest at five (4186, 3924, 3869, 3815), the boundary of
+the searched range, with an average assignment probability near 0.99 (Figure 4).
 
 ::: {.content-visible when-format="pdf"}
-![Five state trajectory classes from the gbmt model. Each line is a class-mean path for democracy, Black imprisonment, and the Black/White ratio.](../figures_pdf/04_gbtm_classes.png){width=100%}
+![Five state trajectory classes from the gbmt model. Each line is a class-mean path for democracy, Black imprisonment, and the Black/White ratio, on raw scales; the clustering itself uses two inputs, democracy and the logged Black rate, so the ratio panel is descriptive rather than an input.](../figures_pdf/04_gbtm_classes.png){width=100%}
 :::
 
 ::: {.content-visible when-format="html"}
-![Five state trajectory classes from the gbmt model. Each line is a class-mean path for democracy, Black imprisonment, and the Black/White ratio.](../figures/04_gbtm_classes.png){width=100%}
+![Five state trajectory classes from the gbmt model. Each line is a class-mean path for democracy, Black imprisonment, and the Black/White ratio, on raw scales; the clustering itself uses two inputs, democracy and the logged Black rate, so the ratio panel is descriptive rather than an input.](../figures/04_gbtm_classes.png){width=100%}
 :::
 
-The classes arrange themselves along a single spectrum. States that grew more democratic decarcerated
-the most, while those that backslid the furthest, the group Grumbach (2023) calls the laboratories of
-backsliding, reduced Black imprisonment the least and even saw their white rate climb. This is the
-same relationship as before, now drawn as a contrast between recognizable groups of states. The method
+At the extremes the classes echo the earlier pattern. The class that ended most democratic cut
+Black imprisonment the most, from about 2,835 to 1,260 per 100,000, and its white rate fell the
+most as well; the class that backslid the furthest, the group Grumbach (2023) calls the
+laboratories of backsliding, cut Black imprisonment by about a third and saw its white prison
+rate rise, from about 387 to 466 (the white series is not shown in the figure). Between the
+extremes the ordering is loose: the flattest Black-rate path belongs to a class in the middle of
+the democracy range, not to the deepest backslider. The method
 invites overreading, though, and the details argue for restraint. Every class decarcerated, because
 the national decline runs through all of them, so the groups differ in degree rather than in
-direction. The ratio converged toward four or five across the board. And the BIC keeps improving as
+direction. The ratio converged toward four or five across the board. The BIC, moreover, keeps improving as
 classes are added, so the figure of five is not firmly pinned down; highly autocorrelated series like
 these can produce classes that are not really there. The classes are useful summaries, not natural
 kinds, and they remain entangled with region. A method can hand back a clean typology that looks more
@@ -394,11 +399,11 @@ and a placebo test provides inference by asking how unusual Florida's gap is aga
 computed for every donor state.
 
 ::: {.content-visible when-format="pdf"}
-![Florida compared with synthetic Florida on VAP turnout. The observed series (red) tracks the synthetic series (grey) before and after the reform.](../figures_pdf/05_synth_trends.png){width=80%}
+![Florida compared with synthetic Florida on VAP turnout. The observed series (red) follows the synthetic series (grey) through 2018, then falls below it after the reform, most sharply in 2022.](../figures_pdf/05_synth_trends.png){width=80%}
 :::
 
 ::: {.content-visible when-format="html"}
-![Florida compared with synthetic Florida on VAP turnout. The observed series (red) tracks the synthetic series (grey) before and after the reform.](../figures/05_synth_trends.png){width=80%}
+![Florida compared with synthetic Florida on VAP turnout. The observed series (red) follows the synthetic series (grey) through 2018, then falls below it after the reform, most sharply in 2022.](../figures/05_synth_trends.png){width=80%}
 :::
 
 ::: {.content-visible when-format="pdf"}
@@ -409,16 +414,17 @@ computed for every donor state.
 ![Placebo test. Florida's post-treatment gap (red) sits inside the cloud of donor-state placebos.](../figures/05_synth_placebos.png){width=80%}
 :::
 
-The pre-reform fit is close, with a 2016 gap of only 0.07 points, which lends the comparison
-credibility (Figure 5). After the reform, the gaps are −1.4 points in 2020 and −4.8 in 2022, both
+The pre-reform fit is reasonable rather than sharp: the pre-period root mean squared prediction
+error is 1.6 percentage points, with gaps of +1.5 in 2014, +0.1 in 2016, and +1.2 in 2018
+(Figure 5). After the reform, the gaps are −1.4 points in 2020 and −4.8 in 2022, both
 negative rather than positive. The placebo test returns a permutation p-value of about 0.14: Florida
 ranks third of the twenty-one units on the post-to-pre prediction error ratio, high in the placebo
-distribution but short of conventional significance (Figure 6; Appendix A reports the donor pool,
+distribution but short of conventional significance (Figure 6; Appendix C reports the donor pool,
 weights, and fit diagnostics). Amendment 4 produced no measurable increase in turnout.
 
-Two further checks indicate the null is robust rather than an artifact of the specification. An in-time
-placebo that moves the treatment back to 2016, before the reform, yields only small gaps in the
-genuinely pre-treatment years, about +1.0 points in 2016 and +2.1 in 2018; these are modest and
+Two further checks indicate the null is not an artifact of a single specification. An in-time
+placebo that moves the treatment back to 2016, before the reform, yields only small gaps in
+2016 and 2018, the years before the real reform, about +1.0 points and +2.1; these are modest and
 positive, the opposite sign of the post-reform gaps, so the design does not manufacture the result,
 though the 2018 gap signals a mild pre-existing drift, plausibly including mobilization by the
 Amendment 4 campaign itself, which was on the November 2018 ballot. A leave-one-out analysis that re-fits the model
@@ -444,12 +450,11 @@ sweeping or empty depends on which number you read.
 The four demonstrations are a small multiverse, one question carried through
 choices that should not change the answer so that the disagreements among the answers can show; this
 section turns the core of that multiverse into a single Bayesian model, in which the measure and comparison choices reappear as
-contrasts of one posterior. The multiverse is the better tool for revealing that the choices matter;
-the model is the better tool for saying how much, and how reliably.
+contrasts of one posterior.
 
 Before collapsing the choices into a model, it helps to see them all at once. Figure 7 is the full
-specification curve: the democracy-inequality effect estimated under every crossing of the four
-inequality measures, the two comparison designs, and the year trend in or out, sixteen defensible
+specification curve: the democracy-inequality association estimated under every crossing of the four
+inequality measures, the two comparison designs, and the year trend in or out, sixteen commonly run
 specifications in all, with each outcome standardized so the effects are comparable. The estimates run
 from clearly negative to clearly positive. The most negative are the white imprisonment rate compared
 across states; the most positive are the Black/White ratio compared across states; the within-state
@@ -457,11 +462,11 @@ specifications sit near zero. The sign of the headline is chosen at the same mom
 specification. This is the multiverse the rest of the section sets out to discipline.
 
 ::: {.content-visible when-format="pdf"}
-![The democracy-inequality effect across sixteen defensible specifications (four inequality measures, two comparison designs, year trend in or out), each outcome standardized. The sign runs from clearly negative (the white rate compared across states) to clearly positive (the Black/White ratio compared across states); within-state specifications sit near zero.](../figures_pdf/07_spec_curve.png){width=95%}
+![The democracy-inequality association across sixteen specifications (four inequality measures, two comparison designs, year trend in or out), each outcome standardized. The sign runs from clearly negative (the white rate compared across states) to clearly positive (the Black/White ratio compared across states); within-state specifications sit near zero.](../figures_pdf/07_spec_curve.png){width=95%}
 :::
 
 ::: {.content-visible when-format="html"}
-![The democracy-inequality effect across sixteen defensible specifications (four inequality measures, two comparison designs, year trend in or out), each outcome standardized. The sign runs from clearly negative (the white rate compared across states) to clearly positive (the Black/White ratio compared across states); within-state specifications sit near zero.](../figures/07_spec_curve.png){width=95%}
+![The democracy-inequality association across sixteen specifications (four inequality measures, two comparison designs, year trend in or out), each outcome standardized. The sign runs from clearly negative (the white rate compared across states) to clearly positive (the Black/White ratio compared across states); within-state specifications sit near zero.](../figures/07_spec_curve.png){width=95%}
 :::
 
 The first two demonstrations treated the choice of measure and the choice of comparison as
@@ -472,35 +477,39 @@ moves with democracy. Rather than walk the forks one at a time, then, we can fit
 those two quantities and read every fork off the one set of estimates it implies.
 
 To do this I fit one joint multilevel model with two outcomes at once, the log Black imprisonment
-rate and the log white rate, each allowed to depend on democracy. Democracy enters in the Mundlak
+rate and the log white rate, each allowed to depend on democracy. The estimation sample is 1,149
+state-year observations across the fifty states, 2000 to 2022. Democracy enters in the Mundlak
 form of the second demonstration, split into a between-state part, a state's long-run average, and
 a within-state part, its year-to-year deviation; each state keeps its own intercept, and the two
 outcomes' intercepts and residuals are free to correlate; within each state the residuals follow a
 first-order autoregressive process, so the strong year-to-year persistence the second demonstration
 warned about is modeled rather than assumed away. Written out,
 
-$$\log B_{st} = \alpha^{B}_{s} + \beta^{B}_{\mathrm{b}}\,\bar{D}_{s} + \beta^{B}_{\mathrm{w}}\,\tilde{D}_{st} + \gamma^{B}\,t + \varepsilon^{B}_{st},$$
+$$\log B_{st} = \alpha^{B}_{s} + \beta^{B}_{\mathrm{b}}\,\bar{D}_{s} + \beta^{B}_{\mathrm{w}}\,\tilde{D}_{st} + \gamma^{B}\,t + \varepsilon^{B}_{st}, \tag{3}$$
 
-$$\log W_{st} = \alpha^{W}_{s} + \beta^{W}_{\mathrm{b}}\,\bar{D}_{s} + \beta^{W}_{\mathrm{w}}\,\tilde{D}_{st} + \gamma^{W}\,t + \varepsilon^{W}_{st},$$
+$$\log W_{st} = \alpha^{W}_{s} + \beta^{W}_{\mathrm{b}}\,\bar{D}_{s} + \beta^{W}_{\mathrm{w}}\,\tilde{D}_{st} + \gamma^{W}\,t + \varepsilon^{W}_{st}, \tag{4}$$
 
 with $\bar{D}_{s}$ and $\tilde{D}_{st}$ the standardized between- and within-state democracy terms,
 $t$ a scaled year trend, state intercepts $(\alpha^{B}_{s}, \alpha^{W}_{s})$ drawn from a bivariate normal
 with a freely estimated correlation, first-order autoregressive residuals
-$\varepsilon_{st} = \rho\,\varepsilon_{s,t-1} + u_{st}$ within each state, and the contemporaneous
+$\varepsilon^{k}_{st} = \rho^{k}\,\varepsilon^{k}_{s,t-1} + u^{k}_{st}$ within each state, for each outcome $k \in \{B, W\}$, and the contemporaneous
 shocks $u^{B}_{st}$ and $u^{W}_{st}$ also free to correlate. Regression slopes carry Normal(0, 1)
-priors; all other priors are the brms defaults. The between-state ratio effect in Figure 8 is the
-posterior contrast $\beta^{B}_{\mathrm{b}} - \beta^{W}_{\mathrm{b}}$. The model is fit with the brms
+priors; the remaining priors are the brms defaults: Student-t(3, 0, 2.5) on the random-effect and
+residual standard deviations, LKJ(1) on both correlation matrices, Student-t intercepts centered on
+the sample medians, and a flat prior on the autoregressive coefficients. The between-state ratio contrast in Figure 8 is the
+posterior difference $\beta^{B}_{\mathrm{b}} - \beta^{W}_{\mathrm{b}}$. The model is fit with the brms
 package (Bürkner, 2017) and converged cleanly, with every R-hat below 1.01
-and no divergent transitions; the autoregressive parameter is estimated near 0.95 to 0.98, which is
-just how serially dependent these series are. The coefficients below are scaled per one standard
+and no divergent transitions; the autoregressive parameters are estimated at $\rho^{B} = 0.95$ (0.92 to 0.98) and $\rho^{W} = 0.98$
+(0.96 to 1.00), which is just how serially dependent these series are. The coefficients below are scaled per one standard
 deviation of democracy rather than per index point, so their sizes are not directly comparable to
-those in the second demonstration, but their signs and pattern are the same.
+those in the second demonstration. The signs match; the within-state contrasts, as reported below,
+no longer clear zero once the serial dependence is priced.
 
 Once the model is fit, three of the four measures are no longer separate analyses but contrasts of
 one posterior, and the fourth, the raw Black-minus-white gap, a simple function of it (Figure 8).
 Between states, a one standard deviation increase in democracy goes with white imprisonment lower by
 about 0.13 log points (95 percent credible interval −0.25 to −0.01) and Black imprisonment that is
-essentially flat (−0.01, −0.11 to +0.09). The ratio effect is just the difference between these two,
+essentially flat (−0.01, −0.11 to +0.09). The ratio contrast is just the difference between these two,
 and it comes out positive, about +0.12 (+0.01 to +0.23), for exactly the reason the first
 demonstration gave: the ratio rises not because Black imprisonment rises but because the white
 denominator falls. The alarming cross-sectional pattern and the reassuring one are the same posterior,
@@ -509,18 +518,20 @@ toward zero and their intervals straddle it; the modest within-state link of the
 is itself sensitive to whether that dependence is acknowledged.
 
 ::: {.content-visible when-format="pdf"}
-![The competing measures of racial inequality as contrasts of one posterior. Each density is the effect of a one standard deviation increase in between-state democracy on one quantity; the raw Black-minus-white gap (not shown) is a simple function of the two rates. The Black/White ratio (red) sits above zero only because white imprisonment (blue) falls faster than the Black rate (grey); a single posterior produces a rising ratio and a falling white rate at the same time.](../figures_pdf/06_bayes_contrasts.png){width=90%}
+![The competing measures of racial inequality as contrasts of one posterior. Each density is the between-state contrast associated with a one standard deviation difference in democracy; the raw Black-minus-white gap (not shown) is a simple function of the two rates. The Black/White ratio (red) sits above zero only because white imprisonment (blue) falls while the Black rate (grey) stays essentially flat; a single posterior produces a rising ratio and a falling white rate at the same time.](../figures_pdf/06_bayes_contrasts.png){width=90%}
 :::
 
 ::: {.content-visible when-format="html"}
-![The competing measures of racial inequality as contrasts of one posterior. Each density is the effect of a one standard deviation increase in between-state democracy on one quantity; the raw Black-minus-white gap (not shown) is a simple function of the two rates. The Black/White ratio (red) sits above zero only because white imprisonment (blue) falls faster than the Black rate (grey); a single posterior produces a rising ratio and a falling white rate at the same time.](../figures/06_bayes_contrasts.png){width=90%}
+![The competing measures of racial inequality as contrasts of one posterior. Each density is the between-state contrast associated with a one standard deviation difference in democracy; the raw Black-minus-white gap (not shown) is a simple function of the two rates. The Black/White ratio (red) sits above zero only because white imprisonment (blue) falls while the Black rate (grey) stays essentially flat; a single posterior produces a rising ratio and a falling white rate at the same time.](../figures/06_bayes_contrasts.png){width=90%}
 :::
 
 Holding the measures inside one model buys something the side-by-side comparison cannot. Because
 every contrast is computed from the same draws, we can ask not just whether the measures disagree
-but how reliably they do. The posterior probability that democracy raises the ratio while leaving
-white imprisonment lower, the exact shape of the first demonstration's reversal, is about 0.97;
-ignoring the serial dependence would inflate it to 0.99, so the modeled figure is the honest one. The
+but how reliably they do. The posterior probability that stronger democracy goes with a higher ratio and lower white
+imprisonment, the exact shape of the first demonstration's reversal, is about 0.97 once the
+serial dependence is modeled. The same quantity is 0.99 when that dependence is ignored, 0.98
+when census region enters the simpler model as a fixed effect, and 0.86 on the 38-state subsample
+of the recording screen (Appendix D); the modeled figure is the honest headline. The
 weaker version, that the ratio rises while the absolute Black rate falls, is no better than a coin
 toss, about 0.54, because the Black rate is too close to flat to sign. So the dependable claim is the
 specific one: more democratic states post a higher ratio while imprisoning white residents at lower
@@ -528,9 +539,11 @@ rates. That reversal is not a fragile accident of one arbitrary comparison. It i
 feature of how the two rates move, reported as a probability that has already paid the price of the
 autocorrelation.
 
-The reversal also survives the other obvious checks. Replacing the Gaussian likelihood on the log
-rates with a negative-binomial count model on the raw counts, and adding census region as a fixed
-effect, each reproduces a positive between-state ratio effect carried by the falling white rate.
+The reversal also survives the other obvious checks, run as variants of the model without the
+autoregressive term. A negative-binomial count model on the raw counts gives a between-state
+ratio contrast of +0.15 (95 percent credible interval +0.04 to +0.26) with a white-rate contrast
+of −0.17 (−0.28 to −0.05); census region as a fixed effect gives +0.11 (+0.00 to +0.22) with
+−0.14 (−0.26 to −0.03). Each is a positive ratio contrast carried by the falling white rate.
 
 None of this makes the relationship causal. The model rearranges the same observational evidence
 more economically; it does not identify an effect. Its value is methodological. The earlier
@@ -553,18 +566,16 @@ Rather than argue over which measure of racial disparity is correct, it fits one
 two underlying rates, the rates at which a state imprisons its Black and its white residents, and
 reads each competing measure off that model as a contrast of its posterior. The disagreement among the
 measures, left elsewhere for the reader to settle, becomes a quantity the model reports, as a
-probability. This is the paper's central methodological move: not the reminder that measurement
-matters, but a way to stop choosing among measures and model what they summarize.
+probability. The move, throughout, is to stop choosing among measures and model what they summarize.
 
 What is easy to lose, stated only as a principle, is how concretely and how quickly
 the choices bite, and how they accumulate. Here they are shown one after another, with numbers, on a
 case where the stakes are real: the most common measure of racial disparity in incarceration points the
 wrong way for a mechanical reason, and a celebrated voting-rights reform reads as a triumph or a
-non-event depending on the frame. The practical counsel is simple to state. Report more than one measure, and
-when they disagree, say so instead of quietly keeping the one that reads best. Keep within-state
-change separate from between-state differences. Treat the groups a clustering routine hands you as a
-convenient summary, not a discovery. And judge a policy by what it does, not by what its text
-promises.
+non-event depending on the frame. The practical counsel is simple to state: report more than one measure, and say so when they
+disagree; keep within-state change separate from between-state differences; treat the groups a
+clustering routine hands back as convenient summaries rather than discoveries; and judge a policy
+by its effect rather than its text.
 
 The substantive estimates are deliberately unspectacular, and their size is part of the argument:
 across these analyses, the movement produced by the analyst's choices exceeds the movement produced
@@ -574,18 +585,14 @@ incarceration and is sensitive to how serial dependence is handled; and re-enfra
 can be undone by a fee. One result travels beyond this case: the
 Black/White imprisonment ratio worsens with democracy only because the white rate falls, not because
 Black imprisonment moves. A widely reported equity metric can move for reasons that have nothing to do
-with how Black people are treated, and the institutions that rely on the ratio make the stakes
-concrete. The federal juvenile justice system's core racial-and-ethnic-disparities requirement has
-states measure themselves with the Relative Rate Index, a minority-to-white rate ratio, with a fifth
-of a state's formula grant at stake (Office of Juvenile Justice and Delinquency Prevention [OJJDP],
-n.d.). Racial impact statements, adopted first in Iowa and since considered across the states,
-evaluate proposed sentencing law with the same family of disparity measures (Mauer, 2007). And the
-best-known state rankings of imprisonment disparity order states by the Black/White ratio: New
-Jersey, Wisconsin, and Minnesota sit at the top, the very low-white-denominator states of Figure 1,
-and New Jersey holds the country's worst ratio while imprisoning Black residents at a rate below the
-national average (Nellis, 2021). These institutions reward and censure states, every day, with a
-measure that can deteriorate when white imprisonment falls. Taken
-together, the demonstrations show how easily the convenient answer turns out to be wrong.
+with how Black people are treated, and the institutions of the introduction put their weight on
+exactly this arithmetic: the Relative Rate Index behind the federal juvenile justice system's
+disparity requirement (Office of Juvenile Justice and Delinquency Prevention [OJJDP], n.d.), the
+racial impact statements that evaluate proposed sentencing law (Mauer, 2007), and the rankings on
+which New Jersey, Wisconsin, and Minnesota, the low-white-denominator states of Figure 1, sit at
+the top (Nellis, 2021). Each grades states with a measure that can deteriorate when white
+imprisonment falls. Taken together, the demonstrations show how easily the convenient answer
+turns out to be wrong.
 
 ## Limitations
 
@@ -595,19 +602,22 @@ vote (Uggen & Manza, 2002), might move statewide turnout by less than a point, b
 not that re-enfranchisement does nothing, and a sharper test would follow the formerly incarcerated
 themselves in voter files. The first three
 demonstrations are observational. They help frame the question; they do not answer it causally. State democracy and incarceration are themselves estimated
-quantities. And the synthetic control rests on a single treated state, an imperfect midterm pre-fit, a
-small pool of clean donor states, and a 2020 treatment year disrupted by the pandemic.
+quantities. The synthetic control rests on a single treated state, an imperfect midterm pre-fit, a small
+pool of clean donor states, and a 2020 treatment year disrupted by the pandemic; the 2022 gap
+also coincides with an unusually uncompetitive Florida cycle while the heavily weighted donors,
+Arizona and New Hampshire, held close races, so part of that gap is plausibly electoral
+competition rather than the reform.
 
 The analysis is also narrower than the question. The racial contrast is binary: Black and white imprisonment rates
 are the series Vera reports most completely, so Latino, Native American, and other groups, and the
 states' uneven recording of Hispanic ethnicity, fall outside the analysis. The recording problem is
 the sharper worry: states that fold Hispanic prisoners into the white count inflate their white rates,
 and those states skew southern, so the practice could mimic the denominator finding. Appendix D
-screens them out and refits the model; the pattern survives in sign and attenuates in strength. And the state is the unit
+screens them out and refits the model; the pattern survives in sign and attenuates in strength. The state, finally, is the unit
 throughout. State rates average over counties that differ sharply in policing and prosecution, so
 nothing here speaks to disparity within a state.
 
-And the "democracy" coefficient itself needs careful reading. The State
+The "democracy" coefficient itself needs careful reading. The State
 Democracy Index moves with party control of state government, the very lever the punishment
 literature emphasizes (Jacobs & Carmichael, 2001), with region, and with a state's broader
 political culture, and the analysis does not try to pull these apart. The robustness check that adds
@@ -618,55 +628,19 @@ isolation. Distinguishing the two would take a design built for that question.
 # Conclusion
 
 This paper has used one case, race and democracy and punishment in the U.S. states, to make a
-methodological point: that the answer depends on how we measure and frame the question, often more than
-on the data. Change the measure and a disparity reverses; change the comparison and an effect shrinks;
-change the frame and a reform that freed a million voters did almost nothing. The point is not that
-the data are useless, but that the choices made around them deserve as much scrutiny as the findings
-themselves. When the measures disagree, the better response is to model what they share, not to crown
-one. On the questions of who is punished and who may vote, that scrutiny is not optional.
+methodological point: the answer depends on how we measure and frame the question, often more
+than on the data. Change the measure and a disparity reverses; change the comparison and an
+association shrinks; change the frame and a reform that restored the vote, on paper, to 1.4
+million people did almost nothing. The data are not the weak link; the choices made around them
+deserve the same scrutiny as the findings themselves. When the measures disagree, the better
+response is to model what they share rather than to crown one.
 
 # Data and code availability {.unnumbered}
 
 All data are public and documented in the repository. Code and data to rebuild the merged dataset,
 every model, and every figure are available at https://github.com/haomeng797-ship-it/dem-crime-equity.
 
-# Appendix A: synthetic control details {.unnumbered}
-
-Twenty-nine states have a complete VAP-turnout series across the twelve even-year elections from
-2000 to 2022: Florida, the treated unit; eight states that also changed their felon-voting rules
-between 2016 and 2022 and are therefore dropped (California, Louisiana, Nevada, New Jersey, New
-Mexico, New York, Virginia, and Washington; four further reformers, Colorado, Connecticut, Iowa, and
-Kentucky, already fail the completeness screen); and twenty clean donors: Alaska, Arizona, Hawaii,
-Idaho, Illinois, Indiana, Kansas, Maryland, Massachusetts, Michigan, Montana, New Hampshire, North
-Dakota, Ohio, Oregon, Rhode Island, South Dakota, Utah, Vermont, and Wyoming.
-
-Synthetic Florida is built from mean pre-period turnout over 2000 to 2018 and turnout in the
-presidential years 2008, 2012, and 2016. The optimizer places almost all weight on four donors:
-Arizona (0.49), New Hampshire (0.36), Utah (0.07), and Illinois (0.06); every other donor receives
-less than 0.01. The pre-period fit has a root mean squared prediction error of 1.59 percentage
-points, and the 2016 gap is 0.07 points.
-
-Year-by-year gaps between Florida and synthetic Florida are +1.5 points in 2014, +0.1 in 2016, +1.2
-in 2018, then −1.4 in 2020 and −4.8 in 2022. The post-to-pre mean squared prediction error ratio is
-9.2, which places Florida third among the twenty-one units; permutation inference on that rank gives
-p = 3/21, about 0.14. The in-time placebo that moves treatment back to 2016 fits the genuinely
-pre-treatment years with an RMSPE of 1.64 (gaps of +0.6 points in 2012 and +1.1 in 2014) and, in the
-placebo's own post-period, produces only the small positive gaps reported in the text, +1.0 in 2016
-and +2.1 in 2018, the opposite sign of the true post-reform gaps. Dropping each weighted donor in turn leaves the 2020 gap between −1.6 and +1.1 points
-and the 2022 gap between −5.4 and +1.3.
-
-# Appendix B: decomposing the national trend {.unnumbered}
-
-National Black and white prison rates are aggregated from the Vera counts and populations (prison,
-ages 15 to 64), using only the fifty states with data in both endpoint years so that changes in which
-states report cannot masquerade as trend. From 2000 to 2019 the Black rate fell from about 2,516 to
-1,697 per 100,000, a 33 percent decline, while the white rate rose from about 342 to 400, a 17
-percent increase. On the log scale the ratio's decline of 0.55 splits into 0.39 from the Black rate
-and 0.16 from the white rate, a 71/29 split. Extending the window from 2000 to 2022 gives a 95/5
-split, because pandemic-era declines left the white rate only 3 percent above its 2000 level. The
-script that produces these figures is in the repository.
-
-# Appendix C: the sign flip generalizes beyond democracy {.unnumbered}
+# Appendix A: the sign flip generalizes beyond democracy {.unnumbered}
 
 
 Demonstration 1 varies the measure while holding the democracy axis fixed. This appendix varies the
@@ -693,6 +667,44 @@ claimed. Recoding the party variable as the share of the window's years with a R
 gives the same pattern (ratio −.27, white rate +.27, Black rate +.08). The covariate file and the
 script that produces the table are in the repository.
 
+# Appendix B: decomposing the national trend {.unnumbered}
+
+National Black and white prison rates are aggregated from the Vera counts and populations (prison,
+ages 15 to 64), holding the panel to states with data in both endpoint years (all fifty qualify) so that changes in which
+states report cannot masquerade as trend. From 2000 to 2019 the Black rate fell from about 2,516 to
+1,697 per 100,000, a 33 percent decline, while the white rate rose from about 342 to 400, a 17
+percent increase. On the log scale the ratio's decline of 0.55 splits into 0.39 from the Black rate
+and 0.16 from the white rate, a 71/29 split. Extending the window from 2000 to 2022 gives a 95/5
+split, because pandemic-era declines left the white rate only 3 percent above its 2000 level. The
+script that produces these figures is in the repository.
+
+# Appendix C: synthetic control details {.unnumbered}
+
+Twenty-nine states have a complete VAP-turnout series across the twelve even-year elections from
+2000 to 2022: Florida, the treated unit; eight states that also changed their felon-voting rules
+between 2016 and 2022 and are therefore dropped (California, Louisiana, Nevada, New Jersey, New
+Mexico, New York, Virginia, and Washington; four further reformers, Colorado, Connecticut, Iowa, and
+Kentucky, already fail the completeness screen); and twenty clean donors: Alaska, Arizona, Hawaii,
+Idaho, Illinois, Indiana, Kansas, Maryland, Massachusetts, Michigan, Montana, New Hampshire, North
+Dakota, Ohio, Oregon, Rhode Island, South Dakota, Utah, Vermont, and Wyoming.
+
+Synthetic Florida is built from mean pre-period turnout over 2000 to 2018 and turnout in the
+presidential years 2008, 2012, and 2016. The optimizer places almost all weight on four donors:
+Arizona (0.49), New Hampshire (0.36), Utah (0.07), and Illinois (0.06); every other donor receives
+less than 0.01. The pre-period fit has a root mean squared prediction error of 1.59 percentage
+points, and the 2016 gap is 0.07 points.
+
+Year-by-year gaps between Florida and synthetic Florida are +1.5 points in 2014, +0.1 in 2016, +1.2
+in 2018, then −1.4 in 2020 and −4.8 in 2022. The post-to-pre mean squared prediction error ratio is
+9.2; the routine dates the intervention at the 2020 election and scores only 2022 as post, with
+2020 itself in neither window (post MSPE 23.3 against pre MSPE 2.5 over 2000 to 2018), and the
+same convention applies to every placebo. The ratio places Florida third among the twenty-one units; permutation inference on that rank gives
+p = 3/21, about 0.14. The in-time placebo that moves treatment back to 2016 fits the genuinely
+pre-treatment years with an RMSPE of 1.64 (gaps of +0.6 points in 2012 and +1.1 in 2014) and, in the
+placebo's own post-period, produces only the small positive gaps reported in the text, +1.0 in 2016
+and +2.1 in 2018, the opposite sign of the true post-reform gaps. Dropping each weighted donor in turn leaves the 2020 gap between −1.6 and +1.1 points
+and the 2022 gap between −5.4 and +1.3.
+
 # Appendix D: the reversal without the misclassifying states {.unnumbered}
 
 States differ in whether Hispanic prisoners are recorded as Hispanic or folded into the white count,
@@ -706,8 +718,8 @@ Georgia, Hawaii, Kentucky, Louisiana, Michigan, Missouri, Montana, Tennessee, an
 Dropping them leaves the sign flip intact in the cross-section: across the remaining thirty-eight
 states the ratio's correlation with democracy is +.13 while both absolute rates stay negative (Black
 −.25, white −.27). Refitting the AR(1) joint model on the subsample gives a between-state ratio
-effect of +0.08 (95 percent credible interval −0.05 to +0.21) and a white-rate effect of −0.12
-(−0.28 to +0.03); the posterior probability that democracy raises the ratio while lowering white
+contrast of +0.08 (95 percent credible interval −0.05 to +0.21) and a white-rate contrast of −0.12
+(−0.28 to +0.03); the posterior probability that democracy goes with a higher ratio and lower white
 imprisonment is 0.86, against 0.97 in the full sample. The pattern survives in direction and
 attenuates in strength. Part of the attenuation is mechanical, since the screen removes most of the
 South and with it much of the between-state variation in democracy; part may be real, and is worth
