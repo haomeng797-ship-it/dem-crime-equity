@@ -1,7 +1,6 @@
 # Democracy, Crime, and Equity in the U.S. States
 
-### Two Rates, Four Findings
-*Why measures of racial disparity in imprisonment disagree, and how to report the disagreement as a probability.*
+### A Joint Bayesian Framework for Estimating Racial Disparity in Imprisonment When the Measures Disagree
 
 A reproducible study in R on public state-level data, asking whether stronger state democracy tracks less racial inequality in incarceration, and whether felon re-enfranchisement changes it. The point is mostly methodological: run the same question through four ordinary choices about measurement and design and the answer keeps shifting, so what looks like a finding about race and democracy often comes down to the analyst's choices. The full argument and results are in the paper, linked below.
 

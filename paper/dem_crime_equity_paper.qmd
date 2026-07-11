@@ -1,6 +1,5 @@
 ---
-title: "Two Rates, Four Findings"
-subtitle: "Why measures of racial disparity in imprisonment disagree, and how to report the disagreement as a probability"
+title: "A Joint Bayesian Framework for Estimating Racial Disparity in Imprisonment When the Measures Disagree"
 author: "Miura Meng"
 date: today
 abstract: |
@@ -40,10 +39,10 @@ format:
         \usepackage{fancyhdr}
         \pagestyle{fancy}
         \fancyhf{}
-        \fancyhead[L]{TWO RATES, FOUR FINDINGS}
+        \fancyhead[L]{ESTIMATING DISPARITY WHEN THE MEASURES DISAGREE}
         \fancyhead[R]{\thepage}
         \renewcommand{\headrulewidth}{0pt}
-        \fancypagestyle{plain}{\fancyhf{}\fancyhead[L]{TWO RATES, FOUR FINDINGS}\fancyhead[R]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+        \fancypagestyle{plain}{\fancyhf{}\fancyhead[L]{ESTIMATING DISPARITY WHEN THE MEASURES DISAGREE}\fancyhead[R]{\thepage}\renewcommand{\headrulewidth}{0pt}}
         \usepackage{titling}
         \pretitle{\begin{center}\large\bfseries}
         \posttitle{\par\end{center}\vskip 0.5em}
