@@ -6,6 +6,8 @@ A reproducible study in R on public state-level data, asking whether stronger st
 
 **Author:** Miura Meng
 
+*Under review at Statistics and Public Policy (submitted July 2026).*
+
 ## Read it
 
 - [Read the paper (web)](https://haomeng797-ship-it.github.io/dem-crime-equity/paper/dem_crime_equity_paper.html)
