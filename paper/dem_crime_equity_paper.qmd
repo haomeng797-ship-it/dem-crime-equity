@@ -87,7 +87,10 @@ direction itself. Criminology has long argued over which summary is the right on
 known to hinge on the benchmark in the denominator, on the attribution of differential involvement,
 and on the data source itself (Beck & Blumstein, 2018; Cesario et al., 2019; Sabol et al., 2025).
 The argument does not end because it cannot: it is an argument about which dimension of a
-two-dimensional object to throw away.
+two-dimensional object to throw away. The arithmetic behind the disagreement is elementary, and
+this paper does not present it as news. What practice lacks is a way to tell when the
+arithmetic, rather than anything about Black residents, is moving the number; providing one is
+the contribution.
 
 Nor does the choice stay inside scholarship. How equally states punish Black and white residents is
 among the most consequential questions in the study of race and punishment (Western, 2006), and
@@ -434,10 +437,10 @@ straddling zero in every case, so no single donor drives the estimate. The negat
 therefore best read as a fluctuation around zero rather than as turnout suppression: it is not
 statistically distinguishable from zero and reverses when individual donors are removed.
 
-A null result is only worth reporting if its source is visible, and here it is. The reform barely took
-effect. SB7066 required people to pay all outstanding court fines, fees, and restitution before
-regaining the vote, and the fullest empirical account of the amendment's aftermath finds that unpaid
-court debt kept most of the people it covered from regaining the vote (Morse, 2021). The requirement
+A null result is only worth reporting if its source is visible, and here it is: as Morse (2021)
+documents, the reform barely took effect. SB7066 required people to pay all outstanding court
+fines, fees, and restitution before regaining the vote, and unpaid court debt kept most of the
+people the amendment covered from regaining it. The requirement
 works as a wealth test on the franchise and falls hardest on poor and disproportionately Black
 citizens (Meredith & Morse, 2017). Its effect is visible in the counts: in 2024, six years after the amendment passed, more
 than 700,000 Floridians who had completed their sentences remained disenfranchised for unpaid legal
@@ -447,10 +450,12 @@ sweeping or empty depends on which number you read.
 
 # From multiverse to model
 
-The four demonstrations are a small multiverse, one question carried through
-choices that should not change the answer so that the disagreements among the answers can show; this
-section turns the core of that multiverse into a single Bayesian model, in which the measure and comparison choices reappear as
-contrasts of one posterior.
+The four demonstrations are a small multiverse: one question carried through choices that
+should not change the answer, so that the disagreements among the answers can show. This section
+turns the core of that multiverse into a single Bayesian model, in which the measure and
+comparison choices reappear as contrasts of one posterior. The other two forks, the clustering
+and the reading of the reform, are different designs rather than different summaries, and stay
+outside the model.
 
 Before collapsing the choices into a model, it helps to see them all at once. Figure 7 is the full
 specification curve: the democracy-inequality association estimated under every crossing of the four
@@ -512,8 +517,8 @@ about 0.13 log points (95 percent credible interval −0.25 to −0.01) and Blac
 essentially flat (−0.01, −0.11 to +0.09). The ratio contrast is just the difference between these two,
 and it comes out positive, about +0.12 (+0.01 to +0.23), for exactly the reason the first
 demonstration gave: the ratio rises not because Black imprisonment rises but because the white
-denominator falls. The alarming cross-sectional pattern and the reassuring one are the same posterior,
-read two ways. Within states, once that serial dependence is modeled, the year-to-year effects shrink
+denominator falls. The cross-sectional reading that suggests worsening disparity and the one that suggests none are
+the same posterior, read two ways. Within states, once that serial dependence is modeled, the year-to-year effects shrink
 toward zero and their intervals straddle it; the modest within-state link of the second demonstration
 is itself sensitive to whether that dependence is acknowledged.
 
@@ -591,8 +596,7 @@ disparity requirement (Office of Juvenile Justice and Delinquency Prevention [OJ
 racial impact statements that evaluate proposed sentencing law (Mauer, 2007), and the rankings on
 which New Jersey, Wisconsin, and Minnesota, the low-white-denominator states of Figure 1, sit at
 the top (Nellis, 2021). Each grades states with a measure that can deteriorate when white
-imprisonment falls. Taken together, the demonstrations show how easily the convenient answer
-turns out to be wrong.
+imprisonment falls. Taken together, the demonstrations show how easily the convenient reading fails.
 
 ## Limitations
 
