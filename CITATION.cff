@@ -34,6 +34,7 @@ keywords:
   - reproducible research
   - R
 license: MIT
+doi: "10.5281/zenodo.21611284"
 repository-code: "https://github.com/haomeng797-ship-it/dem-crime-equity"
 url: "https://haomeng797-ship-it.github.io/dem-crime-equity/"
 version: 1.0.0
