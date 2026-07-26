@@ -1,0 +1,64 @@
+cff-version: 1.2.0
+message: "If you use this code or the merged dataset it builds, please cite the software archive below, and cite the accompanying paper for the analysis itself."
+type: software
+title: "dem-crime-equity: analysis code for estimating racial disparity in imprisonment when the measures disagree"
+abstract: >-
+  Analysis code for a state-year study of racial disparity in imprisonment across the United States.
+  The repository rebuilds the merged panel from public sources (the State Democracy Index 2.0, the
+  Vera Institute's Incarceration Trends, and University of Florida Election Lab turnout), and
+  reproduces every model and figure in the accompanying paper: cross-sectional comparisons under
+  four competing disparity measures, within and between state (Mundlak) mixed models, group-based
+  multivariate trajectory models, a synthetic control for Florida's 2018 felon re-enfranchisement,
+  a sixteen-specification curve, and a joint Bayesian multilevel model of the log Black and log
+  white imprisonment rates with first-order autoregressive errors, from which each competing
+  disparity measure is read off as a contrast of a single posterior. Robustness scripts cover a
+  negative-binomial count model, census-region fixed effects, a Hispanic recording-practice screen,
+  a national decomposition of the trend, and the same measurement reversal on poverty,
+  urbanization, and the party of the governor.
+authors:
+  - given-names: Miura
+    family-names: Meng
+    email: meng10@upenn.edu
+    orcid: "https://orcid.org/0009-0004-1522-1997"
+    affiliation: "Graduate School of Education, University of Pennsylvania"
+keywords:
+  - racial disparity in incarceration
+  - state democracy
+  - Bayesian multilevel models
+  - multiverse analysis
+  - specification curve analysis
+  - synthetic control
+  - group-based trajectory modeling
+  - felony disenfranchisement
+  - state-year panel data
+  - reproducible research
+  - R
+license: MIT
+repository-code: "https://github.com/haomeng797-ship-it/dem-crime-equity"
+url: "https://haomeng797-ship-it.github.io/dem-crime-equity/"
+version: 1.0.0
+date-released: "2026-07-26"
+preferred-citation:
+  type: article
+  title: "A Joint Bayesian Framework for Estimating Racial Disparity in Imprisonment When the Measures Disagree"
+  year: 2026
+  doi: "10.31235/osf.io/uv4bs_v6"
+  url: "https://osf.io/uv4bs"
+  notes: "Manuscript under review. The DOI resolves to the open preprint version that matches this release."
+  authors:
+    - given-names: Miura
+      family-names: Meng
+      email: meng10@upenn.edu
+      orcid: "https://orcid.org/0009-0004-1522-1997"
+      affiliation: "Graduate School of Education, University of Pennsylvania"
+references:
+  - type: article
+    title: "A Joint Bayesian Framework for Estimating Racial Disparity in Imprisonment When the Measures Disagree"
+    year: 2026
+    doi: "10.31235/osf.io/uv4bs_v6"
+    url: "https://osf.io/uv4bs"
+    notes: "Open preprint on SocArXiv."
+    authors:
+      - given-names: Miura
+        family-names: Meng
+        orcid: "https://orcid.org/0009-0004-1522-1997"
