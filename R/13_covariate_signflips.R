@@ -1,4 +1,4 @@
-# 10_covariate_signflips.R
+# 13_covariate_signflips.R
 # Does the sign flip generalize beyond the democracy index? Correlate three common
 # structural determinants of incarceration and political economy with the four
 # disparity measures (state means over 2016-2020, as in Figure 2):

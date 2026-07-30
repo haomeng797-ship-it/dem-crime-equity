@@ -1,4 +1,4 @@
-# 09_national_decomposition.R
+# 12_national_decomposition.R
 # The national Black/White prison-rate ratio narrowed sharply after 2000 -- the field's
 # most-quoted equity trend. Decompose the narrowing on the log scale:
 #   dlog(ratio) = dlog(Black rate) - dlog(white rate),
