@@ -1,0 +1,10 @@
+"statistic","value"
+"Pearson correlation: ratio and gap",0.496625769685875
+"Spearman rank correlation: ratio and gap",0.449891956782713
+"Median absolute rank difference",10.5
+"Mean absolute rank difference",12.04
+"Maximum absolute rank difference",33
+"States differing by at least 10 rank places",27
+"States differing by at least 20 rank places",11
+"Top-five overlap",1
+"Top-ten overlap",5

@@ -1,0 +1,66 @@
+"model","formula","family"
+"AR(1) log-rate","logB ~ demW + demM + yearc + (1 | p | state_abbr) + ar(time = year, gr = state_abbr) 
+logW ~ demW + demM + yearc + (1 | p | state_abbr) + ar(time = year, gr = state_abbr) ","$logB
+
+Family: gaussian 
+Link function: identity 
+
+
+$logW
+
+Family: gaussian 
+Link function: identity 
+
+"
+"Log-rate, no AR(1)","logB ~ demW + demM + yearc + (1 | p | state_abbr) 
+logW ~ demW + demM + yearc + (1 | p | state_abbr) ","$logB
+
+Family: gaussian 
+Link function: identity 
+
+
+$logW
+
+Family: gaussian 
+Link function: identity 
+
+"
+"Region + AR(1)","logB ~ demW + demM + yearc + region + (1 | p | state_abbr) + ar(time = year, gr = state_abbr) 
+logW ~ demW + demM + yearc + region + (1 | p | state_abbr) + ar(time = year, gr = state_abbr) ","$logB
+
+Family: gaussian 
+Link function: identity 
+
+
+$logW
+
+Family: gaussian 
+Link function: identity 
+
+"
+"Negative-binomial count","Bc ~ demW + demM + yearc + offset(offB) + (1 | p | state_abbr) 
+Wc ~ demW + demM + yearc + offset(offW) + (1 | p | state_abbr) ","$Bc
+
+Family: negbinomial 
+Link function: log 
+
+
+$Wc
+
+Family: negbinomial 
+Link function: log 
+
+"
+"Recording-screen sample","logB ~ demW + demM + yearc + (1 | p | state_abbr) + ar(time = year, gr = state_abbr) 
+logW ~ demW + demM + yearc + (1 | p | state_abbr) + ar(time = year, gr = state_abbr) ","$logB
+
+Family: gaussian 
+Link function: identity 
+
+
+$logW
+
+Family: gaussian 
+Link function: identity 
+
+"
