@@ -5,8 +5,7 @@ from pypdf import PdfReader, PdfWriter
 
 ROOT = Path(__file__).resolve().parents[2]
 NAMES = ["figure_1_estimand_geometry", "figure_2_joint_posterior",
-         "figure_3_robustness", "figure_s2_posterior_predictive_checks",
-         "figure_s1_descriptive_associations"]
+         "figure_3_robustness", "figure_s2_posterior_predictive_checks"]
 writer = PdfWriter()
 for name in NAMES:
     path = ROOT / "figures" / (name + ".pdf")

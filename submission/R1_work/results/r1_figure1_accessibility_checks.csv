@@ -1,8 +1,0 @@
-"check","value"
-"input_rows",50
-"maximum_ratio_reconstruction_error",3.73034936274053e-14
-"maximum_gap_reconstruction_error",3.41060513164848e-13
-"states_moving_at_least_ten",27
-"median_rank_movement",10.5
-"top_ten_overlap",5
-"spearman_rank_correlation",0.449891956782713
