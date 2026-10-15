@@ -37,8 +37,8 @@ license: MIT
 doi: "10.5281/zenodo.21611284"
 repository-code: "https://github.com/haomeng797-ship-it/dem-crime-equity"
 url: "https://haomeng797-ship-it.github.io/dem-crime-equity/"
-version: 1.0.0
-date-released: "2026-07-26"
+version: 1.1.0
+date-released: "2026-10-14"
 preferred-citation:
   type: article
   title: "A Joint Bayesian Framework for Estimating Racial Disparity in Imprisonment When the Measures Disagree"
