@@ -68,6 +68,17 @@ Rebuilding the paper and report documents is optional and not needed to check th
 | `paper/` | the paper: Quarto source + rendered PDF and HTML |
 | `report/` | the longer data report: Quarto source + rendered HTML |
 
+## Revision materials
+
+The folder `submission/R1_work/` holds the code, saved results, and figures for the revised version of the paper. Run the scripts from the repository root:
+
+1. `00_rebuild_and_audit_data.R` rebuilds the analysis data from the raw files and checks it against `data/state_dem_incarceration.csv`.
+2. `04_refit_primary_model.R` and `05_refit_sensitivity_models.R` refit the primary and sensitivity models. Each takes several minutes, and the fitted models are written to `submission/R1_work/models/`, which is not tracked.
+3. `01_extract_posterior_estimands.R`, `03_audit_model_diagnostics.R`, `06_posterior_predictive_checks.R`, `07_descriptive_measurement_summary.R`, and `08_gap_estimand_audit.R` produce the estimates, diagnostics, and descriptive comparisons in `submission/R1_work/results/`.
+4. `14_unify_figure_style.R` redraws every figure, and `16_rate_covariance_check.R` reproduces the check of how the correlation between the two rate coefficients affects the ratio estimate.
+
+The saved results let you redraw the figures without refitting any model. `estimand_spec.md` and `figure_spec.md` in the same folder describe the estimands and the figure conventions.
+
 ## Data sources
 
 All data are public. Each dataset belongs to its providers and is subject to their own terms; cite

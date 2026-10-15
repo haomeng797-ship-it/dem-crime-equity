@@ -1,16 +1,16 @@
 # Shared typography, colors, and export settings for the R1 figure set.
-font_regular <- "Optima"
-font_heading <- "Optima"
+font_regular <- "Helvetica"
+font_heading <- "Helvetica"
 font_heading_size <- 10
 font_emphasis <- font_heading
 color_ink <- "#000000"
 color_ratio <- "#9B5361"
-color_gap <- "#487B70"
-# Figure 2 keeps its accepted black/blue encoding.
+color_gap <- "#2E4A6B"
+# Group colors (Figure 2 and the diagnostics): Black rate black, White rate blue.
 color_black <- "#171717"
 color_white <- "#0072B2"
-color_diagnostic_black <- "#8C6270"
-color_diagnostic_white <- "#648276"
+color_diagnostic_black <- color_black
+color_diagnostic_white <- color_white
 color_mid <- "#737B80"
 color_grid <- "#E4E8EB"
 

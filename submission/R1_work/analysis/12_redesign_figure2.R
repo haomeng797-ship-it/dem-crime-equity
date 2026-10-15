@@ -78,8 +78,8 @@ probability_note <- function(probability, gap_text, top) {
 }
 
 p_joint <- ggplot(draws, aes(ratio_pct, gap_per_100k)) +
-  geom_point(color = "#69747D", size = 0.55, alpha = 0.065, stroke = 0.15) +
-  stat_density_2d(color = "#526572", bins = 5, linewidth = 0.38) +
+  geom_point(color = "#7A7A7A", size = 0.55, alpha = 0.065, stroke = 0.15) +
+  stat_density_2d(color = "#404040", bins = 5, linewidth = 0.38) +
   geom_hline(yintercept = 0, color = "#69757E", linewidth = 0.3, linetype = "22") +
   geom_vline(xintercept = 0, color = "#69757E", linewidth = 0.3, linetype = "22") +
   probability_note(prob_both, "Gap increases", TRUE) +
