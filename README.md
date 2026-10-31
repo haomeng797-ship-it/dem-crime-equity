@@ -4,22 +4,11 @@
 
 ### A Joint Bayesian Framework for Estimating Racial Disparity in Imprisonment When the Measures Disagree
 
-A reproducible study in R on public state-level data, asking whether stronger state democracy tracks less racial inequality in incarceration, and whether felon re-enfranchisement changes it. The point is mostly methodological: run the same question through four ordinary choices about measurement and design and the answer keeps shifting, so what looks like a finding about race and democracy often comes down to the analyst's choices. The full argument and results are in the paper, linked below.
+A reproducible study in R on public state-level data, asking whether stronger state democracy tracks less racial inequality in incarceration, and whether felon re-enfranchisement changes it. The point is mostly methodological: run the same question through four ordinary choices about measurement and design and the answer keeps shifting, so what looks like a finding about race and democracy often comes down to the analyst's choices. The full argument and results are in the paper.
 
 **Author:** Miura Meng
 
 *Revise and resubmit, Statistics and Public Policy.*
-
-## Read it
-
-- [Read the paper (web)](https://haomeng797-ship-it.github.io/dem-crime-equity/paper/dem_crime_equity_paper.html)
-- [The paper as a formatted PDF](https://haomeng797-ship-it.github.io/dem-crime-equity/paper/dem_crime_equity_paper.pdf)
-
-A longer, more exploratory data walk-through is also included as a self-contained report:
-
-- [Read the report (web)](https://haomeng797-ship-it.github.io/dem-crime-equity/report/dem_crime_equity.html)
-
-The matching `.qmd` files are the Quarto sources.
 
 ## Reproduce
 
