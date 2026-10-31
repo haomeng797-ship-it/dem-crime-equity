@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21611284.svg)](https://doi.org/10.5281/zenodo.21611284)
 
-A reproducible study in R on public state-level data, asking whether stronger state democracy tracks less racial inequality in incarceration, and whether felon re-enfranchisement changes it. The point is mostly methodological: run the same question through four ordinary choices about measurement and design and the answer keeps shifting, so what looks like a finding about race and democracy often comes down to the analyst's choices. The full argument and results are in the paper.
+R code and public state-level data for a study of how racial disparity in imprisonment is measured. The Black/White ratio and the Black-minus-White gap are computed from the same two imprisonment rates, yet they can rank states differently and even move in opposite directions. The analysis models the two rates jointly in a Bayesian multilevel model and derives both measures from the same posterior draws, with state democracy serving as an illustrative comparison.
 
 **Author:** Miura Meng
 
