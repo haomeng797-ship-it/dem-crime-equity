@@ -19,24 +19,7 @@ install.packages(c("dplyr", "tidyr", "ggplot2", "lme4", "gbmt", "tidysynth",
                    "brms", "posterior", "ggridges", "ragg", "ggrepel", "knitr"))
 ```
 
-Then run the scripts in order to rebuild the merged dataset, every model, and the figures:
-
-```bash
-Rscript R/01_load_merge.R            # build the merged state-year dataset
-Rscript R/02_first_plot.R            # cross-section: democracy vs. the Black/White ratio
-Rscript R/03_equity_measures.R       # four ways to measure inequity
-Rscript R/04_within_state_models.R   # within/between mixed models
-Rscript R/05_gbtm_trajectories.R     # trajectory typology
-Rscript R/06_causal_amendment4.R     # Florida synthetic control
-Rscript R/07_robustness.R            # synthetic-control robustness checks
-Rscript R/08_bayes_expansion.R       # joint Bayesian model of the Black and white rates
-Rscript R/09_bayes_robustness.R      # robustness checks for the joint model
-Rscript R/10_bayes_ar1.R             # the headline model: joint model with AR(1) errors
-Rscript R/11_spec_curve.R            # 16-specification curve
-Rscript R/12_national_decomposition.R # decomposing the national ratio decline
-Rscript R/13_covariate_signflips.R   # the sign flip beyond democracy: poverty, urbanicity, party
-Rscript R/14_hispanic_robustness.R   # Hispanic-misclassification robustness
-```
+Then run the scripts in `R/` in numerical order, from `01_load_merge.R` to `14_hispanic_robustness.R`, to rebuild the merged dataset, every model, and the figures.
 
 The Bayesian scripts (`08`–`10`, `14`) fit models with `brms`/Stan; each takes a few minutes and
 caches its fit as an `.rds` at the repo root, refitting only if the cache is absent.
