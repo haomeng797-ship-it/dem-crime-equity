@@ -1,4 +1,5 @@
-# Create the first R1 figure prototypes from the submitted data and fitted models.
+# Draw Figure 1 from the merged data, plus earlier layouts of Figures 2 and 3 from the saved
+# posterior draws. 14_unify_figure_style.R replaces those two with the versions from 12 and 13.
 
 suppressPackageStartupMessages({
   library(dplyr)
@@ -269,7 +270,7 @@ figure_1_with_ranks <- (p_geometry_ratio + p_geometry_gap) / p_rank +
   plot_layout(heights = c(1, 1.05))
 save_figure(figure_1_with_ranks, "figure_1_estimand_geometry_and_ranks", 7.25, 7.15)
 
-# Supplementary Figure S1: descriptive associations with state democracy.
+# Exploratory figure, not in the paper: descriptive associations with state democracy.
 
 scatter_panel <- function(data, outcome, panel_title, panel_subtitle, y_label, color,
                           y_labels = label_number()) {
@@ -354,10 +355,10 @@ p_white <- scatter_panel(
   label_comma()
 )
 
-figure_s1 <- (p_ratio | p_gap) / (p_black | p_white) +
+descriptive_figure <- (p_ratio | p_gap) / (p_black | p_white) +
   plot_layout(guides = "collect")
 
-save_figure(figure_s1, "figure_s1_descriptive_associations", 7.25, 6.15)
+save_figure(descriptive_figure, "descriptive_associations", 7.25, 6.15)
 
 # Figure 2: joint posterior for the two disparity estimands and their rate components.
 all_draws <- readRDS(file.path(results_dir, "r1_posterior_draws.rds"))

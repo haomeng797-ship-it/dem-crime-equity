@@ -1,5 +1,5 @@
-# Rebuild the submitted analysis data from the two raw sources without touching
-# any tracked repository output, then document the analysis sample used in R1.
+# Rebuild the submitted analysis data from the two raw sources without changing the
+# merged dataset in data/, then document the analysis sample used in R1.
 
 suppressPackageStartupMessages({
   library(dplyr)

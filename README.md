@@ -70,14 +70,34 @@ Rebuilding the paper and report documents is optional and not needed to check th
 
 ## Revision materials
 
-The folder `submission/R1_work/` holds the code, saved results, and figures for the revised version of the paper. Run the scripts from the repository root:
+The folder `submission/R1_work/` holds the code, saved results, and figures for the revised version of the paper, which is under review. The revision narrows the paper to the measurement question and the joint model of the two rates, and it leaves out the trajectory, synthetic-control, and specification-curve analyses. Apart from the data in `data/`, the folder does not depend on anything in `R/`. The scripts are in `submission/R1_work/analysis/`. Run them from the repository root in this order:
 
 1. `00_rebuild_and_audit_data.R` rebuilds the analysis data from the raw files and checks it against `data/state_dem_incarceration.csv`.
 2. `04_refit_primary_model.R` and `05_refit_sensitivity_models.R` refit the primary and sensitivity models. Each takes several minutes, and the fitted models are written to `submission/R1_work/models/`, which is not tracked.
 3. `01_extract_posterior_estimands.R`, `03_audit_model_diagnostics.R`, `06_posterior_predictive_checks.R`, `07_descriptive_measurement_summary.R`, and `08_gap_estimand_audit.R` produce the estimates, diagnostics, and descriptive comparisons in `submission/R1_work/results/`.
-4. `14_unify_figure_style.R` redraws every figure, and `16_rate_covariance_check.R` reproduces the check of how the correlation between the two rate coefficients affects the ratio estimate.
+4. `14_unify_figure_style.R` redraws every figure by running `02`, `12`, `13`, and `06` in turn, and `16_rate_covariance_check.R` reproduces the check of how the correlation between the two rate coefficients affects the ratio estimate.
 
-The saved results let you redraw the figures without refitting any model. `estimand_spec.md` and `figure_spec.md` in the same folder describe the estimands and the figure conventions.
+The saved results contain the estimates reported in the paper, so they can be checked without refitting any model, and `16` runs from them alone. Script `14` needs steps 2 and 3 first, because it also redraws Figure S1 from the fitted primary model. Run `14` rather than `02` by itself: `02` also draws earlier layouts of Figures 2 and 3 under the final file names, and `14` replaces them with the versions from `12` and `13`. `estimand_spec.md` and `figure_spec.md` in the analysis folder describe the estimands and the figure conventions.
+
+Where each part of the revised paper comes from (paths relative to `submission/R1_work/`):
+
+| In the revised paper | Saved output | Script |
+|---|---|---|
+| Analysis sample (Section 3.2) | `results/r1_data_audit.csv` | `00` |
+| Hispanic-recording screen (Section 3.2, Appendix C) | `results/r1_recording_screen.csv` | `05` |
+| State examples and rank comparisons (Sections 2 and 5.1) | `results/r1_figure1_example_states.csv`, `results/r1_state_measurement_summary.csv`, `results/r1_rank_agreement_summary.csv`, `results/r1_annual_rank_agreement.csv` | `07` |
+| Between- and within-state estimates (Sections 5.2 to 5.4, Tables C1 and C2) | `results/r1_posterior_summary.csv`, `results/r1_joint_probabilities.csv`, `results/r1_posterior_draws.rds` | `01` |
+| Gap standardization (Appendix B) | `results/r1_gap_estimand_audit.csv` | `08` |
+| Rate covariance check (Section 6) | `results/r1_rate_covariance_check.csv` | `16` |
+| Model formulas and software versions (Appendix A) | `results/r1_model_formulas.csv`, `results/r1_refit_session_info.txt` | `03`, `04` |
+| Convergence diagnostics (Table D1) | `results/r1_model_diagnostics.csv`, `results/r1_parameter_diagnostics.csv` | `03` |
+| Posterior predictive and residual checks (Section 5.4, Table D2) | `results/r1_posterior_predictive_checks.csv`, `results/r1_residual_autocorrelation_checks.csv` | `06` |
+| Figure 1 | `figures/figure_1_estimand_geometry.*` | `02` |
+| Figure 2 | `figures/figure_2_joint_posterior.*` | `12` |
+| Figure 3 | `figures/figure_3_robustness.*` | `13` |
+| Figure S1 | `figures/figure_s2_posterior_predictive_checks.*` (the file keeps its working name) | `06` |
+
+`figures/figure_1_estimand_geometry_and_ranks.*`, an extended version of Figure 1 with a rank panel, is not used in the paper.
 
 ## Data sources
 

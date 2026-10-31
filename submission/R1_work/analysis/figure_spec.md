@@ -1,7 +1,8 @@
 # R1 figure specification
 
-Status: local working standard, based on the journal's current author instructions and a visual
-audit of recent 2026 Statistics and Public Policy articles.
+Status: the conventions used for the figures in the revised paper, based on the journal's author
+instructions and a visual audit of recent 2026 Statistics and Public Policy articles. The shared
+settings are in `figure_style.R`.
 
 ## Journal constraints
 
@@ -14,8 +15,9 @@ audit of recent 2026 Statistics and Public Policy articles.
 
 ## Visual system
 
-- Typeface: Avenir Next Regular throughout the artwork, with Avenir Next Medium for panel headings and Demi Bold used only for compact state labels.
-- Final-width base type: 8.5 pt; never below 7.5 pt.
+- Typeface: Helvetica throughout the artwork.
+- Type size at final width: 8.6-pt base with 8-pt axis and legend text (`theme_r1()`); in-panel
+  labels are set slightly smaller.
 - Main-text width: 7.25 inches for two-column figures, 3.5 inches for single-column figures.
 - Background: white.
 - Grid: only faint major grid lines when they materially aid comparison.
@@ -25,21 +27,24 @@ audit of recent 2026 Statistics and Public Policy articles.
 
 ## Semantic colors
 
-- Relative disparity (ratio): vermilion `#B2473E`.
-- Absolute disparity (gap): teal `#007A78`.
-- Black group-specific rate: charcoal `#2E3338`.
-- White group-specific rate: steel blue `#5B7F9B`.
+- Relative disparity (ratio): `#9B5361`.
+- Absolute disparity (gap): `#2E4A6B`.
+- Black group-specific rate: near-black `#171717`.
+- White group-specific rate: blue `#0072B2`.
 - Observations and reference marks: neutral grays.
 
-## Planned main figures
+## Figures in the revised paper
 
-1. Descriptive measurement map: two disparity panels (ratio and gap) and two clearly separated
-   group-specific burden panels (Black and White rates). Points are neutral; fitted relationships
-   carry semantic color. No region legend unless region is analytically necessary.
-2. Joint posterior: ratio change against gap change, with posterior mass by quadrant; a companion
-   interval panel shows the two underlying rate changes that generate the result.
-3. Robustness: compact paired interval plots for ratio and gap across the primary and sensitivity
-   models.
+1. Figure 1 (`figure_1_estimand_geometry`): state averages for 2016-2020. Panel A shows that equal
+   ratios lie on rays from the origin, and Panel B shows that equal gaps lie on parallel lines,
+   with a Gap 0 reference line.
+2. Figure 2 (`figure_2_joint_posterior`): Panel A plots the ratio change against the gap change
+   for the between-state contrast, with posterior density contours; Panel B shows the two
+   group-specific rate changes that generate the result.
+3. Figure 3 (`figure_3_robustness`): paired interval plots for the ratio and the gap across the
+   primary and four sensitivity models.
+4. Figure S1 (`figure_s2_posterior_predictive_checks`, a working file name): posterior predictive
+   densities for the two log rates, and lag-1 residual dependence before and after the AR(1) term.
 
 ## Quality gate
 

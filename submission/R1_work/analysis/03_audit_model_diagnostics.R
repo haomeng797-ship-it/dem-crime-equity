@@ -1,5 +1,5 @@
-# Audit the fitted models retained for R1. This reads the submitted cache files
-# but writes all diagnostic records to the local, ignored R1 workspace.
+# Audit the five fitted R1 models from 04 and 05 and write the diagnostic, parameter, and
+# formula tables to submission/R1_work/results.
 
 suppressPackageStartupMessages({
   library(brms)
