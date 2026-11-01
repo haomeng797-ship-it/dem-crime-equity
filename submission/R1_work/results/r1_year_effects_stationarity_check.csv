@@ -1,0 +1,25 @@
+"fit","design","quantity","median","lower_95","upper_95","probability_positive"
+"Year effects, AR constrained to (-1, 1)","between","ar_black",0.959927996607685,0.931213865602062,0.985869774172158,1
+"Year effects, AR constrained to (-1, 1)","between","ar_white",0.995726207758716,0.983115046782435,0.999831284187983,1
+"Year effects, AR constrained to (-1, 1)","between","black_rate_pct",-0.723322287529077,-10.3790810076898,10.0718630035228,0.444611111111111
+"Year effects, AR constrained to (-1, 1)","between","gap_per_100k",34.5929315295072,-122.316593486536,211.048345427853,0.667388888888889
+"Year effects, AR constrained to (-1, 1)","between","ratio_pct",12.1822687936862,-0.16952173552236,26.0275944784245,0.973055555555556
+"Year effects, AR constrained to (-1, 1)","between","white_rate_pct",-11.4912124292804,-21.6157313350888,0.424214687419787,0.0282777777777778
+"Year effects, AR constrained to (-1, 1)","within","ar_black",0.959927996607685,0.931213865602062,0.985869774172158,1
+"Year effects, AR constrained to (-1, 1)","within","ar_white",0.995726207758716,0.983115046782435,0.999831284187983,1
+"Year effects, AR constrained to (-1, 1)","within","black_rate_pct",-0.302806039876313,-1.1569875392716,0.559689510482561,0.241666666666667
+"Year effects, AR constrained to (-1, 1)","within","gap_per_100k",-4.74872070914606,-19.5862579465219,10.5809384577777,0.269166666666667
+"Year effects, AR constrained to (-1, 1)","within","ratio_pct",-0.125697624378435,-1.11135753350451,0.892071326721187,0.407111111111111
+"Year effects, AR constrained to (-1, 1)","within","white_rate_pct",-0.179781458094941,-0.890837466094643,0.535852592289687,0.310777777777778
+"Year effects, flat AR prior","between","ar_black",0.962996536251755,0.933096573371189,0.988904098634868,1
+"Year effects, flat AR prior","between","ar_white",1.00822786530787,0.989204626468156,1.02639814868846,1
+"Year effects, flat AR prior","between","black_rate_pct",-0.613375860374588,-10.2447190452072,9.92448630738844,0.456
+"Year effects, flat AR prior","between","gap_per_100k",36.6802341388064,-121.888354885166,209.509305767989,0.665833333333333
+"Year effects, flat AR prior","between","ratio_pct",12.0131304860145,-0.42086933007626,26.0211601533762,0.970777777777778
+"Year effects, flat AR prior","between","white_rate_pct",-11.2172849344064,-21.7346375719178,0.166435902229455,0.0266111111111111
+"Year effects, flat AR prior","within","ar_black",0.962996536251755,0.933096573371189,0.988904098634868,1
+"Year effects, flat AR prior","within","ar_white",1.00822786530787,0.989204626468156,1.02639814868846,1
+"Year effects, flat AR prior","within","black_rate_pct",-0.30481762652993,-1.145440744107,0.549662152944927,0.246
+"Year effects, flat AR prior","within","gap_per_100k",-4.90420617874353,-19.6917933318185,10.2548076470215,0.264444444444444
+"Year effects, flat AR prior","within","ratio_pct",-0.163075194455581,-1.16057780649928,0.840660785252636,0.372833333333333
+"Year effects, flat AR prior","within","white_rate_pct",-0.136987194879779,-0.853619196491254,0.566440486797516,0.354777777777778

@@ -13,7 +13,8 @@ figures_dir <- file.path(work_root, "figures")
 input <- file.path(results_dir, "r1_posterior_draws.rds")
 input_hash <- unname(tools::md5sum(input))
 model_levels <- c("AR(1) log-rate", "Log-rate, no AR(1)", "Region + AR(1)",
-                  "Negative-binomial count", "Recording-screen sample")
+                  "Negative-binomial count", "Recording-screen sample",
+                  "Year effects + AR(1)")
 summaries <- readRDS(input) |>
   filter(design == "between") |>
   mutate(model = factor(model, levels = rev(model_levels))) |>
@@ -24,7 +25,7 @@ summaries <- readRDS(input) |>
             lower_50 = quantile(estimate, 0.25), upper_50 = quantile(estimate, 0.75),
             lower_95 = quantile(estimate, 0.025), upper_95 = quantile(estimate, 0.975),
             .groups = "drop")
-stopifnot(nrow(summaries) == 10, !anyNA(summaries),
+stopifnot(nrow(summaries) == 12, !anyNA(summaries),
           all(summaries$lower_95 <= summaries$lower_50),
           all(summaries$lower_50 <= summaries$median),
           all(summaries$median <= summaries$upper_50),
@@ -32,7 +33,7 @@ stopifnot(nrow(summaries) == 10, !anyNA(summaries),
 saved <- read.csv(file.path(results_dir, "r1_posterior_summary.csv")) |>
   filter(design == "between", estimand %in% c("ratio_pct", "gap_per_100k"))
 check <- inner_join(summaries, saved, by = c("model", "estimand"), suffix = c("", "_saved"))
-stopifnot(nrow(check) == 10,
+stopifnot(nrow(check) == 12,
           max(abs(check$median - check$median_saved)) < 1e-10,
           max(abs(check$lower_95 - check$lower_95_saved)) < 1e-10,
           max(abs(check$upper_95 - check$upper_95_saved)) < 1e-10)
@@ -77,13 +78,13 @@ pdf_device <- function(filename, width, height, bg, ...) {
   grDevices::quartz(type = "pdf", file = filename, width = width, height = height,
                     family = font, bg = bg, title = "Sensitivity of racial imprisonment disparity estimates")
 }
-ggsave(paste0(stem, ".pdf"), figure, width = 7.25, height = 3.45,
+ggsave(paste0(stem, ".pdf"), figure, width = 7.25, height = 3.9,
        device = pdf_device, bg = "white")
-ggsave(paste0(stem, ".png"), figure, width = 7.25, height = 3.45,
+ggsave(paste0(stem, ".png"), figure, width = 7.25, height = 3.9,
        dpi = 600, device = ragg::agg_png, bg = "white")
-ggsave(paste0(stem, ".tif"), figure, width = 7.25, height = 3.45,
+ggsave(paste0(stem, ".tif"), figure, width = 7.25, height = 3.9,
        dpi = 600, device = ragg::agg_tiff, compression = "lzw", bg = "white")
-ggsave(paste0(stem, "_preview.png"), figure, width = 7.25, height = 3.45,
+ggsave(paste0(stem, "_preview.png"), figure, width = 7.25, height = 3.9,
        dpi = 400, device = ragg::agg_png, bg = "white")
 stopifnot(identical(unname(tools::md5sum(input)), input_hash))
-message("Figure 3 styled; all ten medians and 95% intervals match the saved results.")
+message("Figure 3 styled; all twelve medians and 95% intervals match the saved results.")

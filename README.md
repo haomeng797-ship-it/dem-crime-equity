@@ -40,7 +40,7 @@ Rebuilding the paper and report documents is optional and not needed to check th
 
 ## Revision materials
 
-The folder `submission/R1_work/` holds the code, saved results, and figures for the revised version of the paper. To rerun it, start with `analysis/00_rebuild_and_audit_data.R`, refit the models with `04` and `05`, and then run the remaining scripts in numerical order. The estimates reported in the paper are already saved in `results/`, so they can be checked without refitting the models.
+The folder `submission/R1_work/` holds the code, saved results, and figures for the revised version of the paper. To rerun it, start with `analysis/00_rebuild_and_audit_data.R`, refit the models with `04`, `05`, and `17`, and then run the remaining scripts in numerical order. The estimates reported in the paper are already saved in `results/`, so they can be checked without refitting the models.
 
 ## Data sources
 

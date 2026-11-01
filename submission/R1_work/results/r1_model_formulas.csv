@@ -64,3 +64,16 @@ Family: gaussian
 Link function: identity 
 
 "
+"Year effects + AR(1)","logB ~ demW + demM + yearf + (1 | p | state_abbr) + ar(time = year, gr = state_abbr) 
+logW ~ demW + demM + yearf + (1 | p | state_abbr) + ar(time = year, gr = state_abbr) ","$logB
+
+Family: gaussian 
+Link function: identity 
+
+
+$logW
+
+Family: gaussian 
+Link function: identity 
+
+"

@@ -29,7 +29,8 @@ model_specs <- tibble::tribble(
   "Log-rate, no AR(1)",     "submission/R1_work/models/sensitivity_no_ar_refit.rds", "gaussian", "logB", "logW",
   "Region + AR(1)",         "submission/R1_work/models/sensitivity_region_ar1_refit.rds", "gaussian", "logB", "logW",
   "Negative-binomial count", "submission/R1_work/models/sensitivity_count_refit.rds", "count", "Bc", "Wc",
-  "Recording-screen sample", "submission/R1_work/models/sensitivity_recording_screen_refit.rds", "gaussian", "logB", "logW"
+  "Recording-screen sample", "submission/R1_work/models/sensitivity_recording_screen_refit.rds", "gaussian", "logB", "logW",
+  "Year effects + AR(1)",   "submission/R1_work/models/sensitivity_year_effects_refit.rds", "gaussian", "logB", "logW"
 )
 
 draw_name <- function(response, term) paste0("b_", response, "_", term)

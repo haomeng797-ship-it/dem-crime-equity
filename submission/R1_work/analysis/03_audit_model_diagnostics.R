@@ -24,7 +24,8 @@ model_files <- tibble::tribble(
   "Log-rate, no AR(1)",      "submission/R1_work/models/sensitivity_no_ar_refit.rds",
   "Region + AR(1)",          "submission/R1_work/models/sensitivity_region_ar1_refit.rds",
   "Negative-binomial count", "submission/R1_work/models/sensitivity_count_refit.rds",
-  "Recording-screen sample", "submission/R1_work/models/sensitivity_recording_screen_refit.rds"
+  "Recording-screen sample", "submission/R1_work/models/sensitivity_recording_screen_refit.rds",
+  "Year effects + AR(1)",    "submission/R1_work/models/sensitivity_year_effects_refit.rds"
 )
 
 safe_min <- function(x) min(x[is.finite(x)], na.rm = TRUE)

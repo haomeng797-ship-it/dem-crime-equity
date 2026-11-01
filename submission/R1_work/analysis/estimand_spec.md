@@ -45,6 +45,12 @@ causal estimate or as a superior version of the between-state comparison.
 - Sensitivity 2: primary model with Census-region fixed effects.
 - Sensitivity 3: joint negative-binomial count model with population offsets.
 - Sensitivity 4: primary model without the 12 states flagged by the Hispanic-recording screen.
+- Sensitivity 5: primary model with year fixed effects in place of the linear time trend
+  (`17_refit_year_effects_model.R`).
+- Stationarity check for sensitivity 5: AR(1) coefficients constrained to (-1, 1)
+  (`18_year_effects_stationarity_check.R`, reported in Appendix A).
+- Gap check: the primary model with Alaska's autoregressive chain restarted in 2014
+  (`19_alaska_gap_check.R`, reported in Appendix A).
 
 ## Reporting rule
 
