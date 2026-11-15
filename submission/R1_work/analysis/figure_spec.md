@@ -27,8 +27,8 @@ settings are in `figure_style.R`.
 
 ## Semantic colors
 
-- Relative disparity (ratio): `#9B5361`.
-- Absolute disparity (gap): `#2E4A6B`.
+- Relative disparity (ratio): `#BE0F34`.
+- Absolute disparity (gap): `#1B3FA0`.
 - Black group-specific rate: near-black `#171717`.
 - White group-specific rate: blue `#0072B2`.
 - Observations and reference marks: neutral grays.
@@ -42,8 +42,8 @@ settings are in `figure_style.R`.
    for the between-state contrast, with posterior density contours; Panel B shows the two
    group-specific rate changes that generate the result.
 3. Figure 3 (`figure_3_robustness`): paired interval plots for the ratio and the gap across the
-   primary and four sensitivity models.
-4. Figure S1 (`figure_s2_posterior_predictive_checks`, a working file name): posterior predictive
+   primary and five sensitivity models.
+4. Figure D1 (`figure_s2_posterior_predictive_checks`, a working file name): posterior predictive
    densities for the two log rates, and lag-1 residual dependence before and after the AR(1) term.
 
 ## Quality gate

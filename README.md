@@ -6,7 +6,7 @@ R code and public state-level data for a study of how racial disparity in impris
 
 **Author:** Miura Meng
 
-*Revise and resubmit, Statistics and Public Policy.*
+*Revision under review, Statistics and Public Policy.*
 
 ## Reproduce
 
@@ -40,7 +40,7 @@ Rebuilding the paper and report documents is optional and not needed to check th
 
 ## Revision materials
 
-The folder `submission/R1_work/` holds the code, saved results, and figures for the revised version of the paper. To rerun it, start with `analysis/00_rebuild_and_audit_data.R`, refit the models with `04`, `05`, and `17`, and then run the remaining scripts in numerical order. The estimates reported in the paper are already saved in `results/`, so they can be checked without refitting the models.
+The folder `submission/R1_work/` holds the code, saved results, and figures for the revised version of the paper. To rerun it, start with `analysis/00_rebuild_and_audit_data.R`, refit the models with `04`, `05`, and `17`, and then run the remaining scripts in numerical order. The estimates reported in the paper are already saved in `results/`, so they can be checked without refitting the models. The revision scripts additionally use `patchwork` and `ggdist`.
 
 ## Data sources
 
