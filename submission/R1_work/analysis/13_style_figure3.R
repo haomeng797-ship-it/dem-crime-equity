@@ -45,10 +45,10 @@ panel <- function(estimand_name, title, x_label, color, show_y) {
   ggplot(filter(summaries, estimand == estimand_name), aes(median, model)) +
     geom_vline(xintercept = 0, color = "#69757E", linewidth = 0.3, linetype = "22") +
     geom_segment(aes(x = lower_95, xend = upper_95, yend = model),
-                 color = color, linewidth = 0.6) +
+                 color = color, linewidth = 0.4) +
     geom_segment(aes(x = lower_50, xend = upper_50, yend = model),
-                 color = color, linewidth = 1.35) +
-    geom_point(shape = 21, size = 2.1, stroke = 0.3, color = "white", fill = color) +
+                 color = color, linewidth = 1.0) +
+    geom_point(shape = 16, size = 1.5, color = color) +
     labs(title = title, x = x_label, y = NULL) +
     theme_minimal(base_family = font, base_size = 8.6) +
     theme(
@@ -57,8 +57,9 @@ panel <- function(estimand_name, title, x_label, color, show_y) {
       axis.title = element_text(color = "#000000", size = 8.6),
       axis.title.x = element_text(margin = margin(t = 7)),
       panel.grid = element_blank(),
-      panel.grid.major.x = element_line(color = "#E4E8EB", linewidth = 0.25),
-      axis.ticks.x = element_line(color = "#303A41", linewidth = 0.28),
+      panel.grid.major.y = element_line(color = "#E1E5E8", linewidth = 0.25),
+      axis.line.x = element_line(color = "#303A41", linewidth = 0.2),
+      axis.ticks.x = element_line(color = "#303A41", linewidth = 0.2),
       axis.ticks.length = grid::unit(2, "pt"),
       axis.text.y = if (show_y) element_text(color = "#000000", size = 8) else element_blank(),
       plot.title = element_text(family = heading_font, color = "#000000", face = "plain",
@@ -73,7 +74,7 @@ figure <- panel("ratio_pct", "A  Relative disparity", "Change in Black/White rat
   panel("gap_per_100k", "B  Absolute disparity", "Change in gap per 100,000",
         color_gap, FALSE) + plot_layout(widths = c(1.15, 1))
 
-stem <- file.path(figures_dir, "figure_3_robustness_publication")
+stem <- file.path(figures_dir, "figure_3_robustness")
 pdf_device <- function(filename, width, height, bg, ...) {
   grDevices::quartz(type = "pdf", file = filename, width = width, height = height,
                     family = font, bg = bg, title = "Sensitivity of racial imprisonment disparity estimates")

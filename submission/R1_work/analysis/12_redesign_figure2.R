@@ -51,8 +51,8 @@ theme_publication <- function() {
       axis.title = element_text(color = ink, size = 8.6),
       axis.title.x = element_text(margin = margin(t = 6)),
       axis.title.y = element_text(margin = margin(r = 6)),
-      axis.line = element_line(color = "#303A41", linewidth = 0.28),
-      axis.ticks = element_line(color = "#303A41", linewidth = 0.28),
+      axis.line = element_line(color = "#303A41", linewidth = 0.2),
+      axis.ticks = element_line(color = "#303A41", linewidth = 0.2),
       axis.ticks.length = grid::unit(2, "pt"),
       plot.title = element_text(family = heading_font, face = "plain", color = ink,
                                  size = font_heading_size, margin = margin(b = 4)),
@@ -64,68 +64,78 @@ theme_publication <- function() {
 }
 
 probability_note <- function(probability, gap_text, top) {
-  y <- if (top) grid::unit(1, "npc") - grid::unit(c(4, 8, 13.3), "mm") else
-    grid::unit(c(17.3, 13.3, 8), "mm")
-  labels <- c("Ratio increases", gap_text, sprintf("%.1f%%", 100 * probability))
-  grobs <- lapply(seq_along(labels), function(i) grid::textGrob(
-    labels[i], x = grid::unit(1, "npc") - grid::unit(2, "mm"), y = y[i],
-    just = c("right", "centre"), gp = grid::gpar(
-      fontfamily = if (i == 3) heading_font else font, col = ink,
-      fontsize = if (i == 3) 10 else 8.2
-    )
-  ))
-  annotation_custom(do.call(grid::grobTree, grobs))
+  label <- sprintf("Ratio increases, %s\n%.1f%% of draws", gap_text, 100 * probability)
+  annotation_custom(grid::textGrob(label,
+    x = grid::unit(1, "npc") - grid::unit(2, "mm"),
+    y = if (top) grid::unit(1, "npc") - grid::unit(2, "mm") else grid::unit(2, "mm"),
+    just = c("right", if (top) "top" else "bottom"),
+    gp = grid::gpar(fontfamily = font, col = ink, fontsize = 8, lineheight = 1.15)))
 }
 
+# Show a fixed random subset of the draws so single points stay visible; the contours
+# and every reported number still use all 18,000 draws.
+set.seed(20261115)
+shown_draws <- draws[sample.int(nrow(draws), 3000L), ]
 p_joint <- ggplot(draws, aes(ratio_pct, gap_per_100k)) +
-  geom_point(color = "#7A7A7A", size = 0.55, alpha = 0.065, stroke = 0.15) +
-  stat_density_2d(color = "#404040", bins = 5, linewidth = 0.38) +
+  geom_point(data = shown_draws, color = "#1A1A1A", size = 1.0, alpha = 0.11, shape = 16) +
+  stat_density_2d(color = "#404040", bins = 5, n = 300, linewidth = 0.24, linejoin = "round") +
   geom_hline(yintercept = 0, color = "#69757E", linewidth = 0.3, linetype = "22") +
   geom_vline(xintercept = 0, color = "#69757E", linewidth = 0.3, linetype = "22") +
-  probability_note(prob_both, "Gap increases", TRUE) +
-  probability_note(prob_disagree, "Gap does not increase", FALSE) +
+  probability_note(prob_both, "gap increases", TRUE) +
+  probability_note(prob_disagree, "gap does not increase", FALSE) +
   scale_x_continuous(labels = scales::label_number(suffix = "%", accuracy = 1)) +
   scale_y_continuous(breaks = c(-250, 0, 250, 500)) +
-  labs(title = "A  Relative and absolute disparity", subtitle = "Joint posterior distribution",
+  coord_cartesian(xlim = c(-11, 40), ylim = c(-310, 440)) +
+  labs(title = "A  Relative and absolute disparity",
        x = "Change in Black/White ratio",
        y = "Change in Black-White gap (per 100,000)") + theme_publication()
 
-p_rates <- ggplot(rates, aes(y = y, color = group)) +
-  geom_vline(xintercept = 0, color = "#69757E", linewidth = 0.3, linetype = "22") +
-  geom_segment(aes(x = lower_95, xend = upper_95, yend = y), linewidth = 0.65) +
-  geom_segment(aes(x = lower_50, xend = upper_50, yend = y), linewidth = 1.35) +
-  geom_point(aes(x = median), size = 2.1) +
-  geom_text(aes(x = -24, y = y + 0.25, label = group), hjust = 0,
-            color = ink, family = heading_font, size = 3.05) +
-  geom_text(aes(x = -24, y = y - 0.24, label = estimate_label), hjust = 0,
-            color = ink, family = font, size = 2.8) +
+rate_draws <- draws |>
+  select(black_rate_pct, white_rate_pct) |>
+  pivot_longer(everything(), names_to = "estimand", values_to = "estimate") |>
+  mutate(group = factor(if_else(estimand == "black_rate_pct", "Black rate", "White rate"),
+                        levels = c("White rate", "Black rate")))
+rates <- mutate(rates, group = factor(group, levels = levels(rate_draws$group)))
+p_rates <- ggplot(rate_draws, aes(x = estimate, y = group, color = group, fill = group)) +
+  geom_vline(xintercept = 0, color = "#69757E", linewidth = 0.2, linetype = "22") +
+  ggdist::stat_slab(height = 0.62, alpha = 0.22, color = NA, normalize = "groups") +
+  ggdist::stat_slab(height = 0.62, fill = NA, linewidth = 0.2, normalize = "groups") +
+  geom_segment(data = rates, aes(x = lower_95, xend = upper_95, y = group, yend = group),
+               linewidth = 0.4, inherit.aes = FALSE, color = c(color_black, blue)[
+                 match(as.character(rates$group), c("Black rate", "White rate"))]) +
+  geom_segment(data = rates, aes(x = lower_50, xend = upper_50, y = group, yend = group),
+               linewidth = 1.0, inherit.aes = FALSE, color = c(color_black, blue)[
+                 match(as.character(rates$group), c("Black rate", "White rate"))]) +
+  geom_point(data = rates, aes(x = median, y = group), size = 1.5, shape = 16,
+             inherit.aes = FALSE, color = c(color_black, blue)[
+               match(as.character(rates$group), c("Black rate", "White rate"))]) +
+  geom_text(data = rates, aes(x = median, y = as.numeric(group) - 0.17,
+            label = estimate_label), inherit.aes = FALSE,
+            color = ink, family = font, size = 8 / .pt) +
   scale_color_manual(values = c("Black rate" = color_black, "White rate" = blue)) +
-  scale_x_continuous(breaks = c(-20, -10, 0, 10), limits = c(-25, 12),
-                     labels = scales::label_number(suffix = "%", accuracy = 1),
-                     expand = expansion(mult = 0)) +
-  scale_y_continuous(limits = c(0.48, 2.5), breaks = NULL, expand = expansion(mult = 0)) +
-  labs(title = "B  Group-specific imprisonment rates",
-       subtitle = "Median, 50% and 95% credible intervals", x = "Rate change", y = NULL) +
+  scale_fill_manual(values = c("Black rate" = color_black, "White rate" = blue)) +
+  scale_x_continuous(breaks = c(-30, -20, -10, 0, 10, 20),
+                     labels = scales::label_number(suffix = "%", accuracy = 1)) +
+  scale_y_discrete(expand = expansion(add = c(0.42, 0.72))) +
+  coord_cartesian(xlim = c(-32, 20)) +
+  labs(title = "B  Group-specific imprisonment rates", x = "Rate change", y = NULL) +
   theme_publication() +
   theme(axis.line.y = element_blank(), axis.ticks.y = element_blank())
 
 # Re-styling must preserve the existing kernel-density contour geometry.
 reference_density <- ggplot_build(
-  ggplot(draws, aes(ratio_pct, gap_per_100k)) + stat_density_2d(bins = 5)
+  ggplot(draws, aes(ratio_pct, gap_per_100k)) + stat_density_2d(bins = 5, n = 300)
 )$data[[1]]
 current_density <- ggplot_build(p_joint)$data[[2]]
 stopifnot(isTRUE(all.equal(reference_density[c("x", "y", "level", "group")],
                            current_density[c("x", "y", "level", "group")],
                            check.attributes = FALSE)))
 
-figure <- (p_joint | p_rates) + plot_layout(widths = c(1.48, 1)) + plot_annotation(
-  caption = "Between-state association per 1-SD higher long-run democracy. Brackets report 95% credible intervals.",
-  theme = theme(plot.caption = element_text(family = font, color = ink, size = 7.7,
-                                            hjust = 0, margin = margin(t = 7)),
-                plot.margin = margin(3, 5, 5, 5))
+figure <- (p_joint | p_rates) + plot_layout(widths = c(1.3, 1)) + plot_annotation(
+  theme = theme(plot.margin = margin(3, 5, 5, 5))
 )
 
-stem <- file.path(figures_dir, "figure_2_publication_redesign")
+stem <- file.path(figures_dir, "figure_2_joint_posterior")
 pdf_device <- function(filename, width, height, bg, ...) {
   grDevices::quartz(type = "pdf", file = filename, width = width, height = height,
                     family = font, bg = bg, title = "Joint posterior and group-specific imprisonment rates")

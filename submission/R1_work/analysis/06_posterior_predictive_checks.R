@@ -313,59 +313,66 @@ if (!"--legacy-layout" %in% commandArgs(trailingOnly = TRUE)) {
     all(lag_summary$median <= lag_summary$upper_50),
     all(lag_summary$upper_50 <= lag_summary$upper_95))
 
-  plot_intervals <- function(data, limits, breaks, y_breaks, y_labels, title, subtitle) {
-    stopifnot(all(data$lower_95 >= limits[1]), all(data$upper_95 <= limits[2]))
-    ggplot(data, aes(median, y, color = response)) +
-      geom_vline(xintercept = 0, color = color_mid, linewidth = 0.35, linetype = "22") +
-      geom_segment(aes(x = lower_95, xend = upper_95, yend = y), linewidth = 0.65) +
-      geom_segment(aes(x = lower_50, xend = upper_50, yend = y), linewidth = 1.5) +
-      geom_segment(aes(xend = median, y = y - 0.09, yend = y + 0.09), linewidth = 0.5) +
-      geom_label(aes(label = sprintf("%.3f", median)), nudge_y = 0.25,
-        family = font_regular, size = 2.8, color = color_ink, fill = "white",
-        linewidth = 0, label.padding = grid::unit(0.08, "lines"),
-        label.r = grid::unit(0, "lines")) +
-      scale_color_manual(values = c("Black rate" = color_diagnostic_black,
-        "White rate" = color_diagnostic_white), guide = "none") +
-      scale_x_continuous(limits = limits, breaks = breaks,
-        labels = label_number(accuracy = if (diff(limits) < 0.2) 0.01 else 0.1)) +
-      scale_y_continuous(breaks = y_breaks, labels = y_labels,
-        limits = c(0.55, max(y_breaks) + 0.6), expand = expansion(mult = 0)) +
-      labs(title = title, subtitle = subtitle,
-        x = "Mean residual lag-1 correlation", y = NULL) +
-      theme_r1() +
-      theme(panel.grid.major.y = element_blank(), axis.ticks.y = element_blank())
+  # One dumbbell row per rate: the lag-1 residual correlation before and after the AR(1) term.
+  dumbbell <- lag_summary |>
+    mutate(stage = if_else(adjustment == "Before AR(1) term", "before", "after"),
+      response = factor(response, levels = c("White rate", "Black rate")),
+      stage = factor(stage, levels = c("before", "after"),
+        labels = c("Before AR(1) term", "After AR(1) term")),
+      label = sprintf("%.2f [%.2f, %.2f]", median, lower_95, upper_95))
+  spans <- dumbbell |>
+    group_by(response) |>
+    summarise(low = min(median), high = max(median), .groups = "drop")
+  stopifnot(nrow(dumbbell) == 4, nrow(spans) == 2, all(spans$high > spans$low))
+  p_dependence <- ggplot(dumbbell, aes(median, response)) +
+    geom_vline(xintercept = 0, color = color_mid, linewidth = 0.35, linetype = "22") +
+    geom_segment(data = spans, aes(x = low, xend = high, y = response, yend = response),
+      color = "#B4BABF", linewidth = 0.5) +
+    geom_point(aes(shape = stage, color = response), size = 2.2, fill = "white", stroke = 0.7) +
+    geom_text(aes(label = label, hjust = if_else(stage == "Before AR(1) term", 1, 0)),
+      nudge_y = 0.3, family = font_regular, size = 8 / .pt, color = color_ink) +
+    scale_shape_manual(values = c("Before AR(1) term" = 21, "After AR(1) term" = 16),
+      guide = guide_legend(override.aes = list(color = color_ink))) +
+    scale_color_manual(values = c("Black rate" = color_diagnostic_black,
+      "White rate" = color_diagnostic_white), guide = "none") +
+    scale_x_continuous(limits = c(-0.05, 0.88), breaks = seq(0, 0.8, 0.2),
+      labels = label_number(accuracy = 0.1)) +
+    scale_y_discrete(expand = expansion(add = c(0.45, 0.7))) +
+    labs(title = "C  Residual dependence",
+      x = "Mean residual lag-1 correlation", y = NULL) +
+    theme_r1() +
+    theme(panel.grid = element_blank(), panel.grid.major = element_blank(),
+      axis.ticks.y = element_blank(),
+      axis.line.x = element_line(color = "#303A41", linewidth = 0.2),
+      legend.position = "top", legend.justification = "right",
+      legend.direction = "horizontal", legend.margin = margin(0, 0, -4, 0),
+      legend.box.spacing = grid::unit(0, "pt"),
+      plot.title = element_text(margin = margin(b = -9)))
+  density_notes <- function(panel, observed_xy, draws_xy, observed_at, draws_at) {
+    panel +
+      annotate("segment", x = observed_at[1], y = observed_at[2], xend = observed_xy[1],
+        yend = observed_xy[2], linewidth = 0.25, color = color_ink) +
+      annotate("text", x = observed_xy[1], y = observed_xy[2], label = "Observed",
+        hjust = 1.08, family = font_regular, size = 8 / .pt, color = color_ink) +
+      annotate("segment", x = draws_at[1], y = draws_at[2], xend = draws_xy[1],
+        yend = draws_xy[2], linewidth = 0.25, color = color_ink) +
+      annotate("text", x = draws_xy[1], y = draws_xy[2], label = "50 posterior\npredictive draws",
+        hjust = -0.06, lineheight = 0.95, family = font_regular, size = 8 / .pt,
+        color = color_ink)
   }
-  p_overview <- plot_intervals(lag_summary,
-    c(-0.05, 0.85), seq(0, 0.8, 0.2), 1:4,
-    c("White: after", "White: before", "Black: after", "Black: before"),
-    "C  Residual dependence", "Before and after the AR(1) term")
-  after_summary <- lag_summary |>
-    filter(adjustment == "After AR(1) term") |>
-    mutate(y = if_else(response == "Black rate", 2, 1))
-  p_detail <- plot_intervals(after_summary,
-    c(-0.02, 0.10), seq(-0.02, 0.10, 0.02), 1:2, c("White rate", "Black rate"),
-    "D  Remaining dependence", "After the AR(1) term; expanded scale")
-  for (panel in list(p_overview, p_detail)) {
-    layers <- ggplot_build(panel)$data
-    stopifnot(nrow(layers[[2]]) == nrow(panel$data),
-      nrow(layers[[3]]) == nrow(panel$data), nrow(layers[[4]]) == nrow(panel$data),
-      all(layers[[2]]$xend > layers[[2]]$x),
-      all(layers[[3]]$xend > layers[[3]]$x),
-      all(layers[[4]]$xend == layers[[4]]$x))
-  }
-  figure_zoom <- ((p_density_black | p_density_white) / (p_overview | p_detail)) +
-    plot_layout(heights = c(1, 0.85)) +
-    plot_annotation(caption = paste0(
-      "Vertical ticks and labels: medians. Thick/thin segments: 50%/95% credible intervals.\n",
-      "Panel D repeats the post-AR(1) estimates from panel C on an expanded horizontal scale."),
-      theme = theme(plot.caption = element_text(family = font_regular, color = color_ink,
-        size = 7.7, hjust = 0, margin = margin(t = 6)), plot.margin = margin(3, 5, 5, 5)))
+  axis_lines <- theme(axis.line = element_line(color = "#303A41", linewidth = 0.2))
+  p_density_black <- density_notes(p_density_black, c(7.0, 0.95), c(8.12, 1.02),
+    c(7.42, 0.8), c(7.9, 0.8)) + coord_cartesian(clip = "off") + axis_lines
+  p_density_white <- p_density_white + axis_lines
+  figure_zoom <- ((p_density_black | p_density_white) / p_dependence) +
+    plot_layout(heights = c(1, 0.5)) +
+    plot_annotation(theme = theme(plot.margin = margin(3, 5, 5, 5)))
   stem <- if ("--zoom-layout" %in% commandArgs(trailingOnly = TRUE)) {
     "figure_s2_diagnostic_zoom_trial"
   } else {
     "figure_s2_posterior_predictive_checks"
   }
-  save_figure(figure_zoom, stem, 7.25, 5.5)
+  save_figure(figure_zoom, stem, 7.25, 4.9)
 } else {
   save_figure(figure_s2, "figure_s2_diagnostic_legacy", 7.25, 5.9)
 }

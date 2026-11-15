@@ -1,11 +1,11 @@
 # Shared typography, colors, and export settings for the R1 figure set.
 font_regular <- "Helvetica"
 font_heading <- "Helvetica"
-font_heading_size <- 10
+font_heading_size <- 9
 font_emphasis <- font_heading
 color_ink <- "#000000"
-color_ratio <- "#9B5361"
-color_gap <- "#2E4A6B"
+color_ratio <- "#BE0F34"
+color_gap <- "#1B3FA0"
 # Group colors (Figure 2 and the diagnostics): Black rate black, White rate blue.
 color_black <- "#171717"
 color_white <- "#0072B2"
@@ -22,7 +22,7 @@ theme_r1 <- function(base_size = 8.6) {
       axis.text = ggplot2::element_text(size = 8, color = color_ink),
       axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 6)),
       axis.title.y = ggplot2::element_text(margin = ggplot2::margin(r = 6)),
-      axis.ticks = ggplot2::element_line(color = "#303A41", linewidth = 0.28),
+      axis.ticks = ggplot2::element_line(color = "#303A41", linewidth = 0.2),
       axis.ticks.length = grid::unit(2, "pt"),
       panel.grid.minor = ggplot2::element_blank(),
       panel.grid.major = ggplot2::element_line(color = color_grid, linewidth = 0.25),
